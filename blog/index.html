@@ -1,21 +1,9 @@
 <html>
     <head>
-        <title>BLOG</title>
-        <link rel="stylesheet" type="text/css" href="/theme.css">
-        <!--MathJax-->
-        <script>MathJax = {
-            tex:{
-                    inlineMath: [['$', '$'], ['\\(', '\\)']]
-                },
-            svg:{
-                    fontCache: 'global'
-                }
-            };
+        <div id="header"></div>
+        <script>
+            $("#header").load("https://xrdrsp.com/head.html");
         </script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/babel-polyfill/7.8.7/polyfill.js?features=es6"></script>
-        <script type="text/javascript" id="MathJax-script" async  src="https://cdn.bootcdn.net/ajax/libs/mathjax/latest/es5/tex-chtml.js"></script>
-        <!--Highlight.js-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css" rel="stylesheet">
     </head>
     <body>
         <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -64,14 +52,11 @@
             </script>
         </div>
         -->
-        <div id="footer"></div>
-        <script>
-            $("#header").load("/header.html");
-            $("#footer").load("/footer.html");
-        </script>
     </body>
     <foot>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> 
-        <script>hljs.initHighlightingOnLoad();</script>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("https://xrdrsp.com/foot.html");
+        </script>
     </foot>
 </html>

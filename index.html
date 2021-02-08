@@ -1,24 +1,9 @@
 <html>
     <head>
-        <title>BLOG</title>
-        <link rel="stylesheet" type="text/css" href="/theme.css">
-        <!--MathJax-->
-        <script>MathJax = {
-            tex:{
-                    inlineMath: [['$', '$'], ['\\(', '\\)']]
-                },
-            svg:{
-                    fontCache: 'global'
-                }
-            };
+        <div id="header"></div>
+        <script>
+            $("#header").load("https://xrdrsp.com/head.html");
         </script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/babel-polyfill/7.8.7/polyfill.js?features=es6"></script>
-        <script type="text/javascript" id="MathJax-script" async  src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.0.5/es5/tex-chtml.js"></script>
-        <!--Highlight.js-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css" rel="stylesheet">
-        <script src="/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> 
-        <script>hljs.initHighlightingOnLoad();</script>
     </head>
     <body>
         <div align="right"><a href="/zh-CN.html">简体中文 (zh-CN)</a></div>
@@ -58,43 +43,6 @@
             </table>
         </div>
 
-        <hr>
-        <!--
-        <p>Comments: <a href="https://disqus.com">Disqus</a> and Valine are displayed here.</p>
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://xrdrsp.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <div id="valine">
-            <div id="comment"></div>
-            <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
-            <script>
-                new Valine({
-                    el:'#comment',
-                    appId: 'dE9k2LvAgox0otTsmCmllREl-gzGzoHsz',
-                    appKey: 'clMmQtbi1pRHyVPx80jeJEja',
-                    lang: 'en',
-                    recordIP: true,
-                    emojiMaps: {}
-                });
-            </script>
-        </div>
-        -->
         <div id="footer"></div>
         <script>
             $("#footer").load("https://xrdrsp.com/foot.html");
