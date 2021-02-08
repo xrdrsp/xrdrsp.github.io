@@ -1,3 +1,4 @@
-.gitignore
 template.html
-.DS_Store
+*.DS_Store
+$RECYCLE.bin
+System Volumn Information
