@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <div id="header"></div>
+        <script>
+            $("#header").load("https://xrdrsp.com/head.html");
+        </script>
+    </head>
+    <body>
+        <h1>行列式和矩阵</h1>
+        <font size=3px><i>Posted on Feb 9, 2021. Category: Mathematics, Lecture-Notes</i></font>
+        <h2>1 二阶行列式</h2>
+        <h3>1.1 定义和计算</h3>
+        <p>
+            设有一个二元线性方程组 
+            <!-- $$\begin{cases} a_{11}x_1 + a_{12}x_2 = b_1\\ a_{21}x_1 + a_{22}x_2 = b_2\end{cases}$$ -->
+            <!-- $$\begin{align}\begin{cases} a_{11}x_1 + a_{12}x_2 = b_1 \label{XX} \\ 
+            a_{21}x_1 + a_{22}x_2 = b_2 \label{XX}\end{cases}\end{align}$$ -->
+            $$
+            \begin{cases}\begin{align}
+            a_{11}x_1 + a_{12}x_2 = b_1 \tag{1.1.1}\\
+            a_{21}x_1 + a_{22}x_2 = b_2 \tag{1.1.2}\\
+            \end{align}\end{cases}\tag{1.1}
+            $$
+            其中 
+            $$
+            a_{11}a_{22} - a_{21}a_{12} \neq 0 \tag{1.1.3}
+            $$
+            $(1.1.1)$ 中的每项都乘 $a_{21}$，等价于
+            $$
+            a_{11}a_{21}x_1 + a_{12}a_{21}x_2 = a_{21}b_1 \tag{1.2}
+            $$
+            $(1.1.2)$ 中的每项都乘 $a_{11}$，等价于
+            $$
+            a_{21}a_{11}x_1 + a_{22}a_{11}x_2 = a_{11}b_2 \tag{1.3}
+            $$
+            将等式 $(1.3)$ 的 $\rm{LHS}$ 减去等式 $(1.2)$ 的 $\rm{LHS}$，等式 $(1.3)$ 的 $\rm{RHS}$ 减去等式 $(1.2)$ 的 $\rm{RHS}$，得到
+            $$
+            (a_{11}a_{21} - a_{21}a_{11})x_1 + (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{1.4}
+            $$
+            它等价于
+            $$
+            (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{1.5}
+            $$
+            由于不等式 $(1.1.3)$，有
+            $$
+            x_2 = \dfrac{a_{11}b_2 - a_{21}b_1}{a_{22}a_{11} - a_{12}a_{21}} \tag{1.6.1}
+            $$
+            同理可得，
+            $$
+            x_1 = \dfrac{a_{22}b_1 - a_{12}b_2}{a_{22}a_{11} - a_{12}a_{21}} \tag{1.6.2}
+            $$
+            因此我们得到方程的唯一解
+            $$
+            \begin{cases}
+            x_1 = \dfrac{a_{22}b_1 - a_{12}b_2}{a_{22}a_{11} - a_{12}a_{21}} \\
+            x_2 = \dfrac{a_{11}b_2 - a_{21}b_1}{a_{22}a_{11} - a_{12}a_{21}} \\
+            \end{cases}\tag{1.6}
+            $$
+        </p>
+        <p>
+            由此数学家定义了二阶行列式：
+            <i><blockquote>行列式（Determinant），记作
+            $\det(A)$
+            或
+            $|A|$
+            ，是一个在方块矩阵上计算得到的标量。行列式可以看做是有向面积或体积的概念在一般的欧几里得空间中的推广。</i>（摘自<a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">维基百科—行列式</a>。）</blockquote>
+            但是这个定义太讨厌了，所以若 $4$ 个数排成 $2 \times 2$ 的数表，形如 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right|$ 的，就是二阶行列式，并且 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right| = ad - bc$。定义其中四个数为二阶行列式的<i><b>元素</b></i>、二阶行列式中左上角与右下角元素连接的对角线为<i><b>主对角线</b></i>、右上角与左下角元素连接的对角线为<i><b>副对角线</b></i>。所以一个二阶行列式的值为主对角线上元素的乘积减去副对角线上元素的乘积。设 $D = \left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|, D_1 = \left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, D_2 = \left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|$，因此方程 $(1.1)$ 的解可以这么表示：
+            $$
+            \begin{cases}
+            x_1 = \dfrac{\left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|}{\left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|} = \dfrac{D_1}{D} \\
+            x_2 = \dfrac{\left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|}{\left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|} = \dfrac{D_2}{D} \\
+            \end{cases}\tag{1.7}
+            $$
+        </p>
+        <p>
+            所以，二阶行列式可以用来解二元线性方程组。
+        </p>
+        <h2>2 三阶行列式</h2>
+        <h3>2.1 定义和计算</h3>
+        <p>类似地，可以应用三阶行列式来解三元线性方程组。三阶行列式中， $9$ 个数排成 $3 \times 3$ 的数表，形如 $\left|\begin{array}{ccccccccc}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right|$。它的值是这么算的：
+            $$
+            \left|\begin{array}{ccccccccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right| = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32} \tag{2.1}
+            $$
+        </p>
+        <p>三阶行列式的值也满足「主对角线上元素的乘积减去副对角线上元素的乘积」。但是主对角线和副对角线不止一条了。每当主对角线的下一个元素超出了边界，那么就把下一行第一个元素作为下一个元素继续乘积；当副对角线的下一个元素超出了边界，那么就把下一行最后一个元素作为下一个元素继续乘积，直到最后一行为止。</p>
+        <h3>2.2 一些性质</h3>
+        <p>一些定义：
+            <table>
+                <tr>
+                    <td>逆序对&emsp;</td>
+                    <td>一个排列 $a$ 中，若存在 $i, j\in \mathbb{R}$ 且 $i < j, a_i > a_j$，就把 $(i, j)$ 或 $(a_i, a_j)$ 叫作 $a$ 的一个<i><b>逆序对</b></i>。</j></td>
+                </tr>
+                <tr>
+                    <td>逆序数&emsp;</td>
+                    <td>一个排列 $a$ 中，逆序对的个数被称为<b><i>逆序数</i></b>。</td>
+                </tr>
+            </table>
+        </p>
+    </body>
+    <foot>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("https://xrdrsp.com/foot.html");
+        </script>
+    </foot>
+</html>
