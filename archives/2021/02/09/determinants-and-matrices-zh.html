@@ -8,9 +8,10 @@
     </head>
     <body>
         <h1>行列式和矩阵</h1>
-        <font size=3px><i>Posted on Feb 9, 2021. Category: Mathematics, Lecture-Notes</i></font>
-        <h2>1 二阶行列式</h2>
-        <h3>1.1 定义和计算</h3>
+        <font size=3px><i>Posted on 09-02-2021. First Updated on 02-05-2021.</i></font>
+        <h2>0 引入</h2>
+        <h3>0.0 二阶行列式</h3>
+        <h4>0.0.0 定义和计算</h4>
         <p>
             设有一个二元线性方程组 
             <!-- $$\begin{cases} a_{11}x_1 + a_{12}x_2 = b_1\\ a_{21}x_1 + a_{22}x_2 = b_2\end{cases}$$ -->
@@ -18,44 +19,37 @@
             a_{21}x_1 + a_{22}x_2 = b_2 \label{XX}\end{cases}\end{align}$$ -->
             $$
             \begin{cases}\begin{align}
-            a_{11}x_1 + a_{12}x_2 = b_1 \tag{1.1.1}\\
-            a_{21}x_1 + a_{22}x_2 = b_2 \tag{1.1.2}\\
-            \end{align}\end{cases}\tag{1.1}
+            a_{11}x_1 + a_{12}x_2 = b_1 \tag{0.0.0}\\
+            a_{21}x_1 + a_{22}x_2 = b_2 \tag{0.0.1}\\
+            \end{align}\end{cases}\tag{0.1}
             $$
             其中 
             $$
-            a_{11}a_{22} - a_{21}a_{12} \neq 0 \tag{1.1.3}
+            a_{11}a_{22} - a_{21}a_{12} \neq 0 \tag{0.2}
             $$
-            $(1.1.1)$ 中的每项都乘 $a_{21}$，等价于
+            $(0.0.0)$ 中的每项都乘 $a_{21}$，等价于
             $$
-            a_{11}a_{21}x_1 + a_{12}a_{21}x_2 = a_{21}b_1 \tag{1.2}
+            a_{11}a_{21}x_1 + a_{12}a_{21}x_2 = a_{21}b_1 \tag{0.3}
             $$
-            $(1.1.2)$ 中的每项都乘 $a_{11}$，等价于
+            $(0.0.1)$ 中的每项都乘 $a_{11}$，等价于
             $$
-            a_{21}a_{11}x_1 + a_{22}a_{11}x_2 = a_{11}b_2 \tag{1.3}
+            a_{21}a_{11}x_1 + a_{22}a_{11}x_2 = a_{11}b_2 \tag{0.4}
             $$
-            将等式 $(1.3)$ 的 $\rm{LHS}$ 减去等式 $(1.2)$ 的 $\rm{LHS}$，等式 $(1.3)$ 的 $\rm{RHS}$ 减去等式 $(1.2)$ 的 $\rm{RHS}$，得到
+            将等式 $(0.4)$ 的 $\rm{LHS}$ 减去等式 $(0.3)$ 的 $\rm{LHS}$，等式 $(0.4)$ 的 $\rm{RHS}$ 减去等式 $(0.3)$ 的 $\rm{RHS}$，得到
             $$
-            (a_{11}a_{21} - a_{21}a_{11})x_1 + (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{1.4}
+            (a_{11}a_{21} - a_{21}a_{11})x_1 + (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{0.5}
             $$
             它等价于
             $$
-            (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{1.5}
+            (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{0.6}
             $$
             由于不等式 $(1.1.3)$，有
             $$
-            x_2 = \dfrac{a_{11}b_2 - a_{21}b_1}{a_{22}a_{11} - a_{12}a_{21}} \tag{1.6.1}
+            x_2 = \dfrac{a_{11}b_2 - a_{21}b_1}{a_{22}a_{11} - a_{12}a_{21}} \tag{0.7.0}
             $$
             同理可得，
             $$
-            x_1 = \dfrac{a_{22}b_1 - a_{12}b_2}{a_{22}a_{11} - a_{12}a_{21}} \tag{1.6.2}
-            $$
-            因此我们得到方程的唯一解
-            $$
-            \begin{cases}
-            x_1 = \dfrac{a_{22}b_1 - a_{12}b_2}{a_{22}a_{11} - a_{12}a_{21}} \\
-            x_2 = \dfrac{a_{11}b_2 - a_{21}b_1}{a_{22}a_{11} - a_{12}a_{21}} \\
-            \end{cases}\tag{1.6}
+            x_1 = \dfrac{a_{22}b_1 - a_{12}b_2}{a_{22}a_{11} - a_{12}a_{21}} \tag{0.7.1}
             $$
         </p>
         <p>
@@ -65,26 +59,29 @@
             或
             $|A|$
             ，是一个在方块矩阵上计算得到的标量。行列式可以看做是有向面积或体积的概念在一般的欧几里得空间中的推广。</i>（摘自<a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">维基百科—行列式</a>。）</blockquote>
-            但是这个定义太讨厌了，所以若 $4$ 个数排成 $2 \times 2$ 的数表，形如 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right|$ 的，就是二阶行列式，并且 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right| = ad - bc$。定义其中四个数为二阶行列式的<i><b>元素</b></i>、二阶行列式中左上角与右下角元素连接的对角线为<i><b>主对角线</b></i>、右上角与左下角元素连接的对角线为<i><b>副对角线</b></i>。所以一个二阶行列式的值为主对角线上元素的乘积减去副对角线上元素的乘积。设 $D = \left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|, D_1 = \left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, D_2 = \left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|$，因此方程 $(1.1)$ 的解可以这么表示：
+            $4$ 个数排成 $2 \times 2$ 的数表，形如 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right|$ 的，就是二阶行列式，并且 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right| = ad - bc$。定义其中四个数为二阶行列式的<i><b>元素</b></i>、二阶行列式中左上角与右下角元素连接的对角线为<i><b>主对角线</b></i>、右上角与左下角元素连接的对角线为<i><b>副对角线</b></i>。所以一个二阶行列式的值为主对角线上元素的乘积减去副对角线上元素的乘积。设 $D = \left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|, D_1 = \left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, D_2 = \left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|$，因此方程 $(1.1)$ 在 $D \neq 0$ 时存在唯一解：
             $$
             \begin{cases}
             x_1 = \dfrac{\left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|}{\left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|} = \dfrac{D_1}{D} \\
             x_2 = \dfrac{\left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|}{\left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|} = \dfrac{D_2}{D} \\
-            \end{cases}\tag{1.7}
+            \end{cases}\tag{0.8}
             $$
         </p>
         <p>
-            所以，二阶行列式可以用来解二元线性方程组。
+            二阶行列式可以用来解二元线性方程组。
         </p>
-        <h2>2 三阶行列式</h2>
-        <h3>2.1 定义和计算</h3>
-        <p>类似地，可以应用三阶行列式来解三元线性方程组。三阶行列式中， $9$ 个数排成 $3 \times 3$ 的数表，形如 $\left|\begin{array}{ccccccccc}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right|$。它的值是这么算的：
+        <h3>0.1 三阶行列式</h3>
+        <h4>0.1.0 定义和计算</h4>
+        <p>类似地，为了简化三元线性方程组的求解公式，引入了三阶行列式的定义。三阶行列式中， $9$ 个数排成 $  3 \times 3$ 的数表，形如 $\left|\begin{array}{ccccccccc}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right|$。三阶行列式的展开式也可用对角线法则得到：
             $$
-            \left|\begin{array}{ccccccccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right| = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32} \tag{2.1}
+            \left|\begin{array}{ccccccccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right| = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32} \tag{0.9}
             $$
         </p>
-        <p>三阶行列式的值也满足「主对角线上元素的乘积减去副对角线上元素的乘积」。但是主对角线和副对角线不止一条了。每当主对角线的下一个元素超出了边界，那么就把下一行第一个元素作为下一个元素继续乘积；当副对角线的下一个元素超出了边界，那么就把下一行最后一个元素作为下一个元素继续乘积，直到最后一行为止。</p>
-        <h3>2.2 一些性质</h3>
+        <p>三阶行列式的值也满足「主对角线上元素的乘积减去副对角线上元素的乘积」。但是主对角线和副对角线不止一条了。每当主对角线的下一个元素超出了边界，那么就把下一行第一个元素作为下一个元素继续乘积；当副对角线的下一个元素超出了边界，那么就把下一行最后一个元素作为下一个元素继续乘积，直到最后一行为止。主对角线上的元素乘积带正号，副对角线上的元素成绩带负号。六项的代数和就是展开式。</p>
+        <h4>0.1.1 一些性质</h4>
+        <p>
+            $(0.9)$ 中，容易发现，每一项都是三个元素的乘积，其中这三个元素来自不同的行、不同的列。因此，每一项不考虑正负号可以写成 $a_{1p_1}a_{2p_2}a_{3p_3}$，其中 $p$ 是 $1, 2, 3$ 的某种排列。这样的排列一共有 $3! = 6$ 种，这决定了展开式总共有几项。
+        </p>
         <p>一些定义：
             <table>
                 <tr>
@@ -95,10 +92,66 @@
                     <td>逆序数&emsp;</td>
                     <td>一个排列 $a$ 中，逆序对的个数被称为<b><i>逆序数</i></b>，记作 $\tau$ 或 $t$。</td>
                 </tr>
+                <tr>
+                    <td>奇排列&emsp;</td>
+                    <td>逆序对为奇数的排列叫作奇排列。</td>
+                </tr>
+                <tr>
+                    <td>偶排列&emsp;</td>
+                    <td>逆序对为偶数的排列叫作偶排列。</td>
+                </tr>
             </table>
         </p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Lemma 1.</b> 对换改变排列的奇偶性。对于一个奇排列，将两个元素进行一次对换，它变成偶排列。对于一个偶排列，将两个元素进行一次对换，它变成奇排列。
+                    <p>证明：</p>
+                    <p>
+                        假设是 $(a_i, a_j)$ 对换。
+                        <ol>
+                            <li>$j=i+1$。则只有对换的那两个数的逆序或不逆序性质发生了变化，其他的都不变，所以逆序对数的奇偶性变化。</li>
+                            <li>$j>i+1$。则这个交换可以看做 $2(j-i)+1$ 个 1 中的交换：$i$ 与 $i+1$，$i+1$ 与 $i+2$，……，$j-1$ 与 $j$，$j-2$ 与 $j-1$，……，$i$ 与 $i+1$。又每次交换逆序数都扩大或减小 $1$。$2(j-i)+1$ 是奇数，所以逆序对数的奇偶性变化。</li>
+                        </ol>
+                        所以逆序对数的奇偶性变化。
+                    </p>
+                </td>
+            </tr>
+        </table>
+
         <p>
-            很容易发现，三阶行列式求值方法的六项中，每项都是行列式中不同行、不同列的三个元素的乘积，只是符号不同而已。根据上面的定义，
+            仔细观察每项，对照各项的正负号与列标的排列，不难发现，带正号的三项列标分别是：$123, 231, 312$，它们都是偶排列；带符号的三项列标排列都是奇排列。根据这个规律，我们进一步地可以得到三阶行列式的计算公式：
+            $$
+            \left|\begin{array}{ccccccccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right| = \sum(-1)^\tau a_{1p_1}a_{2p_2}a_{3p_3} \tag{0.10}
+            $$
+            ，其中$p_1, p_2, p_3$ 是列标； $\tau$ 是排列 $\{p_i\}$ 的逆序数。这样，$n$ 阶行列式的定义和计算就呼之欲出了。
+        </p>
+        <h3>0.2 $n$ 阶行列式</h3>
+        <p>
+            设有 $n^2$ 个数，排成 $n$ 行 $n$ 列的数表：$
+            \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$。作出表中位于不同行、不同列的 $n$ 个数的乘积，并乘 $(-1)^\tau$ 作为符号再相加，得到形如 $(-1)^\tau \prod\limits_{i=1}^n a_{ip_i}$ 的项，其中排列 $p\{i\}$ 是数 $1, 2, \cdots, n$ 构成的 $n$ 阶排列，表示列标； $\tau$ 是排列 $\{p_i\}$ 的逆序数。这样的排列一共有 $n!$ 个，这决定了展开式总共有几项。取这 $n!$ 项的代数和，得到 $n$ 阶行列式的展开式：
+            $$
+            \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right| = \sum (-1)^\tau \prod\limits_{i=1}^n a_{ip_i} \tag{0.11}
+            $$
+            ，这是 $n$ 阶行列式。
+        </p>
+        <p>
+            对于一个 $n$ 阶行列式 $D = \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$，它可以被简记为 $\det(a_{ij})$。
+        </p>
+        <p>
+            根据 $(0.11)$，我们可以得到一些简单易证的 Corollaries：
+            <ul>
+                <li>
+                    $$\left|\begin{array}{cccccccccccccccc} \lambda_1 & 0 & \cdots &  0 \\ 0 & \lambda_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \lambda_n \end{array}\right| = \prod \lambda_i \tag{0.12}$$
+                </li>
+                <li>
+                    $$\left|\begin{array}{ccccccccccccccccccccccccc} 0 & 0 & 0 & \cdots & \lambda_1 \\ 0 & 0 & 0 & \cdots & 0 \\ 0 & 0 & \lambda_3 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \lambda_n & 0 & 0 & \cdots & 0 \end{array}\right| = (-1)^{\frac{n(n-1)}{2}}\prod \lambda_i \tag{0.13}$$
+                </li>
+                <li>$(0.12)$ 中，位于主对角线下册的元素不为 $0$，仍成立。</li>
+            </ul>
+        </p>
+        <p>
+            To Be Continued.
         </p>
     </body>
     <foot>
