@@ -13,8 +13,8 @@ body {
     padding-bottom: 50px;
     line-height: 30px;
     word-break: hyphenate;
-    font-size: 18px;
-    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
 }
 
 p {
@@ -22,15 +22,23 @@ p {
     color: #000000;
     line-height: 30px;
     word-break: hyphenate;
-    font-size: 18px;
-    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
+}
+
+pre, tt {
+	font-size: 90%;
+	font-family: "Computer Modern Typewriter", monaco, monospace;
 }
 
 code {
-    font-family: "Courier New", Menlo;
+    font-family: "Computer Modern Typewriter", "Courier New";
     color: #6f6f6f;
 }
 
+em {
+	font-style: italic;
+}
 
 h1 {
     font-size: 4.0rem;
