@@ -106,7 +106,7 @@
         <table border="1" width="100%" align="left">
             <tr>
                 <td>
-                    <b>Lemma 1.</b> 对换改变排列的奇偶性。对于一个奇排列，将两个元素进行一次对换，它变成偶排列。对于一个偶排列，将两个元素进行一次对换，它变成奇排列。
+                    <b>Lemma 0.</b> 对换改变排列的奇偶性。对于一个奇排列，将两个元素进行一次对换，它变成偶排列。对于一个偶排列，将两个元素进行一次对换，它变成奇排列。
                     <p>证明：</p>
                     <p>
                         假设是 $(a_i, a_j)$ 对换。
@@ -148,12 +148,67 @@
                 <li>
                     $$\left|\begin{array}{ccccccccccccccccccccccccc} 0 & 0 & 0 & \cdots & \lambda_1 \\ 0 & 0 & 0 & \cdots & 0 \\ 0 & 0 & \lambda_3 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \lambda_n & 0 & 0 & \cdots & 0 \end{array}\right| = (-1)^{\frac{n(n-1)}{2}}\prod \lambda_i \tag{0.13}$$
                 </li>
-                <li>$(0.12)$ 中，位于主对角线下册的元素不为 $0$，仍成立。</li>
+                <li>$(0.12)$ 中，位于主对角线下侧的元素不为 $0$，仍成立。</li>
             </ul>
         </p>
+        <h2>1 行列式</h2>
+        <h3>1.0 行列式的基本性质</h3>
+        <p>我们将研究行列式的部分基本性质和一些证明，它们对实际的计算有帮助。</p>
+        <p>设有一个行列式：$D = \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$，将它的行和列互换，得到它的转置行列式：$D^{\rm{T}} = \left|\begin{array}{cccccccccccccccc} a_{11} & a_{21} & \cdots &  a_{n1} \\ a_{12} & a_{22} & \cdots & a_{n2} \\ \vdots & \vdots & \ddots & \vdots \\ a_{1n} & a_{2n} & \cdots &  a_{nn} \end{array}\right|$。有这样的性质：</p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Property 1.</b> $D = D^{\rm{T}}$。
+                </td>
+            </tr>
+        </table>
+        <p>还有这样的性质：</p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Property 2.</b> （交换运算）交换行列式的两行（列），行列式变号。
+                </td>
+            </tr>
+        </table>
+        <p>根据 <b>Property 2.</b>，我们有这样的 Corollary：</p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Corollary 1.</b> 若行列式存在两行（列）相同，行列式的值为 $0$。
+                    <p>Claim: 根据 <b>Property 2.</b>，交换这两行（列），行列式 $D = -D'$；同时 $D = D'$，故 $D=0$。</p>
+                </td>
+            </tr>
+        </table>
         <p>
-            To Be Continued.
+            除此之外：
         </p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Property 3.</b> （线性运算）行列式中某一行（列）所有元素同时乘 $k$，等价于用 $k$ 乘行列式。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Corollary 2.</b> 行列式中若存在行（列）元素成比例，行列式等于 $0$。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Property 4.</b> 若行列式某一行（列）的元素都可以表示成两个数的和，这个行列式等于两个对应行列式的和。即：$\left|\begin{array}{cccccccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ \vdots & \vdots & \ddots & \vdots \\ b_1+c_1 & b_2+c_2 & \cdots & b_n+c_n \\ \vdots & \vdots & \ddots & \vdots  \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right| = \left|\begin{array}{cccccccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ \vdots & \vdots & \ddots & \vdots \\ b_1 & b_2 & \cdots & b_n\\ \vdots & \vdots & \ddots & \vdots  \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right| + \left|\begin{array}{cccccccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ \vdots & \vdots & \ddots & \vdots \\ c_1 & c_2 & \cdots & c_n \\ \vdots & \vdots & \ddots & \vdots  \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Property 5.</b> （数乘运算）行列式某一行（列）各元素乘同一数后加到另一个行（列）对应的元素，行列式的值不变。
+                </td>
+            </tr>
+        </table>
+        <p>以上给出了 5 条关于行列式的基本性质，或许在提出了下面的内容之后会作出一些性质的解释。</p>
+
+            <p>
+                持续更新。
+            </p>
     </body>
     <foot>
         <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
