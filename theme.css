@@ -13,7 +13,7 @@ body {
     padding-bottom: 50px;
     line-height: 30px;
     word-break: hyphenate;
-    font-size: 20px;
+    font-size: 18px;
     font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
 }
 
@@ -22,7 +22,7 @@ p {
     color: #000000;
     line-height: 30px;
     word-break: hyphenate;
-    font-size: 20px;
+    font-size: 18px;
     font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
 }
 
