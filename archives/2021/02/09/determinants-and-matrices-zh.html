@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>行列式和矩阵</h1>
-        <font size=3px><i>Posted on 09-02-2021. First Updated on 02-05-2021.</i></font>
+        <font size=3px><i>Posted on 09-02-2021. Last Updated on 30-05-2021.</i></font>
         <h2>0 引入</h2>
         <h3>0.0 二阶行列式</h3>
         <h4>0.0.0 定义和计算</h4>
@@ -205,7 +205,7 @@
                 </td>
             </tr>
         </table>
-        <p>以上给出了 5 条关于行列式的基本性质，或许在提出了下面的内容之后会作出一些性质的解释。</p>
+        <p>以上给出了 5 条关于行列式的基本性质，<b>众所周知，数学的证明是十分富有乐趣的</b>，因此或许在提出了下面的内容之后会作出一些性质的解释。</p>
         
         <h3>1.1 行列式的按行（列）展开形式</h3>
         <p>
@@ -224,7 +224,35 @@
                 </tr>
             </table>
         </p>
-
+        <p>
+            这样就可以得到行列式的按行（列）展开法则：
+        </p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Theorem 1.</b> 行列式等于它的任一行（列）的各元素与它的代数余子式乘积之和。即：
+                    $$
+                    D = \sum\limits_{k = 1}^na_{ik}A_{ik}
+                    $$
+                    或
+                    $$
+                    D = \sum\limits_{k = 1}^na_{kj}A_{kj}
+                    $$
+                </td>
+            </tr>
+        </table>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>e.g. 1.</b> 这个行列式叫作 <em>Vandermonde 行列式</em>：
+                    $$
+                    D = \left|\begin{array}{ccccccccccccccccccccccccc} 1 & 1 & 1 & \cdots & 1 \\ a_{1} & a_{2} & a_{3} & \cdots &  a_{n} \\ a_1^2 & a_2^2 & a_3^2 & \cdots & a_n^2 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ a_1^{n-1} & a_2^{n - 1} & a_3^{n - 1} & \cdots &  a_n^{n - 1} \end{array}\right|
+                    $$
+                    证明：$D = \sum\limits_{1 \leq j \leq i \leq n}(a_i - a_j)$。
+                </td>
+            </tr>
+        </table>
+        
 
             <p>
                 持续更新。
