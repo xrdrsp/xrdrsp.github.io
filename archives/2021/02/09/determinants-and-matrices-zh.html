@@ -1,0 +1,372 @@
+<html>
+    <head>
+        <title>行列式和矩阵 - xrdrsp</title>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <div id="header"></div>
+        <script>
+            $("#header").load("/head.html");
+        </script>
+    </head>
+    <body>
+        <h1>行列式和矩阵</h1>
+        <font size=3px><em>09-02-2021&emsp;Last Update: 11-06-2021.</em></font>
+        <h2>0 引入</h2>
+        <h3>0.0 二阶行列式</h3>
+        <h4>0.0.0 定义和计算</h4>
+        <p>
+            设有一个二元线性方程组 
+            <!-- $$\begin{cases} a_{11}x_1 + a_{12}x_2 = b_1\\ a_{21}x_1 + a_{22}x_2 = b_2\end{cases}$$ -->
+            <!-- $$\begin{align}\begin{cases} a_{11}x_1 + a_{12}x_2 = b_1 \label{XX} \\ 
+            a_{21}x_1 + a_{22}x_2 = b_2 \label{XX}\end{cases}\end{align}$$ -->
+            $$
+            \begin{cases}\begin{align}
+            a_{11}x_1 + a_{12}x_2 = b_1 \tag{0.0.0}\\
+            a_{21}x_1 + a_{22}x_2 = b_2 \tag{0.0.1}\\
+            \end{align}\end{cases}\tag{0.1}
+            $$
+            其中 
+            $$
+            a_{11}a_{22} - a_{21}a_{12} \neq 0 \tag{0.2}
+            $$
+            $(0.0.0)$ 中的每项都乘 $a_{21}$，等价于
+            $$
+            a_{11}a_{21}x_1 + a_{12}a_{21}x_2 = a_{21}b_1 \tag{0.3}
+            $$
+            $(0.0.1)$ 中的每项都乘 $a_{11}$，等价于
+            $$
+            a_{21}a_{11}x_1 + a_{22}a_{11}x_2 = a_{11}b_2 \tag{0.4}
+            $$
+            将等式 $(0.4)$ 的 $\rm{LHS}$ 减去等式 $(0.3)$ 的 $\rm{LHS}$，等式 $(0.4)$ 的 $\rm{RHS}$ 减去等式 $(0.3)$ 的 $\rm{RHS}$，得到
+            $$
+            (a_{11}a_{21} - a_{21}a_{11})x_1 + (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{0.5}
+            $$
+            它等价于
+            $$
+            (a_{22}a_{11} - a_{12}a_{21})x_2 = a_{11}b_2 - a_{21}b_1 \tag{0.6}
+            $$
+            由于不等式 $(0.2)$，有
+            $$
+            x_2 = \dfrac{a_{11}b_2 - a_{21}b_1}{a_{22}a_{11} - a_{12}a_{21}} \tag{0.7.0}
+            $$
+            同理可得，
+            $$
+            x_1 = \dfrac{a_{22}b_1 - a_{12}b_2}{a_{22}a_{11} - a_{12}a_{21}} \tag{0.7.1}
+            $$
+        </p>
+        <p>
+            由此数学家定义了二阶行列式：
+            <em><blockquote>行列式（Determinant），记作
+            $\det(A)$
+            或
+            $|A|$
+            ，是一个在方块矩阵上计算得到的标量。行列式可以看做是有向面积或体积的概念在一般的欧几里得空间中的推广。</em><a href=https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F"><sup>[1]</sup></a></blockquote>
+            $4$ 个数排成 $2 \times 2$ 的数表，形如 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right|$ 的，就是二阶行列式，并且 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right| = ad - bc$。定义其中四个数为二阶行列式的<em><b>元素</b></em>、二阶行列式中左上角与右下角元素连接的对角线为<em><b>主对角线</b></em>、右上角与左下角元素连接的对角线为<em><b>副对角线</b></em>。所以一个二阶行列式的值为主对角线上元素的乘积减去副对角线上元素的乘积。设 $D = \left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|, D_1 = \left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, D_2 = \left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|$，因此方程 $(1.1)$ 在 $D \neq 0$ 时存在唯一解：
+            $$
+            \begin{cases}
+            x_1 = \dfrac{\left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|}{\left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|} = \dfrac{D_1}{D} \\
+            x_2 = \dfrac{\left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|}{\left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|} = \dfrac{D_2}{D} \\
+            \end{cases}\tag{0.8}
+            $$
+        </p>
+        <p>
+            二阶行列式可以用来解二元线性方程组。
+        </p>
+        <h3>0.1 三阶行列式</h3>
+        <h4>0.1.0 定义和计算</h4>
+        <p>类似地，为了简化三元线性方程组的求解公式，引入了三阶行列式的定义。三阶行列式中， $9$ 个数排成 $  3 \times 3$ 的数表，形如 $\left|\begin{array}{ccccccccc}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right|$。三阶行列式的展开式也可用对角线法则得到：
+            $$
+            \left|\begin{array}{ccccccccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right| = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32} \tag{0.9}
+            $$
+        </p>
+        <p>三阶行列式的值也满足「主对角线上元素的乘积减去副对角线上元素的乘积」。但是主对角线和副对角线不止一条了。每当主对角线的下一个元素超出了边界，那么就把下一行第一个元素作为下一个元素继续乘积；当副对角线的下一个元素超出了边界，那么就把下一行最后一个元素作为下一个元素继续乘积，直到最后一行为止。主对角线上的元素乘积带正号，副对角线上的元素乘积带负号。六项的代数和就是展开式。</p>
+        <h4>0.1.1 一些性质</h4>
+        <p>
+            $(0.9)$ 中，容易发现，每一项都是三个元素的乘积，其中这三个元素来自不同的行、不同的列。因此，每一项不考虑正负号可以写成 $a_{1p_1}a_{2p_2}a_{3p_3}$，其中 $p$ 是 $1, 2, 3$ 的某种排列。这样的排列一共有 $3! = 6$ 种，这决定了展开式总共有几项。
+        </p>
+        <p>一些定义：
+            <table>
+                <tr>
+                    <td>逆序对&emsp;</td>
+                    <td>一个排列 $a$ 中，若存在 $i, j\in \mathbb{R}$ 且 $i < j, a_i > a_j$，就把 $(i, j)$ 或 $(a_i, a_j)$ 叫作 $a$ 的一个<em>逆序对</em>。</td>
+                </tr>
+                <tr>
+                    <td>逆序数&emsp;</td>
+                    <td>一个排列 $a$ 中，逆序对的个数被称为<em>逆序数</em>，记作 $\tau$ 或 $t$。</td>
+                </tr>
+                <tr>
+                    <td>奇排列&emsp;</td>
+                    <td>逆序对为奇数的排列叫作<em>奇排列</em>。</td>
+                </tr>
+                <tr>
+                    <td>偶排列&emsp;</td>
+                    <td>逆序对为偶数的排列叫作<em>偶排列</em>。</td>
+                </tr>
+            </table>
+        </p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Lemma 0.</b> 对换改变排列的奇偶性。对于一个奇排列，将两个元素进行一次对换，它变成偶排列。对于一个偶排列，将两个元素进行一次对换，它变成奇排列。
+                    <p>证明：</p>
+                    <p>
+                        假设是 $(a_i, a_j)$ 对换。
+                        <ol>
+                            <li>$j=i+1$。则只有对换的那两个数的逆序或不逆序性质发生了变化，其他的都不变，所以逆序对数的奇偶性变化。</li>
+                            <li>$j>i+1$。则这个交换可以看做 $2(j-i)+1$ 个 1 中的交换：$i$ 与 $i+1$，$i+1$ 与 $i+2$，……，$j-1$ 与 $j$，$j-2$ 与 $j-1$，……，$i$ 与 $i+1$。又每次交换逆序数都扩大或减小 $1$。$2(j-i)+1$ 是奇数，所以逆序对数的奇偶性变化。</li>
+                        </ol>
+                        所以逆序对数的奇偶性变化。
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            仔细观察每项，对照各项的正负号与列标的排列，不难发现，带正号的三项列标分别是：$123, 231, 312$，它们都是偶排列；带负号的三项列标排列都是奇排列。根据这个规律，我们进一步地可以得到三阶行列式的计算公式：
+            $$
+            \left|\begin{array}{ccccccccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right| = \sum(-1)^\tau a_{1p_1}a_{2p_2}a_{3p_3} \tag{0.10}
+            $$
+            ，其中$p_1, p_2, p_3$ 是列标； $\tau$ 是排列 $\{p_i\}$ 的逆序数。这样，$n$ 阶行列式的定义和计算就呼之欲出了。
+        </p>
+        <h3>0.2 $n$ 阶行列式</h3>
+        <p>
+            设有 $n^2$ 个数，排成 $n$ 行 $n$ 列的数表：$
+            \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$。作出表中位于不同行、不同列的 $n$ 个数的乘积，并乘 $(-1)^\tau$ 作为符号再相加，得到形如 $(-1)^\tau \prod\limits_{i=1}^n a_{ip_i}$ 的项，其中排列 $p\{i\}$ 是数 $1, 2, \cdots, n$ 构成的 $n$ 阶排列，表示列标； $\tau$ 是排列 $\{p_i\}$ 的逆序数。这样的排列一共有 $n!$ 个，这决定了展开式总共有几项。取这 $n!$ 项的代数和，得到 $n$ 阶行列式的展开式：
+            $$
+            \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right| = \sum (-1)^\tau \prod\limits_{i=1}^n a_{ip_i} \tag{0.11}
+            $$
+            ，这是 $n$ 阶行列式。
+        </p>
+        <p>
+            对于一个 $n$ 阶行列式 $D = \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$，它可以被简记为 $\det(a_{ij})$。
+        </p>
+        <p>
+            根据 $(0.11)$，我们可以得到一些简单易证的 Corollaries：
+            <ul>
+                <li>
+                    $$\left|\begin{array}{cccccccccccccccc} \lambda_1 & 0 & \cdots &  0 \\ 0 & \lambda_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \lambda_n \end{array}\right| = \prod \lambda_i \tag{0.12}$$
+                </li>
+                <li>
+                    $$\left|\begin{array}{ccccccccccccccccccccccccc} 0 & 0 & 0 & \cdots & \lambda_1 \\ 0 & 0 & 0 & \cdots & 0 \\ 0 & 0 & \lambda_3 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ \lambda_n & 0 & 0 & \cdots & 0 \end{array}\right| = (-1)^{\frac{n(n-1)}{2}}\prod \lambda_i \tag{0.13}$$
+                </li>
+                <li>$(0.12)$ 中，位于主对角线下侧的元素不为 $0$，仍成立。</li>
+            </ul>
+        </p>
+        <h2>1 行列式</h2>
+        <h3>1.0 行列式的基本性质</h3>
+        <p>我们将研究行列式的部分基本性质和一些证明，它们对实际的计算有帮助。</p>
+        <p>设有一个行列式：$D = \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$，将它的行和列互换，得到它的转置行列式：$D^{\rm{T}} = \left|\begin{array}{cccccccccccccccc} a_{11} & a_{21} & \cdots &  a_{n1} \\ a_{12} & a_{22} & \cdots & a_{n2} \\ \vdots & \vdots & \ddots & \vdots \\ a_{1n} & a_{2n} & \cdots &  a_{nn} \end{array}\right|$。有这样的性质：</p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Property 1.</b> $D = D^{\rm{T}}$。
+                </td>
+            </tr>
+        </table>
+        <p>还有这样的性质：</p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Property 2.</b> （交换运算）交换行列式的两行（列），行列式变号。
+                </td>
+            </tr>
+        </table>
+        <p>根据 <b>Property 2.</b>，我们有这样的 Corollary：</p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Corollary 1.</b> 若行列式存在两行（列）相同，行列式的值为 $0$。
+                    <p>Claim: 根据 <b>Property 2.</b>，交换这两行（列），行列式 $D = -D'$；同时 $D = D'$，故 $D=0$。</p>
+                </td>
+            </tr>
+        </table>
+        <p>
+            除此之外：
+        </p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Property 3.</b> （线性运算）行列式中某一行（列）所有元素同时乘 $k$，等价于用 $k$ 乘行列式。
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Corollary 2.</b> 行列式中若存在行（列）元素成比例，行列式等于 $0$。
+                    <p>Claim: 这是显然的。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Property 4.</b> 若行列式某一行（列）的元素都可以表示成两个数的和，这个行列式等于两个对应行列式的和。即：$\left|\begin{array}{cccccccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ \vdots & \vdots & &nbsp; & \vdots \\ b_1+c_1 & b_2+c_2 & \cdots & b_n+c_n \\ \vdots & \vdots & &nbsp; & \vdots  \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right| = \left|\begin{array}{cccccccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ \vdots & \vdots & &nbsp; & \vdots \\ b_1 & b_2 & \cdots & b_n\\ \vdots & \vdots & &nbsp; & \vdots  \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right| + \left|\begin{array}{cccccccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ \vdots & \vdots & &nbsp; & \vdots \\ c_1 & c_2 & \cdots & c_n \\ \vdots & \vdots & &nbsp; & \vdots  \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right|$
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Property 5.</b> （数乘运算）行列式某一行（列）各元素乘同一数后加到另一个行（列）对应的元素，行列式的值不变。例如，$\left|\begin{array}{cccccccccccccccccccccccccccc} a_{11} & \cdots & a_{1i}  & \cdots & a_{1j} & \cdots & a_{1n} \\ a_{21} & \cdots & a_{2i} & \cdots & a_{2j} & \cdots & a_{2n} \\ \vdots & &nbsp; & \vdots & &nbsp; & \vdots & &nbsp; & \vdots \\ a_{n1} & \cdots & a_{ni}  & \cdots & a_{nj} & \cdots & a_{nn}\end{array}\right| = \left|\begin{array}{cccccccccccccccccccccccccccc} a_{11} & \cdots & a_{1i} + ka_{1j}  & \cdots & a_{1j} & \cdots & a_{1n} \\ a_{21} & \cdots & a_{2i} + ka_{2j} & \cdots & a_{2j} & \cdots & a_{2n} \\ \vdots & &nbsp; & \vdots & &nbsp; & \vdots & &nbsp; & \vdots \\ a_{n1} & \cdots & a_{ni} + ka_{nj}  & \cdots & a_{nj} & \cdots & a_{nn}\end{array}\right|$
+                </td>
+            </tr>
+        </table>
+        <p>以上给出了 5 条关于行列式的基本性质，或许在提出了下面的内容之后会作出一些性质的解释。</p>
+        
+        <h3>1.1 行列式的按行（列）展开形式</h3>
+        <p>
+            这部分讨论的问题是如何用低阶行列式表达相对的高阶行列式，将高阶行列式转换为相对的低阶行列式，以简化我们的计算。
+        </p>
+        <p>
+            一些定义：
+            <table>
+                <tr>
+                    <td>余子式&emsp;</td>
+                    <td>一个 $n$ 阶的行列式中元素 $a_{ij}$，把它所在行、所在列删掉以后再构成 $(n-1)$ 阶行列式，它被叫作 $a_{ij}$ 的<em>余子式</em>。</td>
+                </tr>
+                <tr>
+                    <td>代数余子式&emsp;</td>
+                    <td>记 $A_{ij} = (-1)^{i + j} M_{ij}$，$A_{ij}$ 即为 $a_{ij}$ 的<em>代数余子式</em>。</td>
+                </tr>
+            </table>
+        </p>
+        <p>
+            这样就可以得到行列式的按行（列）展开法则：
+        </p>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Theorem 1.</b> 行列式等于它的任一行（列）的各元素与它的代数余子式乘积之和。即：
+                    $$
+                    D = \sum\limits_{k = 1}^na_{ik}A_{ik}\tag{1.0}
+                    $$
+                    或
+                    $$
+                    D = \sum\limits_{k = 1}^na_{kj}A_{kj}\tag{1.1}
+                    $$
+                </td>
+            </tr>
+        </table>
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>e.g. 1.</b> 这个行列式叫作 <em>Vandermonde 行列式</em>：
+                    $$
+                    D = \left|\begin{array}{ccccccccccccccccccccccccc} 1 & 1 & 1 & \cdots & 1 \\ a_{1} & a_{2} & a_{3} & \cdots &  a_{n} \\ a_1^2 & a_2^2 & a_3^2 & \cdots & a_n^2 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ a_1^{n-1} & a_2^{n - 1} & a_3^{n - 1} & \cdots &  a_n^{n - 1} \end{array}\right|\tag{1.2}
+                    $$
+                    证明：$D = \sum\limits_{1 \leq j \leq i \leq n}(a_i - a_j)$。
+                </td>
+            </tr>
+        </table>
+        
+        <p>由 <b>Theorem 1.</b>，我们可以得到以下重要推论：
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Corollary 3.</b> 行列式某一行（列）的元素与另一行（列）的对应元素的代数余子式乘积之和等于零。即：
+                    $$\sum\limits_{k = 1}^{n} a_{ik}A_{jk} = 0, i\neq j\tag{1.3}$$
+                    或
+                    $$\sum\limits_{k = 1}^{n} a_{ki}A_{kj} = 0, i\neq j\tag{1.4}$$
+                </td>
+            </tr>
+        </table>
+        </p>
+
+        <p>
+        综合 <b>Theorem 1.</b> 和 <b>Corollary 3.</b>，我们可以得到有关代数余子式的重要性质：
+        <table border="1" width="100%" align="left">
+            <tr>
+                <td>
+                    <b>Property 6.</b> 
+                    $$\sum\limits_{k = 1}^{n} a_{ik}A_{jk} = D\delta_{ij} = \begin{cases} D, &i = j, \\ 0, &i \neq j \end{cases}\tag{1.5}$$ 
+                    $$\sum\limits_{k = 1}^{n} a_{ki}A_{kj} = D\delta_{ij} = \begin{cases} D, &i = j, \\ 0, &i \neq j \end{cases}\tag{1.6}$$
+                    ，其中
+                    $$
+                    \delta_{ij} = \begin{cases} 1, &i = j \\ 0, &i \neq j\end{cases}
+                    $$
+                </td>
+            </tr>
+        </table>
+        </p>
+
+        <h3>1.2 Cramer 法则</h3>
+        <p>对于一个齐次线性方程组
+            $$
+            \begin{cases}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = &b_1 \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = &b_2 \\
+            \cdots \\
+            a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = &b_n \\
+            \end{cases}\tag{1.7}
+            $$
+            如果它的系数行列式的值不为 $0$，即：
+            $$
+            D = \left|\begin{array}{cccccccccccccccc} a_{11} & a_{12} & \cdots &  a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{n1} & a_{n2} & \cdots &  a_{nn} \end{array}\right| \neq 0\tag{1.8}
+            $$
+            那么这个线性方程组存在解，而且解是惟一的。解是：
+            $$
+            x_1 = \dfrac{D_1}{D}, x_2 = \dfrac{D_2}{D}, \cdots, x_n = \dfrac{D_n}{D}\tag{1.9}
+            $$
+            其中，$D_j$ 是把 $D$ 中第 $j$ 列的元素（$a_{1j}, a_{2j}, \cdots, a_{nj}$）用方程右边的常数（$b_1, b_2, \cdots, b_n$）替换得到的新的行列式，即
+            $$
+            D_j = \left|\begin{array}{ccccccccccccccccccccc} a_{11} & \cdots & a_{1, j-1} & b_1 & a_{1, j+1} & \cdots &  a_{1n} \\ \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots \\ a_{n1} & \cdots & a_{n, j-1} & b_n & a_{n, j+1} & \cdots &  a_{nn}\end{array}\right|\tag{1.10}
+            $$
+        </p>
+        <p>
+            以上的思想在 0.0.0 中就有体现。这就是 Cramer 法则。从此，我们能够总结如下的两个 Theorem：
+            <table border="1" width="100%" align="left">
+                <tr>
+                    <td>
+                        <b>Theorem 2.</b> 如果线性方程组 $(1.8)$ 的系数行列式 $D$ （即 $(1.9)$）不为 $0$，那么那么这个线性方程组存在解，而且解是惟一的。
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Theorem 3.</b> 如果线性方程组 $(1.8)$ 两个不同的解， $D = 0$。
+                    </td>
+                </tr>
+            </table>
+        </p>
+        <p>
+            此外，还可以进行这样的推广：
+        </p>
+        <p>
+            有这样一个<b>齐次</b>线性方程组：
+            $$
+            \begin{cases}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = &0 \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = &0 \\
+            \cdots \\
+            a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n = &0 \\
+            \end{cases}\tag{1.11}
+            $$
+            它有系数行列式 $D$，得到的方法与上文相同。基于此，得到如下另外两个 Theorem：
+            <table border="1" width="100%" align="left">
+                <tr>
+                    <td>
+                        <b>Theorem 4.</b> 如果 $D\neq 0$，则齐次线性方程组 $(1.11)$ 没有非零解。
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Theorem 5.</b> 如果齐次线性方程组 $(1.11)$ 有非零解，$D=0$。
+                    </td>
+                </tr>
+            </table>
+        </p>
+        <h2>2 矩阵</h2>
+
+            <p>
+                持续更新。
+            </p>
+        
+        <h1>References</h1>
+        <table width="100%">
+            <tr>
+                <td><a href=https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F"><sup>[1]</sup></a>&emsp;</td>
+                <td>行列式. In <em>Wikipedia, the free encyclopedia</em>. Retrieved February 9, 2021, from <a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F</a></td>
+            </tr>
+        </table>
+    </body>
+    <foot>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("/foot.html");
+        </script>
+    </foot>
+</html>

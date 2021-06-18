@@ -1,0 +1,75 @@
+/*
+ * Theme Information:
+ *
+ * Name: Untitled
+ * Author: Eunthique
+ * Version: v0.1.0
+ */
+
+body {
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+    line-height: 30px;
+    word-break: hyphenate;
+    font-size: 18px;
+    font-family: "Times New Roman", serif;
+}
+
+p {
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 30px;
+    word-break: hyphenate;
+    font-size: 18px;
+    font-family: "Times New Roman", serif;
+}
+
+code {
+    font-family: "Courier New", Menlo;
+    color: #6f6f6f;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    word-break: hyphenate;
+}
+
+table, th, td {
+    height: 30px;
+    border-collapse: collapse;
+}
+
+td {
+    font-size: 18px;
+}

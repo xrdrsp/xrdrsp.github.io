@@ -1,0 +1,5 @@
+template.html
+*.DS_Store
+$RECYCLE.bin
+System Volume Information
+.gitignore
