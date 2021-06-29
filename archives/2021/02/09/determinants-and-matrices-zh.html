@@ -225,7 +225,7 @@
             </table>
         </p>
         <p>
-            这样就可以得到行列式的按行（列）展开法则：
+            我们有行列式的按行（列）展开法则：
         </p>
         <table border="1" width="100%" align="left">
             <tr>
@@ -349,6 +349,55 @@
             </table>
         </p>
         <h2>2 矩阵</h2>
+        <h3>2.0 引入</h3>
+        <p>
+            有这样的 $n$ 元线性方程组：
+            $$
+            \begin{cases}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = &b_1 \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = &b_2 \\
+            \cdots \\
+            a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = &b_n \\
+            \end{cases}\tag{2.0}
+            $$
+        </p>
+        <p>
+            当 $b_1 = b_2 = \cdots = b_n = 0$，形成了一个 $n$ 元齐次线性方程组：
+            $$
+            \begin{cases}
+            a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = &0 \\
+            a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = &0 \\
+            \cdots \\
+            a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = &0 \\
+            \end{cases}\tag{2.1}
+            $$
+        </p>
+        <p>
+            $x_1 = x_2 = \cdots = x_n$ 一定是它的解。这是这个 $n$ 元线性方程组的零解。
+        </p>
+        <p>
+            对于这样的线性方程组，我们需要讨论以下问题：
+            <ol>
+                <li>它是否有解？</li>
+                <li>如果它有解，它是否有唯一解？</li>
+                <li>如果它的解不唯一，如何求出它的所有解？</li>
+            </ol>
+        </p>
+        <p>
+            这些问题的答案取决于方程的 $m\times n$ 个系数 $a_{ij}$ 和 $m$ 个常数 $b_i$。它们组成了一个系数矩阵：
+            $$
+            \left(\begin{array}{cccccccccccccccccccc}a_{11} & a_{12} & \cdots & a_{1n} & b_1 \\ a_{21} & a_{22} & \cdots & a_{2n} & b_2 \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} & b_m\end{array}\right)
+            $$
+        </p>
+        <h3>2.2 定义</h3>
+        <p>
+            有 $m\times n$ 个数 $a_{ij} (i = 1, 2, \cdots, m; j = 1, 2, \cdots, n)$。它们排成 $m\times n$ 的数表
+            $$
+            A = \left(\begin{array}{cccccccccccccccc}a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn}\end{array}\right)
+            $$
+            这叫作一个 $m\times n$ 矩阵。其它定义跟行列式有紧密的相关性。
+        </p>
+
 
             <p>
                 持续更新。
@@ -357,7 +406,7 @@
         <h1>References</h1>
         <table width="100%">
             <tr>
-                <td><a href=https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F"><sup>[1]</sup></a>&emsp;</td>
+                <td><a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F"><sup>[1]</sup></a>&emsp;</td>
                 <td>行列式. In <em>Wikipedia, the free encyclopedia</em>. Retrieved February 9, 2021, from <a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F</a></td>
             </tr>
         </table>
