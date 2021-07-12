@@ -7,10 +7,10 @@
  */
 
 body {
-    padding-top: 100px;
-    padding-right: 100px;
-    padding-left: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 0px;
     word-break: hyphenate;
     font-size: 20px;
     font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
