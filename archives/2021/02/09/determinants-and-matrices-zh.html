@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>行列式和矩阵</h1>
-        <font size=3px><em>09-02-2021&emsp;Last Update: 29-06-2021.</em></font>
+        <font size=3px face="Times New Roman"><b>09-02-2021&emsp;Last Update: 29-06-2021.</b></font>
         <h2>0 引入</h2>
         <h3>0.0 二阶行列式</h3>
         <h4>0.0.0 定义和计算</h4>
@@ -55,12 +55,12 @@
         </p>
         <p>
             由此数学家定义了二阶行列式：
-            <em><blockquote>行列式（Determinant），记作
+            <b><blockquote>行列式（Determinant），记作
             $\det(A)$
             或
             $|A|$
-            ，是一个在方块矩阵上计算得到的标量。行列式可以看做是有向面积或体积的概念在一般的欧几里得空间中的推广。</em><a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F"><sup>[1]</sup></a></blockquote>
-            $4$ 个数排成 $2 \times 2$ 的数表，形如 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right|$ 的，就是二阶行列式，并且 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right| = ad - bc$。定义其中四个数为二阶行列式的<em><b>元素</b></em>、二阶行列式中左上角与右下角元素连接的对角线为<em><b>主对角线</b></em>、右上角与左下角元素连接的对角线为<em><b>副对角线</b></em>。所以一个二阶行列式的值为主对角线上元素的乘积减去副对角线上元素的乘积。设 $D = \left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|, D_1 = \left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, D_2 = \left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|$，因此方程 $(1.1)$ 在 $D \neq 0$ 时存在唯一解：
+            ，是一个在方块矩阵上计算得到的标量。行列式可以看做是有向面积或体积的概念在一般的欧几里得空间中的推广。</b><a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F"><sup>[1]</sup></a></blockquote>
+            $4$ 个数排成 $2 \times 2$ 的数表，形如 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right|$ 的，就是二阶行列式，并且 $\left|\begin{array}{cccc} a & c \\ b & d \end{array}\right| = ad - bc$。定义其中四个数为二阶行列式的<b><b>元素</b></b>、二阶行列式中左上角与右下角元素连接的对角线为<b><b>主对角线</b></b>、右上角与左下角元素连接的对角线为<b><b>副对角线</b></b>。所以一个二阶行列式的值为主对角线上元素的乘积减去副对角线上元素的乘积。设 $D = \left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|, D_1 = \left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|, D_2 = \left|\begin{array}{cccc}a_{11} & b_1 \\ a_{21} & b_2\end{array}\right|$，因此方程 $(1.1)$ 在 $D \neq 0$ 时存在唯一解：
             $$
             \begin{cases}
             x_1 = \dfrac{\left|\begin{array}{cccc}b_1 & a_{12} \\ b_2 & a_{22}\end{array}\right|}{\left|\begin{array}{cccc} a_{11} & a_{21}\\a_{12} & a_{22}\end{array}\right|} = \dfrac{D_1}{D} \\
@@ -87,19 +87,19 @@
             <table>
                 <tr>
                     <td>逆序对&emsp;</td>
-                    <td>一个排列 $a$ 中，若存在 $i, j\in \mathbb{R}$ 且 $i < j, a_i > a_j$，就把 $(i, j)$ 或 $(a_i, a_j)$ 叫作 $a$ 的一个<em>逆序对</em>。</td>
+                    <td>一个排列 $a$ 中，若存在 $i, j\in \mathbb{R}$ 且 $i < j, a_i > a_j$，就把 $(i, j)$ 或 $(a_i, a_j)$ 叫作 $a$ 的一个<b>逆序对</b>。</td>
                 </tr>
                 <tr>
                     <td>逆序数&emsp;</td>
-                    <td>一个排列 $a$ 中，逆序对的个数被称为<em>逆序数</em>，记作 $\tau$ 或 $t$。</td>
+                    <td>一个排列 $a$ 中，逆序对的个数被称为<b>逆序数</b>，记作 $\tau$ 或 $t$。</td>
                 </tr>
                 <tr>
                     <td>奇排列&emsp;</td>
-                    <td>逆序对为奇数的排列叫作<em>奇排列</em>。</td>
+                    <td>逆序对为奇数的排列叫作<b>奇排列</b>。</td>
                 </tr>
                 <tr>
                     <td>偶排列&emsp;</td>
-                    <td>逆序对为偶数的排列叫作<em>偶排列</em>。</td>
+                    <td>逆序对为偶数的排列叫作<b>偶排列</b>。</td>
                 </tr>
             </table>
         </p>
@@ -216,11 +216,11 @@
             <table>
                 <tr>
                     <td>余子式&emsp;</td>
-                    <td>一个 $n$ 阶的行列式中元素 $a_{ij}$，把它所在行、所在列删掉以后再构成 $(n-1)$ 阶行列式，它被叫作 $a_{ij}$ 的<em>余子式</em>。</td>
+                    <td>一个 $n$ 阶的行列式中元素 $a_{ij}$，把它所在行、所在列删掉以后再构成 $(n-1)$ 阶行列式，它被叫作 $a_{ij}$ 的<b>余子式</b>。</td>
                 </tr>
                 <tr>
                     <td>代数余子式&emsp;</td>
-                    <td>记 $A_{ij} = (-1)^{i + j} M_{ij}$，$A_{ij}$ 即为 $a_{ij}$ 的<em>代数余子式</em>。</td>
+                    <td>记 $A_{ij} = (-1)^{i + j} M_{ij}$，$A_{ij}$ 即为 $a_{ij}$ 的<b>代数余子式</b>。</td>
                 </tr>
             </table>
         </p>
@@ -244,7 +244,7 @@
         <table border="1" width="100%" align="left">
             <tr>
                 <td>
-                    <b>e.g. 1.</b> 这个行列式叫作 <em>Vandermonde 行列式</em>：
+                    <b>e.g. 1.</b> 这个行列式叫作 <b>Vandermonde 行列式</b>：
                     $$
                     D = \left|\begin{array}{ccccccccccccccccccccccccc} 1 & 1 & 1 & \cdots & 1 \\ a_{1} & a_{2} & a_{3} & \cdots &  a_{n} \\ a_1^2 & a_2^2 & a_3^2 & \cdots & a_n^2 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ a_1^{n-1} & a_2^{n - 1} & a_3^{n - 1} & \cdots &  a_n^{n - 1} \end{array}\right|\tag{1.2}
                     $$
@@ -407,7 +407,7 @@
         <table width="100%">
             <tr>
                 <td><a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F"><sup>[1]</sup></a>&emsp;</td>
-                <td>行列式. In <em>Wikipedia, the free encyclopedia</em>. Retrieved February 9, 2021, from <a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F</a></td>
+                <td>行列式. In <b>Wikipedia, the free encyclopedia</b>. Retrieved February 9, 2021, from <a href="https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">https://zh.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F</a></td>
             </tr>
         </table>
     </body>
