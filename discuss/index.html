@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Discuss</title>
+        <div id="header"></div>
+        <script src="/jquery.js"></script>
+        <script>
+            $("#header").load("/head.html");
+        </script>
+    </head>
+    <body>
+        <p>Disqus:</p>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://xrdrsp.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <hr>
+        <p>Valine:</p>
+        <div id="valine">
+            <div id="comment"></div>
+            <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
+            <script>
+                new Valine({
+                    el:'#comment',
+                    appId: 'dE9k2LvAgox0otTsmCmllREl-gzGzoHsz',
+                    appKey: 'clMmQtbi1pRHyVPx80jeJEja',
+                    placeholder: 'leave your comment',
+                    avatar: ''
+                });
+            </script>
+        </div>
+    </body>
+    <foot>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("/foot.html");
+        </script>
+    </foot>
+</html>
