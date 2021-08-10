@@ -8,7 +8,7 @@
         </script>
     </head>
     <body>
-        <p>Disqus:</p>
+        <h2>Disqus</h2>
         <div id="disqus_thread"></div>
         <script>
             /**
@@ -27,8 +27,7 @@
                 (d.head || d.body).appendChild(s);
             })();
         </script>
-        <hr>
-        <p>Valine:</p>
+        <h2>Valine</h2>
         <div id="valine">
             <div id="comment"></div>
             <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
@@ -37,8 +36,11 @@
                     el:'#comment',
                     appId: 'dE9k2LvAgox0otTsmCmllREl-gzGzoHsz',
                     appKey: 'clMmQtbi1pRHyVPx80jeJEja',
-                    placeholder: 'leave your comment',
-                    avatar: ''
+                    placeholder: 'Hello!',
+                    pageSize: 10,
+                    lang: 'en',
+                    emojiCDN: 'https://127.0.0.1/',
+                    emojiMaps: {}
                 });
             </script>
         </div>
