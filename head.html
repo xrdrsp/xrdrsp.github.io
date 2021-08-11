@@ -1,29 +1,81 @@
 <link rel="stylesheet" type="text/css" href="/theme.css">
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Bright/cmun-bright.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Bright Semibold/cmun-bright-semibold.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Classical Serif Italic/cmun-bright-semibold.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Concrete/cmun-concrete.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Sans/cmun-sans.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Sans Demi-Condensed/cmun-sans-demicondensed.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Serif/cmun-serif.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Serif Slanted/cmun-serif-slanted.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter/cmun-typewriter.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter Light/cmun-typewriter-light.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter Variable/cmun-typewriter-variable.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Upright Italic/cmun-upright-italic.css"></link>
-<link rel="stylesheet" href="/extensions/fonts/PingFang SC/PingFang SC Regular.css"></link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Bright/cmun-bright.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Bright Semibold/cmun-bright-semibold.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Classical Serif Italic/cmun-bright-semibold.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Concrete/cmun-concrete.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Sans/cmun-sans.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Sans Demi-Condensed/cmun-sans-demicondensed.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Serif/cmun-serif.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Serif Slanted/cmun-serif-slanted.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter/cmun-typewriter.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter Light/cmun-typewriter-light.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter Variable/cmun-typewriter-variable.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Upright Italic/cmun-upright-italic.css">
+</link>
+<link rel="stylesheet" href="/extensions/fonts/PingFang SC/PingFang SC Regular.css">
+</link>
 <!-- MathJax -->
-<script>MathJax = {
-    tex:{
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
         },
-    svg:{
-        fontCache: 'global'
+        TeX: {
+            equationNumbers: {
+                autoNumber: 'AMS'
+            }
         }
-    };
+    });
+    MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+        MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+        if (data.display) {
+            var next = data.script.nextSibling;
+            while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+            if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+        }
+        });
+    });
 </script>
-<script src="https://cdn.bootcdn.net/ajax/libs/babel-polyfill/7.8.7/polyfill.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async  src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.0.5/es5/tex-chtml.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i = 0; i < all.length; i += 1) {
+            document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax = {
+        options: {
+            enableMenu: true,
+            menuOptions: {
+                settings: {
+                    zoom: 'Hover',
+                    zscale: '150%',
+                    alt: false,            // true if ALT required for zooming
+                    cmd: false,            // true if CMD required for zooming
+                    ctrl: false,           // true if CTRL required for zooming
+                    shift: false,
+                    collapsible: true, 
+                }
+            }
+        }
+    }
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <!--Highlight.js-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css" rel="stylesheet">
 
