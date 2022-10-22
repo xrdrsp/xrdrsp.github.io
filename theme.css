@@ -8,8 +8,8 @@
 
 body {
     padding-top: 50px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 160px;
+    padding-left: 160px;
     padding-bottom: 0px;
     word-break: hyphenate;
     font-size: 18px;
@@ -46,14 +46,17 @@ a:visited, a:link {
 
 h1 {
     font-size: 4.0rem;
+    font-family: "Computer Modern Serif", "Computer Modern Sans", "times new roman";
 }       
 
 h2 {
     font-size: 2.8rem;
+    font-family: "Computer Modern Serif", "Computer Modern Sans", "times new roman";
 }
 
 h3 {
     font-size: 2.0rem;
+    font-family: "Computer Modern Serif", "Computer Modern Sans", "times new roman";
 }
 
 h4 {
