@@ -93,10 +93,13 @@ th {
 td {
     margin-bottom: 8px;
     margin-top: 8px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
-.error
-{
+.error {
     color: #ff0000;
+}
+
+center {
+    text-align: center;
 }
