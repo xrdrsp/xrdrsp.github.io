@@ -8,7 +8,9 @@
         </script>
     </head>
     <body>
-        <p>Disqus:</p>
+        <h1>Discuss</h1>
+        <p>This is the discussion board with <a href="#disqus">Disqus</a>, <a href="#cusdis">Cusdis</a>, <a href="#valine">Valine</a>. Please check <a href="../about#comment">this page</a> for what is called the Code of Conduct.</p>
+        <h2 id="disqus">Disqus</h2>
         <div id="disqus_thread"></div>
         <script>
             /**
@@ -28,7 +30,19 @@
             })();
         </script>
         <hr>
-        <p>Valine:</p>
+        <h2 id="cusdis">Cusdis</h2>
+        <p>Please note that your messages will only be displayed here once they get approved by <a href="../">xrdrsp</a> when using <a href="https://cusdis.com">Cusdis</a>.</p>
+        <div id="cusdis_thread"
+            data-host="https://cusdis.com"
+            data-app-id="77911a6d-a120-43d2-a2f4-52a04bfd67d5"
+            data-page-id="getID()"
+            data-page-url="getID()"
+            data-page-title="getID()"
+        ></div>
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+        <hr>
+        <h2 id="valine">Valine</h2>
         <div id="valine">
             <div id="comment"></div>
             <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
