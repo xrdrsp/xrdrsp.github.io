@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Title - xrdrsp</title>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <div id="header"></div>
+        <script>
+            $("#header").load("/head.html");
+        </script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <h1>H1</h1>
+        <font size=3px>Post Date<br>Last Update: Update Date</font>
+
+        <p>This is a test.</p>
+
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h4>H4</h4>
+        <h5>H5</h5>
+        <h6>H6</h6>
+
+        <p><b>Bold</b>, <i>italic</i>, <b><i>bold italic</i></b> text.</p>
+
+        <p>This is an in-line mathematical formula: $\sin(x + y) = \sin{x} \cos{y} + \sin{y} \cos{x}$</p>
+
+        $$
+        \sum\limits^{n}_{i = 1} i^2 = \dfrac{n(n + 1)(2n + 1)}{6}
+        $$
+
+    </body>
+    <foot>
+        <div id="footer"></div>
+        <script>
+            $("#footer").load("/foot.html");
+        </script>
+    </foot>
+</html>
