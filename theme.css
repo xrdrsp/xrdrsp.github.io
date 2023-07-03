@@ -6,6 +6,14 @@
  * Version: v0.1.2
  */
 
+header {
+    margin: 0 auto;
+}
+
+footer {
+    margin: 0 auto;
+}
+
 body {
     padding-top: 50px;
     padding-right: 12%;
@@ -15,6 +23,7 @@ body {
     font-size: 18px;
     font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
     color: #000000;
+    margin: 0 auto;
 }
 
 p {
