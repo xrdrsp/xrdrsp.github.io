@@ -51,7 +51,7 @@ em {
 }
 
 a:visited, a:link {
-    color: #000000;
+    color: #000000,
     font-weight: bold;
 }
 
