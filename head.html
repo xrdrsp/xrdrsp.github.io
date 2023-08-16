@@ -40,7 +40,13 @@
             equationNumbers: {
                 autoNumber: 'AMS'
             }
+        },
+        "HTML-CSS": {
+            preferredFont: "STIX",
+            availableFonts: ["STIX", "TEX"],
+            undefinedFamily: "STIXGeneral, 'Arial Unicode MS', serif"
         }
+
     });
     MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
         MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
@@ -62,36 +68,55 @@
     MathJax = {
         options: {
             enableMenu: true,
-            menuOptions: {
-                settings: {
-                    texHints: true,
-                    semantics: false,
-                    zoom: 'Click',
-                    zscale: '200%',
-                    renderer: 'CHTML',
-                    alt: false,
-                    cmd: false,
-                    ctrl: false,
-                    shift: false,
-                    scale: 1,
-                    inTabOrder: true,
-
-                    assistiveMml: true,
-                    collapsible: true,
-                    explorer: false,
-                },
-                annotationTypes: {
-                    TeX: ['TeX', 'LaTeX', 'application/x-tex'],
-                    StarMath: ['StarMath 5.0'],
-                    Maple: ['Maple'],
-                    ContentMathML: ['MathML-Content', 'application/mathml-content+xml'],
-                    OpenMath: ['OpenMath']
-                }
+            showMathMenu: true,
+            // menuOptions: {
+            //     settings: {
+            //         texHints: true,
+            //         semantics: false,
+            //         zoom: 'Click',
+            //         zscale: '200%',
+            //         renderer: 'CHTML',
+            //         alt: false,
+            //         cmd: false,
+            //         ctrl: false,
+            //         shift: false,
+            //         scale: 1,
+            //         inTabOrder: true,
+            //         assistiveMml: true,
+            //         collapsible: true,
+            //         explorer: false
+            //     },
+            //     annotationTypes: {
+            //         TeX: ['TeX', 'LaTeX', 'application/x-tex'],
+            //         StarMath: ['StarMath 5.0'],
+            //         Maple: ['Maple'],
+            //         ContentMathML: ['MathML-Content', 'application/mathml-content+xml'],
+            //         OpenMath: ['OpenMath']
+            //     }
+            // },
+            menuSettings: {
+                zoom: "Hover",
+                zscale: "150%",
+                alt: false,
+                cmd: false,
+                ctrl: false,
+                shift: false,
             }
+        },
+        menuSettings: {
+            zoom: "Hover",
+            zscale: "150%",
+            alt: false,
+            cmd: false,
+            ctrl: false,
+            shift: false,
         }
     };
 </script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_CHTML">
+</script>
 <!--Highlight.js-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css" rel="stylesheet">
 
