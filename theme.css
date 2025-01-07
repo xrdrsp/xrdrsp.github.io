@@ -3,7 +3,7 @@
  *
  * Name: Untitled
  * Author: Dovuq & xrdrsp
- * Version: v0.1.2
+ * Version: v0.1.3
  */
 
 header {
@@ -14,6 +14,41 @@ footer {
     margin: 0 auto;
 }
 
+@font-face {
+    font-family: 'NotoSansSC';
+    font-display: swap;
+    src: url(extensions/fonts/NotoSC/NotoSansSC-VariableFont_wght.ttf) format('opentype');
+    /* unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+2CEB0–2EBEF, U+30000–3134F, U+31350–323AF, U+F900-FAFF, U+2F800-2FA1F; */
+    unicode-range: U+4E00-9FFF, U+3400-4DBF;
+}
+
+@font-face {
+    font-family: 'NotoSerifSC';
+    font-display: swap;
+    src: url(extensions/fonts/NotoSC/NotoSerifSC-VariableFont_wght.ttf) format('opentype');
+    /* unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+2CEB0–2EBEF, U+30000–3134F, U+31350–323AF, U+F900-FAFF, U+2F800-2FA1F; */
+    unicode-range: U+4E00-9FFF, U+3400-4DBF;
+}
+
+@font-face {
+    font-family: 'NotoSansJP';
+    font-display: swap;
+    src: url(extensions/fonts/NotoSC/NotoSansJP-VariableFont_wght.ttf) format('opentype');
+    unicode-range: U+3000-30ff;
+}
+
+@font-face {
+    font-family: 'NotoSerifJP';
+    font-display: swap;
+    src: url(extensions/fonts/NotoSC/NotoSerifJP-VariableFont_wght.ttf) format('opentype');
+    unicode-range: U+3000-30ff;
+}
+
+
+.chinese {
+  font-family: "NotoSerifSC";
+}
+
 body {
     padding-top: 50px;
     padding-right: 12%;
@@ -21,7 +56,7 @@ body {
     padding-bottom: 50px;
     word-break: hyphenate;
     font-size: 18px;
-    font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
+    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", sans-serif;
     color: #000000;
     margin: 0 auto;
 }
@@ -32,12 +67,12 @@ p {
     line-height: 26px;
     word-break: hyphenate;
     font-size: 18px;
-    font-family: "Computer Modern Sans", "PingFang SC", sans-serif;
+    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", sans-serif;
 }
 
 pre, tt {
 	font-size: 90%;
-	font-family: "Computer Modern Typewriter", monaco, monospace;
+	font-family: "Computer Modern Typewriter", monospace;
     color: #000000;
 }
 
@@ -57,19 +92,19 @@ a:visited, a:link {
 
 h1 {
     font-size: 4.0rem;
-    font-family: "Computer Modern Serif", "Computer Modern Sans", "times new roman";
+    font-family: "NotoSerifSC", "Computer Modern Serif";
     color: #000000;
 }       
 
 h2 {
     font-size: 2.8rem;
-    font-family: "Computer Modern Serif", "Computer Modern Sans", "times new roman";
+    font-family: "NotoSerifSC", "Computer Modern Serif";
     color: #000000;
 }
 
 h3 {
     font-size: 2.0rem;
-    font-family: "Computer Modern Serif", "Computer Modern Sans", "times new roman";
+    font-family: "NotoSerifSC", "Computer Modern Serif";
     color: #000000;
 }
 
