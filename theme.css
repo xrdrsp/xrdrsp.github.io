@@ -3,7 +3,7 @@
  *
  * Name: Untitled
  * Author: Dovuq & xrdrsp
- * Version: v0.1.3
+ * Version: v0.1.4
  */
 
 header {
@@ -56,7 +56,7 @@ body {
     padding-bottom: 50px;
     word-break: hyphenate;
     font-size: 18px;
-    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", sans-serif;
+    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", serif;
     color: #000000;
     margin: 0 auto;
 }
@@ -67,7 +67,7 @@ p {
     line-height: 26px;
     word-break: hyphenate;
     font-size: 18px;
-    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", sans-serif;
+    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", serif;
 }
 
 pre, tt {
@@ -92,19 +92,19 @@ a:visited, a:link {
 
 h1 {
     font-size: 4.0rem;
-    font-family: "NotoSerifSC", "Computer Modern Serif";
+    font-family: "NotoSerifSC", "Computer Modern Serif", serif;
     color: #000000;
 }       
 
 h2 {
     font-size: 2.8rem;
-    font-family: "NotoSerifSC", "Computer Modern Serif";
+    font-family: "NotoSerifSC", "Computer Modern Serif", serif;
     color: #000000;
 }
 
 h3 {
     font-size: 2.0rem;
-    font-family: "NotoSerifSC", "Computer Modern Serif";
+    font-family: "NotoSerifSC", "Computer Modern Serif", serif;
     color: #000000;
 }
 
