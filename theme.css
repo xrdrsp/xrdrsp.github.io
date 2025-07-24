@@ -3,7 +3,7 @@
  *
  * Name: Untitled
  * Author: Dovuq & xrdrsp
- * Version: v0.1.4
+ * Version: v0.1.5
  */
 
 header {
@@ -132,23 +132,23 @@ h6 {
     word-break: hyphenate;
 }
 
-table, th, td {
-    
+th, td {
+    padding: 8px;
     border-collapse: collapse;
     color: #000000;
+    font-size: 18px;
 }
 
-th {
+/* th {
     margin-bottom: 12px;
     margin-top: 12px;
-    font-size: 18px;
 }
 
 td {
     margin-bottom: 8px;
     margin-top: 8px;
     font-size: 18px;
-}
+} */
 
 .error {
     color: #ff0000;
@@ -156,4 +156,9 @@ td {
 
 center {
     text-align: center;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
