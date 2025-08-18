@@ -14,7 +14,7 @@ if (o != 'y'):
 
 for path, folders, files in os.walk(directory):
     for file in files:
-        if file.endswith('.html'):
+        if file.endswith('.html') and file != 'head.html' and file != 'foot.html' and not 'uploads' in path:
             full_path = os.path.join(path, file)
             with open(full_path, 'r', encoding="utf-8") as f:
                 lines = f.readlines()
