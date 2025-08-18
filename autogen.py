@@ -19,18 +19,18 @@ for path, folders, files in os.walk(directory):
             with open(full_path, 'r', encoding="utf-8") as f:
                 lines = f.readlines()
                 ext_index = []
+                body_index = []
+                title = ''
+
                 for line in lines:
                     
                     if '<title>' in line and '</title>' in line:
                         title = line
-                    
                     if 'id="ext"' in line:
                         ext_index.append(lines.index(line))
 
-                    if line.endswith('<body>') or line.endswith('<body>\n'):
-                        body_start = lines.index(line)
-                    if line.endswith('</body>') or line.endswith('</body>\n'):
-                        body_end = lines.index(line)
+                    if line.endswith('body>') or line.endswith('body>\n'):
+                        body_index.append(lines.index(line))
 
                 if len(ext_index) == 2:
                     ext = lines[ext_index[0] : ext_index[1] + 1]
@@ -59,7 +59,7 @@ for path, folders, files in os.walk(directory):
                     '    </foot>\n',
                     '</html>'
                 ]
-                new_lines = head + lines[body_start : body_end + 1] + foot
+                new_lines = head + lines[body_index[0] : body_index[1] + 1] + foot
 
             with open(full_path, 'w', encoding="utf-8") as f:
                 f.writelines(new_lines)
