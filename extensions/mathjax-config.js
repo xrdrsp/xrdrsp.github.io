@@ -1,41 +1,6 @@
-<link rel="stylesheet" type="text/css" href="/theme.css">
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Bright/cmun-bright.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Bright Semibold/cmun-bright-semibold.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Classical Serif Italic/cmun-bright-semibold.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Concrete/cmun-concrete.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Sans/cmun-sans.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Sans Demi-Condensed/cmun-sans-demicondensed.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Serif/cmun-serif.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Serif Slanted/cmun-serif-slanted.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter/cmun-typewriter.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter Light/cmun-typewriter-light.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Typewriter Variable/cmun-typewriter-variable.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/Computer Modern/Upright Italic/cmun-upright-italic.css">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/NotoSC/NotoSansSC-VariableFont_wght.ttf">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/NotoSC/NotoSerifSC-VariableFont_wght.ttf">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/NotoSC/NotoSansJP-VariableFont_wght.ttf">
-</link>
-<link rel="stylesheet" href="/extensions/fonts/NotoSC/NotoSerifJP-VariableFont_wght.ttf">
-</link>
+// Archive only
 
-<link rel="shortcut icon" href="/uploads/s/avatar.png" />
-
-<script>
-MathJax = {
+window.MathJax = {
     tex: {
         inlineMath: {'[+]': [['$', '$']]}
     },
@@ -112,20 +77,3 @@ MathJax = {
         }
     }
 };
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_CHTML"> </script>-->
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-<p>
-    <font face="Computer Modern Serif">
-        <a href="/">HOME</a>&emsp;
-        <a href="/archives">ARCHIVES</a>&emsp;
-        <a href="/music">MUSIC</a>&emsp;
-        <a href="/discuss">DISCUSS</a>&emsp;
-        <a href="/about">ABOUT</a>
-    </font>
-</p>
