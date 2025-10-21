@@ -1,0 +1,38 @@
+<html>
+    <div id="header"></div>
+    <head>
+        <meta charset="utf-8">
+        <title>Fekete 引理的一个常见的证明</title>
+        <script src="/node_modules/jquery.js"></script>
+        <script>
+            $("#header").load("/head.html");
+        </script>
+        <!-- <div id="ext"></div> -->
+    </head>
+    <body>
+        <h1>Fekete 引理的一个常见的证明</h1>
+        <p><font size=3px>2025-10-21<br></font></p>
+        <p>作为网站第一篇和数学相关的文章，这里只是记录学习时遇到的基础的内容.</p>
+        <p><b>Fekete 引理</b>表明，对于数列 ${x_n}$，若 $\forall m, n \in \mathbb{N^*}$ 有 $x_{m + n} \leq x_m + x_n$（即满足次可加性），则极限 $\lim\limits_{n \to \infty} \dfrac{x_n}{n}$ 存在，且有
+            $$\lim\limits_{n \to \infty} \dfrac{x_n}{n} = \inf\limits_{n} \dfrac{x_n}{n}. $$
+        </p>
+        <p><b>证明. </b>令 $I = \inf\limits_{n} \dfrac{x_n}{n}$. 则 $\forall \epsilon > 0$，$\exists d \in \mathbb{N^*}$ 使得 $\dfrac{x_d}{d} < I + \dfrac{\epsilon}{2}$.</p>
+        <p>现在在 $\lim\limits_{n \to \infty} \dfrac{x_n}{n}$ 中，根据带余除法，可以不失一般性地认为 $n = kd + r$，其中 $0 \leq r < m$ 且 $k, r \in \mathbb{N}$. 于是
+            $$\dfrac{x_n}{n} = \dfrac{x_{kd + r}}{kd + r} \leq \dfrac{k x_d + x_r}{kd + r} \leq \dfrac{x_d}{d} + \dfrac{x_r}{kd + r}. $$
+        令 $M = \max\{x_1, x_2, \cdots , x_{d - 1}\}$，则 $o(1) = \dfrac{M}{kd + r} \geq \dfrac{x_r}{kd + r}$，因此对于 $\epsilon$，$\exists N \in \mathbb{N}$ 使得 $\dfrac{M}{kd + r} < \dfrac{\epsilon}{2}$ 对所有 $n > N$ 成立.</p>
+        <p>从而，对于所有 $n > N$，都有
+            $$I \leq \dfrac{x_n}{n} < I + \dfrac{\epsilon}{2} + \dfrac{\epsilon}{2} = I + \epsilon. $$
+        </p>
+        <p>根据夹逼定理，有
+            $$\lim\limits_{n \to \infty} \dfrac{x_n}{n} = I = \inf\limits_{n} \dfrac{x_n}{n}. $$
+        </p>
+        <p>证毕. </p>
+        <p>利用 Fekete 引理，我们就能够得到如下结论. 假设数列 ${x_n}$ 满足 $\forall m, n \in \mathbb{N^*}$ 有 $x_m + x_n - 1 \leq x_{m + n} \leq x_m + x_n + 1$，那么，极限 $\lim\limits_{n \to \infty} \dfrac{x_n}{n}$ 也存在.</p>
+    </body>
+    <div id="footer"></div>
+    <foot>
+        <script>
+            $("#footer").load("/foot.html");
+        </script>
+    </foot>
+</html>
