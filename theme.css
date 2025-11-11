@@ -16,7 +16,7 @@ footer {
 
 @font-face {
     font-family: 'NotoSansSC';
-    font-display: swap;
+    font-display: block;
     src: url(extensions/fonts/NotoSC/NotoSansSC-VariableFont_wght.ttf) format('opentype');
     unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+2CEB0–2EBEF, U+30000–3134F, U+31350–323AF, U+F900-FAFF, U+2F800-2FA1F;
     /* unicode-range: U+4E00-9FFF, U+3400-4DBF; */
@@ -24,7 +24,7 @@ footer {
 
 @font-face {
     font-family: 'NotoSerifSC';
-    font-display: swap;
+    font-display: block;
     src: url(extensions/fonts/NotoSC/NotoSerifSC-VariableFont_wght.ttf) format('opentype');
     /* unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+2CEB0–2EBEF, U+30000–3134F, U+31350–323AF, U+F900-FAFF, U+2F800-2FA1F; */
     unicode-range: U+4E00-9FFF, U+3400-4DBF;
@@ -32,21 +32,29 @@ footer {
 
 @font-face {
     font-family: 'NotoSansJP';
-    font-display: swap;
+    font-display: block;
     src: url(extensions/fonts/NotoSC/NotoSansJP-VariableFont_wght.ttf) format('opentype');
     unicode-range: U+3000-30ff;
 }
 
 @font-face {
     font-family: 'NotoSerifJP';
-    font-display: swap;
+    font-display: block;
     src: url(extensions/fonts/NotoSC/NotoSerifJP-VariableFont_wght.ttf) format('opentype');
     unicode-range: U+3000-30ff;
 }
 
 
 .chinese {
-  font-family: "NotoSerifSC";
+    font-family: "NotoSerifSC";
+}
+
+.english {
+    font-family: "Computer Modern Serif";
+}
+
+.japanese {
+    font-family: "NotoSerifJP";
 }
 
 body {
@@ -56,7 +64,8 @@ body {
     padding-bottom: 50px;
     word-break: hyphenate;
     font-size: 18px;
-    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", serif;
+    /* font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", serif; */
+    font-family: "Computer Modern Serif", "NotoSerifJP", "NotoSerifSC", serif;
     color: #000000;
     margin: 0 auto;
 }
@@ -67,7 +76,7 @@ p {
     line-height: 26px;
     word-break: hyphenate;
     font-size: 18px;
-    font-family: "NotoSerifJP", "NotoSerifSC", "Computer Modern Serif", serif;
+    font-family: "Computer Modern Serif", "NotoSerifJP", "NotoSerifSC", serif;
 }
 
 pre, tt {
@@ -78,7 +87,7 @@ pre, tt {
 
 code {
     font-family: "Computer Modern Typewriter", "Courier New";
-    color: #6f6f6f;
+    color: #4f4f4f;
 }
 
 em {
