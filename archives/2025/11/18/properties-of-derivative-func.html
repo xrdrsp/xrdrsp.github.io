@@ -1,0 +1,58 @@
+<html>
+    <div id="header"></div>
+    <head>
+        <meta charset="utf-8">
+        <title>开区间上导函数的一个性质</title>
+        <script src="/node_modules/jquery.js"></script>
+        <script>
+            $("#header").load("/head.html");
+        </script>
+        <!-- <div id="ext"></div> -->
+    </head>
+    <body>
+        <h1>开区间上导函数的一个性质</h1>
+        <p><font size=3px>2025-11-18<br></font></p>
+        <p>在研究函数 $f(x)$ 的导函数 $f'(x)$ 时, 我们可能会遇到如下与 Lagrange 中值定理相关的结论. 假设 $f(x) \in C(a, b)$, $x \in (a, b)$. 则我们有如下命题成立:
+            <ul>
+                <li>若 $f(x)$ 在 $(x_0, b)$ 可导,且 $f'(x_0 + 0) = \lim_{x \to x_0^+} f'(x)$ 存在, 则 $f'_+(x_0)$ 存在, 且 $f'(x_0 + 0) = f'_+(x_0)$;</li>
+                <li>若 $f(x)$ 在 $(a, x_0)$ 可导,且 $f'(x_0 - 0) = \lim_{x \to x_0^-} f'(x)$ 存在, 则 $f'_-(x_0)$ 存在, 且 $f'(x_0 - 0) = f'_-(x_0)$.</li>
+            </ul>
+        </p>
+        <p><b>证明.</b> 只对第一条展开证明. 对于 $x \in (x_0, b)$, 显然满足 Lagrange 定理的条件, 因此存在 $\xi = \xi (x) = x_0 + \theta(x - x_0)$, 其中 $\theta \in (0, 1)$, 使得 
+        $$\dfrac{f(x) - f(x_0)}{x-x_0} = f'(\xi).$$</p>
+        <p>而对于 $\xi$, 我们知道 $\lim_{x \to x_0^+}\xi (x) = x_0$, 并且 $\xi (x) > x_0$, 这意味着, 当 $x \to x_0^+$ 时, $\xi (x)\to x_0^+$. 现在, 我们依据复合函数极限, 就有
+        $$\begin{align*}f'_+(x_0) &= \lim_{x \to x_0^+}\dfrac{f(x) - f(x_0)}{x-x_0} \\
+        &= \lim_{x \to x_0^+} f'(\xi) \\
+        &= \lim_{x \to x_0^+} f'(\xi (x)) \\
+        &\xlongequal{\xi = \xi (x)} \lim_{\xi \to x_0^+} f'(\xi) \\
+        &= f'(x_0 + 0).\end{align*}$$
+        </p>
+        <p>证毕. 这一结论其实表明, 只要导函数的单侧极限存在, 即使导函数在某一点不定义或者不连续, 函数在该点的单侧导数仍然等于该极限.</p>
+        <p>现在, 假设对于 $f(x)$, $\lim_{x \to x_0^+} f'(x), \lim_{x \to x_0^-} f'(x)$ 都存在, 且 $f(x)$ 在 $x_0$ 点可导. 因而
+        $$\lim_{x \to x_0^+} f'(x) = f'_+(x_0) = f'(x_0) = f'_-(x_0) = \lim_{x \to x_0^-} f'(x),$$
+        这立即表明 $\lim_{x \to x_0} f'(x) = f'(x_0)$, 即 $f'(x)$ 在 $x_0$ 点连续. 进一步, 这表明对任意的 $f(x)$, 若 $f(x)$ 可导, 则导函数 $f'(x)$ 没有第一类间断点.<sup><a href="#1">^1</a></sup> 这告诉我们, 函数 $f'(x)$ 作为 $f(x)$ 的导函数, 暗暗拥有着一些关于连续性的性质. 而该性质也可以由如下的更强的结论得到.</p>
+        <p><b>Darboux 定理.</b> 设 $f(x)$ 在 $[a, b]$ 上可导, $f'(a) \leq f'(b)$, 那么对任何 $\gamma \in [f'(a), f'(b)]$ 存在 $\xi \in [a, b]$ 使得 $f'(\xi) = \gamma$.</p>
+        <p><b>证明.</b> 如果 $\gamma = f'(a)$ 或 $\gamma = f'(b)$, 定理已经成立. 所以假设 $f'(a) < \gamma < f'(b)$, 令 $F(x) = f(x) - \gamma x$. 则 $F(x)$ 在 $[a, b]$ 上处处可导, $F'(x) = f'(x) - \gamma$. 现在, $F'(a) = f'(a) - \gamma < 0 < f'(b) - \gamma = f'(b)$. 根据定义, 
+        $$F'_+(a) = \lim\limits_{x \to a^+} \dfrac{F(x) - F(a)}{x - a} < 0,$$
+        就存在 $\delta_1 > 0$ 使得当 $x \in (a, a + \delta_1) \subset (a, b)$ 时
+        $$\dfrac{F(x) - F(a)}{x - a} < 0,$$
+        这说明 $F(x) < F(a)$ 对 $x \in (a, a + \delta_1)$ 成立. 同理, 也存在某个 $\delta_2 > 0$, $F(x) < F(b)$ 对 $x \in (b - \delta_2, b) \subset (a, b)$ 成立.</p>
+        <p>又由于 $F(x)$ 的连续性, 它在 $[a, b]$ 上的最小值 $m$ 存在, 且一定在某个内点取到, 从而 $m = F(\xi)$ 为极小值, $\xi \in (a, b)$. 根据 Fermat 引理, 知道 $F'(\xi) = 0$, 从而 $f'(\xi) = \gamma$. 证毕.</p>
+        <p>注意, 如果一不小心对 $F'(x)$ 使用了 Rolle 或者 Lagrange 定理, 就会导致证明错误. Darboux 不仅蕴含了<font face="NotoSerifSC">“</font>导函数没有第一类间断点<font face="NotoSerifSC">”</font>的结论, 还指出了导函数具有的某种介值性质. 特别地, 我们还可以说, 如果 $f'(x) \neq 0$, $x \in [a, b]$, 则要么 $f'(x) > 0$, $x \in [a, b]$ 或者 $f'(x) < 0$, $x \in [a, b]$.</p>
+
+        <hr>
+
+        <p><sup>^1</sup> $f'(x)$ 虽然没有第一类间断点, 但是可能拥有第二类间断点. 例如对于 
+        $$\begin{align*}f(x) = \begin{cases}
+        x^2 \sin \dfrac{1}{x}, &x \neq 0;\\
+        0, &x = 0
+        \end{cases}\end{align*}$$
+        就是如此, $f(x)$ 处处可导, 但不是连续可导的.</p>
+    </body>
+    <div id="footer"></div>
+    <foot>
+        <script>
+            $("#footer").load("/foot.html");
+        </script>
+    </foot>
+</html>

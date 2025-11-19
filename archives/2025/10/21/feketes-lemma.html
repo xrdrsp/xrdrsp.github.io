@@ -13,10 +13,10 @@
         <h1>Fekete 引理的一个常见的证明</h1>
         <p><font size=3px>2025-10-21<br></font></p>
         <p>作为网站第一篇和数学相关的文章, 这里只是记录学习时遇到的基础的内容.</p>
-        <p><b>Fekete 引理</b>表明, 对于数列 ${x_n}$, 若 $\forall m, n \in \mathbb{N^*}$ 有 $x_{m + n} \leq x_m + x_n$（即满足次可加性）, 则极限 $\lim\limits_{n \to \infty} \dfrac{x_n}{n}$ 存在, 且有
+        <p><b>Fekete 引理</b>表明, 对于数列 ${x_n}$, 若对于任意 $ m, n \in \mathbb{N^*}$ 有 $x_{m + n} \leq x_m + x_n$（即满足次可加性）, 则极限 $\lim\limits_{n \to \infty} \dfrac{x_n}{n}$ 存在, 且有
             $$\lim\limits_{n \to \infty} \dfrac{x_n}{n} = \inf\limits_{n} \dfrac{x_n}{n}. $$
         </p>
-        <p><b>证明. </b>令 $I = \inf\limits_{n} \dfrac{x_n}{n}$. 则 $\forall \epsilon > 0$, $\exists d \in \mathbb{N^*}$ 使得 $\dfrac{x_d}{d} < I + \dfrac{\epsilon}{2}$.</p>
+        <p><b>证明. </b>令 $I = \inf\limits_{n} \dfrac{x_n}{n}$. 则对任意 $ \epsilon > 0$, 存在 $d \in \mathbb{N^*}$ 使得 $\dfrac{x_d}{d} < I + \dfrac{\epsilon}{2}$.</p>
         <p>现在在 $\lim\limits_{n \to \infty} \dfrac{x_n}{n}$ 中, 可以不失一般性地认为 $n = kd + r$, 其中 $0 \leq r < m$ 且 $k, r \in \mathbb{N}$. 于是
             $$\dfrac{x_n}{n} = \dfrac{x_{kd + r}}{kd + r} \leq \dfrac{k x_d + x_r}{kd + r} \leq \dfrac{x_d}{d} + \dfrac{x_r}{kd + r}. $$
         令 $M = \max\{x_1, x_2, \cdots , x_{d - 1}\}$, 则 $o(1) = \dfrac{M}{kd + r} \geq \dfrac{x_r}{kd + r}$, 因此对于 $\epsilon$, $\exists N \in \mathbb{N}$ 使得 $\dfrac{M}{kd + r} < \dfrac{\epsilon}{2}$ 对所有 $n > N$ 成立.</p>
