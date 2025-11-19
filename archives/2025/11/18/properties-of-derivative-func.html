@@ -38,11 +38,11 @@
         $$\dfrac{F(x) - F(a)}{x - a} < 0,$$
         这说明 $F(x) < F(a)$ 对 $x \in (a, a + \delta_1)$ 成立. 同理, 也存在某个 $\delta_2 > 0$, $F(x) < F(b)$ 对 $x \in (b - \delta_2, b) \subset (a, b)$ 成立.</p>
         <p>又由于 $F(x)$ 的连续性, 它在 $[a, b]$ 上的最小值 $m$ 存在, 且一定在某个内点取到, 从而 $m = F(\xi)$ 为极小值, $\xi \in (a, b)$. 根据 Fermat 引理, 知道 $F'(\xi) = 0$, 从而 $f'(\xi) = \gamma$. 证毕.</p>
-        <p>注意, 如果一不小心对 $F'(x)$ 使用了 Rolle 或者 Lagrange 定理, 就会导致证明错误. Darboux 不仅蕴含了<font face="NotoSerifSC">“</font>导函数没有第一类间断点<font face="NotoSerifSC">”</font>的结论, 还指出了导函数具有的某种介值性质. 特别地, 我们还可以说, 如果 $f'(x) \neq 0$, $x \in [a, b]$, 则要么 $f'(x) > 0$, $x \in [a, b]$ 或者 $f'(x) < 0$, $x \in [a, b]$.</p>
+        <p>注意, 如果一不小心对 $F'(x)$ 使用了 Rolle 或者 Lagrange 定理, 就会导致证明错误. Darboux 不仅蕴含了<font face="NotoSerifSC">“</font>导函数没有第一类间断点<font face="NotoSerifSC">”</font>的结论, 还指出了导函数具有的某种介值性质. 特别地, 我们还可以说, 如果 $f'(x) \neq 0$, $x \in [a, b]$, 则要么 $f'(x) > 0$, $x \in [a, b]$, 要么 $f'(x) < 0$, $x \in [a, b]$.</p>
 
         <hr>
 
-        <p><sup>^1</sup> $f'(x)$ 虽然没有第一类间断点, 但是可能拥有第二类间断点. 例如对于 
+        <p><sup>^1</sup> $f'(x)$ 虽然没有第一类间断点, 但是可能拥有第二类间断点. 例如 
         $$\begin{align*}f(x) = \begin{cases}
         x^2 \sin \dfrac{1}{x}, &x \neq 0;\\
         0, &x = 0
