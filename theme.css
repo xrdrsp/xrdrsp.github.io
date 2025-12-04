@@ -45,7 +45,7 @@ footer {
 }
 
 
-.chinese {
+/* .chinese {
     font-family: "NotoSerifSC";
 }
 
@@ -55,7 +55,7 @@ footer {
 
 .japanese {
     font-family: "NotoSerifJP";
-}
+} */
 
 body {
     padding-top: 50px;
@@ -101,35 +101,26 @@ a:visited, a:link {
 
 h1 {
     font-size: 3.6rem;
-    font-family: "NotoSerifSC", "Computer Modern Serif", serif;
-    color: #000000;
 }       
 
 h2 {
     font-size: 2.8rem;
-    font-family: "NotoSerifSC", "Computer Modern Serif", serif;
-    color: #000000;
 }
 
 h3 {
     font-size: 2.0rem;
-    font-family: "NotoSerifSC", "Computer Modern Serif", serif;
-    color: #000000;
 }
 
 h4 {
     font-size: 1.5rem;
-    color: #000000;
 }
 
 h5 {
     font-size: 1.2rem;
-    color: #000000;
 }
 
 h6 {
     font-size: 1rem;
-    color: #000000;
 }
 
 h1, 
@@ -139,6 +130,8 @@ h4,
 h5, 
 h6 {
     word-break: hyphenate;
+    font-family: "NotoSerifSC", "Computer Modern Serif", serif;
+    color: #000000;
 }
 
 th, td {
