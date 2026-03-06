@@ -1,0 +1,124 @@
+<html>
+    <div id="header"></div>
+    <head>
+        <meta charset="utf-8">
+        <title>函数作为导函数的原函数继承性及 Riemann 可积性</title>
+        <script src="/node_modules/jquery.js"></script>
+        <script>
+            $("#header").load("/head.html");
+        </script>
+        <!-- <div id="ext"></div> -->
+    </head>
+    <body>
+        <h1>函数作为导函数的原函数继承性及 Riemann 可积性</h1>
+        <p><font size=3px>2026 年 3 月 6 日<br></font></p>
+        <p>我们首先回顾闭区间上连续函数的<br><b>Newton–Leibniz 公式.</b> 设 $f(x)$ 在 $[a, b]$ 上连续, $\Phi (x)$ 为 $f(x)$ 在 $[a, b]$ 上的任何原函数, 那么
+        \[\int_a^b f(x)\,\mathrm{d}x = \Phi(x)\bigg|_a^b. \]</p>
+        <p>该公式有另一种形式, 即
+            \[\int_a^b f^\prime(x)\, \mathrm{d}x = f(b)-f(a),\]
+            其中 $f(x)$ 在 $[a, b]$ 上连续可导. 由此可得
+            \[f(x) = f(a) + \int_a^x f^\prime(t)\, \mathrm{d}t ,\]
+            这是类似 Lagrange 中值公式的一个表达式. 事实上, 我们根据积分第一中值定理知道, 存在 $\xi \in [a, b]$ 满足表达式
+            \[ f(x) = f(a) + f^\prime (\xi)(x-a). \]
+        </p>
+        <p>对此我们发现, 在 Newton–Leibniz 公式中, 我们得到的 $\xi$ 位于闭区间 $[a, b]$ 中. 但在给定条件下我们若施用 Lagrange 中值定理, 相应的 $\xi$ 则被限制在开区间 $(a, b)$ 中. 这两个结论有什么联系呢? 我们考虑在 $[a, b]$ 上可导的函数 $f(x)$, 并假设其导函数 $f^\prime (x)$ 在 $[a, b]$ 上可积. 令
+            \[F(x) = \int_a^x f^\prime (t)\, \mathrm{d}t.\]
+        现在我们声称, Newton–Leibniz 公式
+        \[f(x) = f(a) + \int_a^x f^\prime (t)\, \mathrm{d}t\]
+        成立. 事实上, 对 $x=b$, 
+        \[F(b) = \int_a^b f^\prime (t)\, \mathrm{d}t.\]
+        对对 $[a, b]$ 的任何分割 $\Delta: x_0 = a < x_1 < \cdots < x_n = b$, 有
+        \[\begin{align*}f(b) - f(a) &= \sum\limits_{k = 1}^n \left[f(x_k) - f(x_{k-1})\right] \\
+        &\xlongequal[\tau_k \in(x_{k-1}, x_k)]{\text{Lagrange}} \sum\limits_{k = 1}^n f^\prime (\tau_k)\Delta x_k.
+        \end{align*}\]
+        现在, 根据 $f^\prime (x)$ 的可积性, 我们知道
+        \[ \begin{align*} f(b) - f(a) &= \lim\limits_{\lambda{\Delta}\to 0}\sum\limits_{k=1}^n f^\prime (\tau_k)\Delta x_k \\
+        &= \int_a^b f^\prime (t)\, \mathrm{d}t.
+        \end{align*} \]
+        </p>
+        <p>现在我们利用 Lagrange 中值定理, 证明了 Newton–Leibniz 公式对可积的 $f^\prime$ 成立. 我们看到, $f^\prime (x)$ 作为导函数, 它从 $f(x)$ 那里继承了某些特殊的性质 (而这一性质并不直接是常常提到的 <a href="/archives/2025/11/18/properties-of-derivative-func.html">Darboux 定理</a>), 这使得它只要可积就自动适用 Newton–Leibniz 公式. 另一方面, 若是 $f^\prime (x)$ 不可积, Newton–Leibniz 公式仍然失效. 令
+        \[\begin{align*}f(x) = \begin{cases}
+        x^{\frac{3}{2}} \sin \frac{1}{x}, &x \neq 0;\\
+        0, &x = 0,
+        \end{cases}\end{align*}\]
+        得到导函数
+        \[\begin{align*}f^\prime (x) = \begin{cases}
+        \frac{3}{2}x^{\frac{1}{2}} \sin \frac{1}{x} - x^{-\frac{1}{2}}\cos \frac{1}{x}, &x \neq 0;\\
+        0, &x = 0.
+        \end{cases}\end{align*}\]
+        $f^\prime (x)$ 在 $x=0$ 附近无界, 因此类似
+        \[ \int_0^1 f^\prime (x) \, \mathrm{d}x \]
+        的积分在 Riemann 意义下是不可积的. 另一方面, 在区间 $[0, 1]$ 上, Lagrange 中值定理却通行无阻. </p>
+        <p>在此之外, 我们说明一类导函数有界, 但仍不可积的函数, 即 Volterra 函数. 而在那之前我们还要给出不依赖 Lebesgue 理论等更深刻的理论的零测集的定义<sup><a href="#comment1">^1</a></sup>, 及三分的 Cantor 集与 Smith–Volterra–Cantor 集 (后者也称胖 Cantor 集) 的涵义.</p>
+        <p><b>零测集.</b> 设 $A \subset \mathbb{R
+        }$. 如果任取 $\varepsilon > 0$, 均存在覆盖 $A$ 的至多可数个开区间 $\{(I_i)_i\}$, 使得
+        \[ \sum\limits_{i = 1}^n |I_i| < \varepsilon, \quad \forall n \geq 1,\]
+        则称 $A$ 为零测集.
+        </p>
+        <p><b>Cantor 集.</b> 这是用递归的方法构造的集合. 先取闭区间 $[0, 1]$, 之后的步骤如下: 
+        <ul>
+            <li>第 $1$ 步: 从中间移除长度为 $\frac{1}{3}$ 的开区间, 即 $(\frac{1}{3}, \frac{2}{3})$, 得到 $2$ 个闭区间;</li>
+            <li>第 $n$ 步: 从剩余的每个区间的中间, 移除长度为 $3^{-n}$ 的开区间.</li>
+        </ul>
+        未被移除的点组成了 Cantor 集. 三分 Cantor 集是零测的. 证明是容易的, 此处从略.</p>
+        <p><b>Smith–Volterra–Cantor 集.</b> 与 Cantor 集类似, 这种集合我们用递归的方法构造.  先取闭区间 $[0, 1]$, 之后的步骤如下:
+        <ul>
+            <li>第 $1$ 步: 从中间移除长度为 $\frac{1}{4}$ 的开区间, 即 $(\frac{3}{8}, \frac{5}{8})$, 得到 $2$ 个闭区间;</li>
+            <li>第 $n$ 步: 从剩余的每个区间的中间, 移除长度为 $2^{-2n}$ 的开区间.</li>
+        </ul>
+        未被移除的点组成了 Smith–Volterra–Cantor 集 $S$. 我们来说明, $S$ 不是零测的.
+        </p>
+        <p>首先假设, $S$ 是零测的, 即对于 $\varepsilon = \frac{1}{4}$, 能够找到开区间族 $\{(I_i)_i\}$, 其中含有至多可数个区间, 它们覆盖了 $S$, 且
+            \[ \sum\limits_{i = 1}^n |I_i| < \varepsilon, \quad \forall n \geq 1.\]
+        另一方面, 在构造过程中我们移除的所有开区间也构成一个可数的区间族 $\{(J_j)_j\}$, 它们互不相交, 且总长度 $\sum_j \left| J_j \right| = \frac{1}{2}$. $\{(I_i)_i\} \cup \{(J_j)_j\}$ 构成 $[0, 1]$ 的一个开覆盖, 由实数完备性, 它有有限子覆盖, 这些子覆盖的区间长度和 $\lambda \geq 1$, 因此
+        \[\sum_i \left| I_i \right| + \sum_j \left| J_j \right| \geq 1,\]
+        由此
+        \[\sum_i \left| I_i \right| \geq \dfrac{1}{2},\]
+        这与之前得到的 $\sum_{i = 1}^n |I_i| < \varepsilon$ 相矛盾. 因此, $S$ 不是零测的.</p>
+
+        <p>现在, 我们可以说明 Volterra 函数 $V(x)$ 的构造方式了. 首先, $V(x) = 0$ 对于任何 $x \in S$ 都成立, 它的构造部分体现在 Smith–Volterra–Cantor 集中被移除的部分, 记为集合 $T$. 令
+        \[f(x) = x^{2} \sin \frac{1}{x}, \quad x\in (0, 1)\]
+        将 $f(x)$ 限制在 $\left(0, \frac{1}{8}\right]$ 上, 并找到最大的 $x_1$ 使得 $f^\prime(x_1) = 0$. 修改函数取值, 使 $f(x)$ 在 $x_1$ 右侧的取值保持在 $f(x_1)$, 得到函数 $f_{11} (x)$:
+        \[\begin{align*}f_{11} (x) = \begin{cases}
+        x^{2} \sin \frac{1}{x}, &x \in (0, x_1];\\
+        f(x_1), &x \in \left(x_1, \frac{1}{8}\right].
+        \end{cases}\end{align*}\]
+        以 $x = \frac{1}{8}$ 为对称轴, 将 $f_{11} (x), x \in \left(0, \frac{1}{8}\right]$ 对称到 $\left[\frac{1}{8}, \frac{1}{4}\right)$ 上, 得到函数 $f_{12} (x)$:
+        \[\begin{align*}f_{12} (x) = \begin{cases}
+        x^{2} \sin \frac{1}{x}, &x \in (0, x_1];\\
+        f(x_1), &x \in \left(x_1, \frac{1}{8}\right];\\
+        f(\frac{1}{4} - x), & x \in \left(\frac{1}{8}, \frac{1}{4}\right).
+        \end{cases}\end{align*}\]
+        现在将 $f_{12} (x)$ 平移到 $\left(\frac{3}{8}, \frac{5}{8}\right)$ (即第一次被移除的区间) 上, 我们得到了 $V(x)$ 在 $\left(\frac{3}{8}, \frac{5}{8}\right)$ 的取值.
+        </p>
+        <p>在处理第 $n$ 次移除的区间时, 我们将 $f(x)$ 限制在 $\left(0, \frac{1}{2^{2n+1}}\right]$ 上, 并找到最大的 $x_n$ 使得 $f^\prime(x_n) = 0$. 修改函数取值, 使 $f(x)$ 在 $x_n$ 右侧的取值保持在 $f(x_n)$, 得到函数 $f_{n1} (x)$:
+        \[\begin{align*}f_{n1} (x) = \begin{cases}
+        x^{2} \sin \frac{1}{x}, &x \in (0, x_n];\\
+        f(x_n), &x \in \left(x_n, \frac{1}{2^{2n+1}}\right].
+        \end{cases}\end{align*}\]
+        以 $x = \frac{1}{2^{2n+1}}$ 为对称轴, 将 $f_{n1} (x), x \in \left(0, \frac{1}{2^{2n+1}}\right]$ 对称到 $\left[\frac{1}{2^{2n+1}}, \frac{1}{2^{2n}}\right)$ 上, 得到函数 $f_{n2} (x)$:
+        \[\begin{align*}f_{n2} (x) = \begin{cases}
+        x^{2} \sin \frac{1}{x}, &x \in (0, x_n];\\
+        f(x_n), &x \in \left(x_n, \frac{1}{2^{2n+1}}\right];\\
+        f(\frac{1}{2^{2n}} - x), & x \in \left(\frac{1}{2^{2n+1}}, \frac{1}{2^{2n}}\right).
+        \end{cases}\end{align*}\]
+        现在将 $f_{n2} (x)$ 平移到所有第 $n$ 次被移除的区间上, 我们得到了 $V(x)$ 于其上的取值.
+        </p>
+        <p>首先, $V(x)$ 在 $[0, 1]$ 上是有界且连续的. 我们也易于说明它是处处可导的, 但是 $V^\prime (x)$ 并不连续. 事实上, 在任何移除的区间的两端聚点处, $V^\prime (x)$ 是不连续的. $V^\prime (x)$ 在 $[0, 1]$ 上的不连续点构成点集 $D_{V^\prime}$. 下面我们说明, 事实上有 $S = D_{V^\prime}$.</p>
+        <p><ul>
+            <li>$D_{V^\prime} \subset S$. 这是显然的.</li>
+            <li>$S \subset D_{V^\prime}$. 考虑任意 $s \in S$, 在 $s$ 的任何邻域内, 必定能找到某个移除的区间的某端聚点, 也进一步包含了该点附近的导数值振荡, 因而该点上 $V^\prime (x)$ 是不连续的.</li>
+        </ul></p>
+        <p>我们现在业已说明了, $V^\prime (x)$ 在 $[0, 1]$ 上的不连续点构成点集与先前构造的 Smith–Volterra–Cantor 集是相等的. 进一步, 由于 Smith–Volterra–Cantor 集不是零测集, 根据闭区间上有界函数可积的 Lebesgue 判据, $V^\prime (x)$ 是非 Riemann 可积的.</p>
+
+
+        <hr>
+        <p id="comment1"><sup>^1</sup> 梅加强. 数学分析讲义, <i>pp.</i> 219-222.</p>
+    </body>
+    <div id="footer"></div>
+    <foot>
+        <script>
+            $("#footer").load("/foot.html");
+        </script>
+    </foot>
+</html>
