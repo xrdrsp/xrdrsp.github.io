@@ -32,7 +32,7 @@
         &\xlongequal[\tau_k \in(x_{k-1}, x_k)]{\text{Lagrange}} \sum\limits_{k = 1}^n f^\prime (\tau_k)\Delta x_k.
         \end{align*}\]
         现在, 根据 $f^\prime (x)$ 的可积性, 我们知道
-        \[ \begin{align*} f(b) - f(a) &= \lim\limits_{\lambda{\Delta}\to 0}\sum\limits_{k=1}^n f^\prime (\tau_k)\Delta x_k \\
+        \[ \begin{align*} f(b) - f(a) &= \lim\limits_{\lambda(\Delta)\to 0}\sum\limits_{k=1}^n f^\prime (\tau_k)\Delta x_k \\
         &= \int_a^b f^\prime (t)\, \mathrm{d}t.
         \end{align*} \]
         </p>
@@ -68,7 +68,7 @@
         </ul>
         未被移除的点组成了 Smith–Volterra–Cantor 集 $S$. 我们来说明, $S$ 不是零测的.
         </p>
-        <p>首先假设, $S$ 是零测的, 即对于 $\varepsilon = \frac{1}{4}$, 能够找到开区间族 $\{(I_i)_i\}$, 其中含有至多可数个区间, 它们覆盖了 $S$, 且
+        <p>首先假设, $S$ 是零测的, 那么对于 $\varepsilon = \frac{1}{4}$, 能够找到开区间族 $\{(I_i)_i\}$, 其中含有至多可数个区间, 它们覆盖了 $S$, 且
             \[ \sum\limits_{i = 1}^n |I_i| < \varepsilon, \quad \forall n \geq 1.\]
         另一方面, 在构造过程中我们移除的所有开区间也构成一个可数的区间族 $\{(J_j)_j\}$, 它们互不相交, 且总长度 $\sum_j \left| J_j \right| = \frac{1}{2}$. $\{(I_i)_i\} \cup \{(J_j)_j\}$ 构成 $[0, 1]$ 的一个开覆盖, 由实数完备性, 它有有限子覆盖, 这些子覆盖的区间长度和 $\lambda \geq 1$, 因此
         \[\sum_i \left| I_i \right| + \sum_j \left| J_j \right| \geq 1,\]
@@ -76,7 +76,7 @@
         \[\sum_i \left| I_i \right| \geq \dfrac{1}{2},\]
         这与之前得到的 $\sum_{i = 1}^n |I_i| < \varepsilon$ 相矛盾. 因此, $S$ 不是零测的.</p>
 
-        <p>现在, 我们可以说明 Volterra 函数 $V(x)$ 的构造方式了. 首先, $V(x) = 0$ 对于任何 $x \in S$ 都成立, 它的构造部分体现在 Smith–Volterra–Cantor 集中被移除的部分, 记为集合 $T$. 令
+        <p>现在, 我们可以说明 Volterra 函数 $V(x)$ 的构造方式了. 首先, $V(x) = 0$ 对于任何 $x \in S$ 都成立, 它主要的构造部分体现在 Smith–Volterra–Cantor 集中被移除的部分, 记为集合 $T$. 令
         \[f(x) = x^{2} \sin \frac{1}{x}, \quad x\in (0, 1)\]
         将 $f(x)$ 限制在 $\left(0, \frac{1}{8}\right]$ 上, 并找到最大的 $x_1$ 使得 $f^\prime(x_1) = 0$. 修改函数取值, 使 $f(x)$ 在 $x_1$ 右侧的取值保持在 $f(x_1)$, 得到函数 $f_{11} (x)$:
         \[\begin{align*}f_{11} (x) = \begin{cases}
