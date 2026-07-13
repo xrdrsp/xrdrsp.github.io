@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[LGR,T1]{fontenc}
+\usepackage[sb]{ebgaramond}
+\newcommand{\Section}[1]{\section*{\textsc{#1}}}
+\renewcommand{\,}{\kern0.2ex}
+\usepackage{lipsum}
+\usepackage{lettrine}
+\begin{document}
+
+\begin{center}\huge
+\textsc{e\,g\,e\,n\,o\,l\,f\,f\,-\,b\,e\,r\,n\,e\,r\   \ g\,a\,r\,a\,m\,o\,n\,d}\\[0.5ex]
+\Large\swshape
+by Georg Duffner and Octavio Pardo
+\end{center}
+
+
+\Section{Regular}
+\lipsum[1]
+
+\Section{Italic}
+\textit{\lipsum[2]}
+
+\Section{Small Caps Regular}
+\textsc{\lipsum[5]}
+
+\Section{Small Caps Italic}
+\textsc{\textit{\lipsum[6]}}
+
+\Section{Bold}
+\textbf{\lipsum[3]}
+
+\Section{Bold Italic}
+\textbf{\emph{\lipsum[4]}}
+
+
+\Section{Small Caps Bold}
+\textbf{\textsc{\lipsum[5]}}
+
+\Section{Small Caps Bold Italic}
+\textbf{\textsc{\textit{\lipsum[6]}}}
+
+\Section{Default Numbers}
+
+1234567890
+
+\Section{Oldstyle Numbers}
+
+\oldstylenums{1234567890}
+
+\Section{Lining Numbers}
+
+\liningnums{1234567890}
+
+\Section{Tabular Numbers}
+
+\tabularnums{1234567890}
+
+\Section{Proportional Numbers}
+
+\proportionalnums{1234567890}
+
+\Section{Superior Numbers}
+
+X\textsu{1234567890}
+
+\Section{Inferior Numbers}
+
+X\textinf{1234567890}
+
+\Section{LGR}
+
+
+{\ebgaramondlgr\noindent
+ a b g d e z h j i k l m n x o p r s t u f q y w\\
+ A B G D E Z H J I K L M N X O P R S T U F Q Y W\\
+}
+
+
+\Section{Initials}\Large
+
+\sloppy
+\lettrine[lraise=0.15,nindent=0.1em]{\textin{L}}{orem ipsum dolor sit amet}, consectetuer adipiscing elit. Ut purus elit, vestibulum
+ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu
+libero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
+neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus
+vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat.
+Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel
+leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar
+at, mollis ac, nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis
+nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci
+dignissim rutrum.
+
+\lettrine[lraise=0.15,nindent=0.1em]{\textin{N}}{am dui ligula}, fringilla a, euismod sodales, sollicitudin vel, wisi. Morbi auctor lorem
+non justo. Nam lacus libero, pretium at, lobortis vitae, ultricies et, tellus. Donec aliquet,
+tortor sed accumsan bibendum, erat ligula aliquet magna, vitae ornare odio metus a mi.
+Morbi ac orci et nisl hendrerit mollis. Suspendisse ut massa. Cras nec ante. Pellentesque a
+nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+mus. Aliquam tincidunt urna. Nulla ullamcorper vestibulum turpis. Pellentesque cursus
+luctus mauris.
+
+\end{document}

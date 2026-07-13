@@ -1,0 +1,63 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_mknaq2qg62jb4g6hefo2nv6qzf
+% Encoding created by otftotfm on Sun Mar 19 14:22:04 2023
+% Command line follows encoding
+/AutoEnc_mknaq2qg62jb4g6hefo2nv6qzf [
+%00
+  /Gamma /uni0394.1 /Theta /Lambda /Xi /Pi /Sigma /Upsilon
+  /Phi /Psi /uni03A9.1 /.notdef /.notdef /.notdef /.notdef /.notdef
+%10
+  /dotlessi /uni0237 /grave.sinf /acute /caron /breve /macron /ring
+  /cedilla /germandbls /ae /oe /oslash /AE /OE /Oslash
+%20
+  /space /exclam.sinf /quotedblright /numbersign.sinf /dollar.sinf /percent.sinf /ampersand.sinf /quoteright
+  /parenleft.sinf /parenright.sinf /asterisk.sinf /plus.sinf /comma.sinf /hyphen.sinf /period.sinf /slash.sinf
+%30
+  /uni2080 /uni2081 /uni2082 /uni2083 /uni2084 /uni2085 /uni2086 /uni2087
+  /uni2088 /uni2089 /colon.sinf /semicolon.sinf /exclamdown /equal.sinf /questiondown /question.sinf
+%40
+  /at.sinf /A.sinf /B.sinf /C.sinf /D.sinf /E.sinf /F.sinf /G.sinf
+  /H.sinf /I.sinf /J.sinf /K.sinf /L.sinf /M.sinf /N.sinf /O.sinf
+%50
+  /P.sinf /Q.sinf /R.sinf /S.sinf /T.sinf /U.sinf /V.sinf /W.sinf
+  /X.sinf /Y.sinf /Z.sinf /bracketleft.sinf /quotedblleft /bracketright.sinf /circumflex /dotaccent
+%60
+  /quoteleft /a.sinf /b.sinf /c.sinf /d.sinf /e.sinf /f.sinf /g.sinf
+  /h.sinf /i.sinf /j.sinf /k.sinf /l.sinf /m.sinf /n.sinf /o.sinf
+%70
+  /p.sinf /q.sinf /r.sinf /s.sinf /t.sinf /u.sinf /v.sinf /w.sinf
+  /x.sinf /y.sinf /z.sinf /endash /emdash /hungarumlaut /tilde /dieresis
+%80
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /Lslash /.notdef /.notdef /.notdef /.notdef /.notdef
+%90
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%A0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /lslash /.notdef /.notdef /.notdef /.notdef /.notdef
+%B0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%C0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%D0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%E0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%F0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ot1
+% --tfm-directory=texmf.test/fonts/tfm/public/ebgaramond
+% --vf-directory=texmf.test/fonts/vf/public/ebgaramond
+% --type1-directory=texmf.test/fonts/type1/public/ebgaramond
+% --encoding-directory=texmf.test/fonts/enc/dvips/ebgaramond
+% --map-file=texmf.test/fonts/map/dvips/ebgaramond/EBGaramond.map
+% --no-updmap --force --coding-scheme=TEX TEXT --feature=sinf --ligkern=*
+% {KL} * EBGaramond-BoldItalic.otf EBGaramond-BoldItalic-inf-ot1'

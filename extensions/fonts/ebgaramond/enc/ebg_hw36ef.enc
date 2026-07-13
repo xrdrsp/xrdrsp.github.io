@@ -1,0 +1,64 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_hw36efsnmmoy2cpsekncbavqse
+% Encoding created by otftotfm on Sun Mar 19 14:22:04 2023
+% Command line follows encoding
+/AutoEnc_hw36efsnmmoy2cpsekncbavqse [
+%00
+  /.notdef /Euro /.notdef /.notdef /fraction /dotaccent /hungarumlaut /ogonek
+  /.notdef /.notdef /uni200C /.notdef /.notdef /.notdef /.notdef /.notdef
+%10
+  /dotlessi /uni0237 /grave.sinf /acute /caron /breve /macron /ring
+  /cedilla /germandbls /ae /oe /oslash /AE /OE /Oslash
+%20
+  /space /exclam.sinf /quotedbl.sinf /numbersign.sinf /dollar.sinf /percent.sinf /ampersand.sinf /quoteright
+  /parenleft.sinf /parenright.sinf /asterisk.sinf /plus.sinf /comma.sinf /hyphen.sinf /period.sinf /slash.sinf
+%30
+  /uni2080 /uni2081 /uni2082 /uni2083 /uni2084 /uni2085 /uni2086 /uni2087
+  /uni2088 /uni2089 /colon.sinf /semicolon.sinf /less.sinf /equal.sinf /greater.sinf /question.sinf
+%40
+  /at.sinf /A.sinf /B.sinf /C.sinf /D.sinf /E.sinf /F.sinf /G.sinf
+  /H.sinf /I.sinf /J.sinf /K.sinf /L.sinf /M.sinf /N.sinf /O.sinf
+%50
+  /P.sinf /Q.sinf /R.sinf /S.sinf /T.sinf /U.sinf /V.sinf /W.sinf
+  /X.sinf /Y.sinf /Z.sinf /bracketleft.sinf /backslash.sinf /bracketright.sinf /circumflex /underscore.sinf
+%60
+  /quoteleft /a.sinf /b.sinf /c.sinf /d.sinf /e.sinf /f.sinf /g.sinf
+  /h.sinf /i.sinf /j.sinf /k.sinf /l.sinf /m.sinf /n.sinf /o.sinf
+%70
+  /p.sinf /q.sinf /r.sinf /s.sinf /t.sinf /u.sinf /v.sinf /w.sinf
+  /x.sinf /y.sinf /z.sinf /braceleft.sinf /bar.sinf /braceright.sinf /tilde /dieresis
+%80
+  /Lslash /quotesingle.sinf /quotesinglbase /florin /quotedblbase /ellipsis /dagger.sinf /daggerdbl.sinf
+  /circumflex /perthousand /Scaron /guilsinglleft /OE /Zcaron /asciicircum.sinf /minus
+%90
+  /lslash /quoteleft /quoteright /quotedblleft /quotedblright /bullet /endash /emdash
+  /tilde /trademark /scaron /guilsinglright /oe /zcaron /asciitilde.sinf /Ydieresis
+%A0
+  /uni00A0 /exclamdown /cent /sterling /currency /yen /brokenbar.sinf /section.sinf
+  /dieresis /copyright /ordfeminine /guillemotleft /logicalnot /uni00AD /registered /macron
+%B0
+  /degree /plusminus /uni00B2 /uni00B3 /acute /uni03BC.1 /paragraph.sinf /periodcentered
+  /cedilla /uni00B9 /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown
+%C0
+  /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+  /Egrave.sinf /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+%D0
+  /Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply
+  /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls
+%E0
+  /agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+  /egrave.sinf /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+%F0
+  /eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide
+  /oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ly1
+% --tfm-directory=texmf.test/fonts/tfm/public/ebgaramond
+% --vf-directory=texmf.test/fonts/vf/public/ebgaramond
+% --type1-directory=texmf.test/fonts/type1/public/ebgaramond
+% --encoding-directory=texmf.test/fonts/enc/dvips/ebgaramond
+% --map-file=texmf.test/fonts/map/dvips/ebgaramond/EBGaramond.map
+% --no-updmap --force --coding-scheme=TEX TYPEWRITER AND WINDOWS ANSI
+% --feature=sinf --ligkern=* {KL} * EBGaramond-BoldItalic.otf
+% EBGaramond-BoldItalic-inf-ly1'
