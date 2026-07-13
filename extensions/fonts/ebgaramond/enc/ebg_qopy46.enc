@@ -1,0 +1,68 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_qopy46olxjannxumjtc5yy7alh
+% Encoding created by otftotfm on Sun Mar 19 14:21:58 2023
+% Command line follows encoding
+/AutoEnc_qopy46olxjannxumjtc5yy7alh [
+%00
+  /Gamma /uni0394.1 /Theta /Lambda /Xi /Pi /Sigma /Upsilon
+  /Phi /Psi /uni03A9.1 /.notdef /.notdef /.notdef /.notdef /.notdef
+%10
+  /dotlessi.sc /uni0237 /grave.sc /acute.sc /caron /breve /macron.sc /ring
+  /cedilla.sc /.notdef /ae.sc /oe.sc /oslash.sc /AE /OE /Oslash
+%20
+  /space /exclam.sc /quotedblright /numbersign.sc /dollar.sc /percent.sc /ampersand.sc /quoteright
+  /parenleft.sc /parenright.sc /asterisk.sc /plus.sc /comma.sc /hyphen.sc /period.sc /slash.sc
+%30
+  /zero.sc /one.sc /two.sc /three.sc /four.sc /five.sc /six.sc /seven.sc
+  /eight.sc /nine.sc /colon.sc /semicolon.sc /exclamdown.sc /equal.sc /questiondown.sc /question.sc
+%40
+  /at.sc /A /B /C /D /E /F /G
+  /H /I /J /K /L /M /N /O
+%50
+  /P /Q /R /S /T /U /V /W
+  /X /Y /Z /bracketleft.sc /quotedblleft /bracketright.sc /circumflex /dotaccent
+%60
+  /quoteleft /a.sc /b.sc /c.sc /d.sc /e.sc /f.sc /g.sc
+  /h.sc /i.sc /j.sc /k.sc /l.sc /m.sc /n.sc /o.sc
+%70
+  /p.sc /q.sc /r.sc /s.sc /t.sc /u.sc /v.sc /w.sc
+  /x.sc /y.sc /z.sc /endash /emdash /hungarumlaut /tilde /dieresis.sc
+%80
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /Lslash /.notdef /.notdef /.notdef /.notdef /.notdef
+%90
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%A0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /lslash.sc /.notdef /.notdef /.notdef /.notdef /.notdef
+%B0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%C0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%D0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%E0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%F0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_ot1
+% --tfm-directory=texmf.test/fonts/tfm/public/ebgaramond
+% --vf-directory=texmf.test/fonts/vf/public/ebgaramond
+% --type1-directory=texmf.test/fonts/type1/public/ebgaramond
+% --encoding-directory=texmf.test/fonts/enc/dvips/ebgaramond
+% --map-file=texmf.test/fonts/map/dvips/ebgaramond/EBGaramond.map
+% --no-updmap --force --coding-scheme=TEX TEXT --feature=kern --feature=liga
+% --feature=lnum --feature=smcp --feature=tnum --ligkern=f i =: fi
+% --ligkern=f l =: fl --ligkern=f f =: ff --ligkern=ff i =: ffi --ligkern=ff
+% l =: ffl --unicoding=germandbls =: SSsmall --unicoding=ff =: FFsmall
+% --unicoding=fi =: FIsmall --unicoding=ffi =: FFIsmall --unicoding=fl =:
+% FLsmall --unicoding=ffl =: FFLsmall EBGaramond-BoldItalic.otf
+% EBGaramond-BoldItalic-tlf-sc-ot1'

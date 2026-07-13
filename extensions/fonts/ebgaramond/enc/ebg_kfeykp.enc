@@ -1,0 +1,64 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_kfeykpdkdkfgcmiob2alq76d6b
+% Encoding created by otftotfm on Sun Mar 19 14:22:04 2023
+% Command line follows encoding
+/AutoEnc_kfeykpdkdkfgcmiob2alq76d6b [
+%00
+  /grave.sinf /acute /circumflex /tilde /dieresis /hungarumlaut /ring /caron
+  /breve /macron /dotaccent /cedilla /ogonek /quotesinglbase /guilsinglleft /guilsinglright
+%10
+  /quotedblleft /quotedblright /quotedblbase /guillemotleft /guillemotright /endash /emdash /uni200C
+  /.notdef /dotlessi /uni0237 /.notdef /.notdef /.notdef /.notdef /.notdef
+%20
+  /space /exclam.sinf /quotedbl.sinf /numbersign.sinf /dollar.sinf /percent.sinf /ampersand.sinf /quoteright
+  /parenleft.sinf /parenright.sinf /asterisk.sinf /plus.sinf /comma.sinf /hyphen.sinf /period.sinf /slash.sinf
+%30
+  /uni2080 /uni2081 /uni2082 /uni2083 /uni2084 /uni2085 /uni2086 /uni2087
+  /uni2088 /uni2089 /colon.sinf /semicolon.sinf /less.sinf /equal.sinf /greater.sinf /question.sinf
+%40
+  /at.sinf /A.sinf /B.sinf /C.sinf /D.sinf /E.sinf /F.sinf /G.sinf
+  /H.sinf /I.sinf /J.sinf /K.sinf /L.sinf /M.sinf /N.sinf /O.sinf
+%50
+  /P.sinf /Q.sinf /R.sinf /S.sinf /T.sinf /U.sinf /V.sinf /W.sinf
+  /X.sinf /Y.sinf /Z.sinf /bracketleft.sinf /backslash.sinf /bracketright.sinf /asciicircum.sinf /underscore.sinf
+%60
+  /quoteleft /a.sinf /b.sinf /c.sinf /d.sinf /e.sinf /f.sinf /g.sinf
+  /h.sinf /i.sinf /j.sinf /k.sinf /l.sinf /m.sinf /n.sinf /o.sinf
+%70
+  /p.sinf /q.sinf /r.sinf /s.sinf /t.sinf /u.sinf /v.sinf /w.sinf
+  /x.sinf /y.sinf /z.sinf /braceleft.sinf /bar.sinf /braceright.sinf /asciitilde.sinf /hyphen.sinf
+%80
+  /Abreve /Aogonek /Cacute /Ccaron /Dcaron /Ecaron /Eogonek /Gbreve
+  /Lacute /Lcaron /Lslash /Nacute /Ncaron /Eng /Ohungarumlaut /Racute
+%90
+  /Rcaron /Sacute /Scaron /Scedilla /Tcaron /uni0162 /Uhungarumlaut /Uring
+  /Ydieresis /Zacute /Zcaron /Zdotaccent /IJ /Idotaccent /dcroat /section.sinf
+%A0
+  /abreve /aogonek /cacute /ccaron /dcaron /ecaron /eogonek /gbreve
+  /lacute /lcaron /lslash /nacute /ncaron /eng /ohungarumlaut /racute
+%B0
+  /rcaron /sacute /scaron /scedilla /tcaron /uni0163 /uhungarumlaut /uring
+  /ydieresis /zacute /zcaron /zdotaccent /ij /exclamdown /questiondown /sterling
+%C0
+  /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+  /Egrave.sinf /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+%D0
+  /Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /OE
+  /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /.notdef
+%E0
+  /agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+  /egrave.sinf /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+%F0
+  /eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /oe
+  /oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /germandbls
+] def
+% Command line: 'otftotfm --automatic --encoding=fontools_t1
+% --tfm-directory=texmf.test/fonts/tfm/public/ebgaramond
+% --vf-directory=texmf.test/fonts/vf/public/ebgaramond
+% --type1-directory=texmf.test/fonts/type1/public/ebgaramond
+% --encoding-directory=texmf.test/fonts/enc/dvips/ebgaramond
+% --map-file=texmf.test/fonts/map/dvips/ebgaramond/EBGaramond.map
+% --no-updmap --force --coding-scheme=EXTENDED TEX FONT ENCODING - LATIN
+% --feature=sinf --ligkern=* {KL} * EBGaramond-BoldItalic.otf
+% EBGaramond-BoldItalic-inf-t1'
