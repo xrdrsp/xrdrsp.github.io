@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Archives - xrdrsp</title>
+    <script src="/common.js"></script>
+</head>
+<body>
+    <main>
+        <div id="header"></div>
+        <h1>Archives</h1>
+        <p>Les contenus sont stockés dans le dossier <code>/archives</code>. Le format des répertoires est <code>/archives/{AAAA}/{MM}/{JJ}/{nom de fichier}</code>.</p>
+        <table border="3">
+            <tr>
+                <th>No</th>
+                <th>Date</th>
+                <th>Entry</th>
+            </tr>
+            <tr>
+                <td>0x2b</td>
+                <td>2026-07-14</td>
+                <td><a href="/archives/2026/07/14/ensemble-des-entiers-structures-quotients-et-sous-groupes-distingues.html">整数集的构造, 商结构与正规子群</a></td>
+            </tr>
+            <tr>
+                <td>0x2a</td>
+                <td>2026-03-14</td>
+                <td><a href="/archives/2026/03/14/cette-même-passion.html">我并没有那一份热忱（玉兰花）</a></td>
+            </tr>
+            <!-- <tr>
+                <td>0x29</td>
+                <td>2026-03-14</td>
+                <td><a href="/archives/2026/03/13/fleur-de-magnolia.html">我并没有那一份热忱（玉兰花）</a></td>
+            </tr> -->
+            <tr>
+                <td>0x28</td>
+                <td>2026-03-06</td>
+                <td><a href="/archives/2026/03/06/théorème-de-la-moyenne.html">函数作为导函数的原函数继承性及 Riemann 可积性</a></td>
+            </tr>
+            <!-- <tr>
+                <td>0x27</td>
+                <td>2026-03-03</td>
+                <td><a href="\archives\2026\03\03\matière.html">精神素材</a></td>
+            </tr> -->
+            <!-- <tr>
+                <td>0x26</td>
+                <td>2026-02-27</td>
+                <td><a href="\archives\2026\02\27\poème.html">短诗一束（未完成）</a></td>
+            </tr> -->
+            <tr>
+                <td>0x25</td>
+                <td>2025-12-10</td>
+                <td><a href="\archives\2025\12\10\verse2.html">高中时期的诗稿（二）</a></td>
+            </tr>
+            <tr>
+                <td>0x24</td>
+                <td>2025-12-10</td>
+                <td><a href="\archives\2025\12\10\verse1.html">高中时期的诗稿（一）</a></td>
+            </tr>
+            <tr>
+                <td>0x23</td>
+                <td>2025-11-23</td>
+                <td><a href="\archives\2025\11\23\rivière-huihe.html">恢河长风</a></td>
+            </tr>
+            <tr>
+                <td>0x22</td>
+                <td>2025-11-18</td>
+                <td><a href="\archives\2025\11\18\properties-of-derivative-func.html">开区间上导函数的一个性质</a></td>
+            </tr>
+            <tr>
+                <td>0x20</td>
+                <td>2025-10-21</td>
+                <td><a href="\archives\2025\10\21\feketes-lemma.html">Fekete 引理的一个常见的证明</a></td>
+            </tr>
+            <!-- <tr>
+                <td>0x1f</td>
+                <td>2025-10-21</td>
+                <td>点绛唇</td>
+                <td><a href="\archives\2025\10\21\dianjiangchun.html">zh-CN</a></td>
+            </tr> -->
+            <!--
+            <tr>
+                <td>0x1e</td>
+                <td>2025-10-05</td>
+                <td>在效实中学的钢琴前</td>
+                <td><a href="\archives\2025\10\05\index.html">zh-CN</a></td>
+            </tr> -->
+            <tr>
+                <td>0x1d</td>
+                <td>2025-09-23</td>
+                <td><a href="\archives\2025\09\23\statement.html">个人陈述</a></td>
+            </tr>
+            <tr>
+                <td>0x1c</td>
+                <td>2025-09-21</td>
+                <td><a href="\archives\2025\09\21\military-training.html">军训（一）</a></td>
+            </tr>
+            <tr>
+                <td>0x1b</td>
+                <td>2025-08-27</td>
+                <td><a href="\archives\2025\08\27\adagio.html">Adagio (ébauche, fragment)</a></td>
+            </tr>
+            <tr>
+                <td>0x1a</td>
+                <td>2025-08-11</td>
+                <td><a href="\archives\2025\08\11\allegretto-sostenuto.html">Allegretto Sostenuto</a></td>
+            </tr>
+            <tr>
+                <td>0x19</td>
+                <td>2025-08-11</td>
+                <td><a href="\archives\2025\08\11\adagio-con-moto.html">Adagio con moto</a></td>
+            </tr>
+
+            <!-- <tr>
+                <td>0x14</td>
+                <td>2024-12-21</td>
+                <td>目聋</td>
+                <td></td>
+                <td><a href="/archives/2024/12/21/eyesdeaf.html">zh-CN</a></td>
+            </tr> -->
+
+            <!-- <tr>
+                <td>0x12</td>
+                <td>01-08-2023</td>
+                <td>Off-topics 08-2023</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2023/08/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0x11</td>
+                <td>25-07-2023</td>
+                <td>Translation: 尤拉·菊勒</td>
+                <td>#Translation</td>
+                <td><a href="/archives/2023/07/25/trans-youra-guller.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0x10</td>
+                <td>01-07-2023</td>
+                <td>Off-topics 07-2023</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2023/07/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0xf</td>
+                <td>01-06-2023</td>
+                <td>Off-topics 06-2023</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2023/06/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0xd</td>
+                <td>01-04-2023</td>
+                <td>Off-topics 04-2023</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2023/04/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0xc</td>
+                <td>01-03-2023</td>
+                <td>Off-topics 03-2023</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2023/03/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0xb</td>
+                <td>01-02-2023</td>
+                <td>Off-topics 02-2023</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2023/02/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0x9</td>
+                <td>01-01-2023</td>
+                <td>Off-topics 01-2023</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2023/01/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0x8</td>
+                <td>01-12-2022</td>
+                <td>Off-topics 12-2022</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2022/12/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0x7</td>
+                <td>01-11-2022</td>
+                <td>Off-topics 11-2022</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2022/11/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0x6</td>
+                <td>01-10-2022</td>
+                <td>Off-topics 10-2022</td>
+                <td>#Off-topics</td>
+                <td><a href="/archives/2022/10/01/off-topics.html">zh-CN</a></td>
+            </tr>
+            <tr>
+                <td>0x3</td>
+                <td>13-08-2021</td>
+                <td>Reproduce: O Me! O Life!</td>
+                <td>#Reproduction</td>
+                <td><a href="/archives/2021/08/13/re-o-me-o-life">en-US</a></td>
+            </tr>
+            <tr>
+                <td>0x1</td>
+                <td>04-04-2020</td>
+                <td>Reproduce: 为告别纪念，为责任前行</td>
+                <td>#Reproduction</td>
+                <td><a href="/archives/2020/04/04/re-zh">zh-CN</a></td>
+            </tr> -->
+        </table>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>

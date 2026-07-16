@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Chopin: Barcarolle in F Sharp, Op. 60</title>
+    <script src="/common.js"></script>
+</head>
+<body>
+    <main>
+    <script>
+        window.location.href = "/musique/chopin/barcarolle.html";
+    </script>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>

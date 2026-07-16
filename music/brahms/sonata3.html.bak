@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Brahms: Piano Sonata in f, Op. 5 (coda of V. <i>Finale</i>)</title>
+    <script src="/common.js"></script>
+</head>
+<body>
+    <main>
+    <script>
+        window.location.href = "/musique/brahms/sonata3.html";
+    </script>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>

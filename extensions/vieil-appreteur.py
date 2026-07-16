@@ -1,6 +1,6 @@
 import os
 
-directory = input()
+directory = input("Enter the working directory:")
 
 if not os.path.isdir(directory):
     print("The specified directory does not exist.")
@@ -38,28 +38,26 @@ for path, folders, files in os.walk(directory):
                     ext = []
 
                 head = [
+                    '<!DOCTYPE html>\n',
                     '<html>\n',
-                    '    <div id="header"></div>\n',
-                    '    <head>\n',
-                    '        <meta charset="utf-8">\n',
-                    f'        {title.strip()}\n',
-                    '        <script src="/node_modules/jquery.js"></script>\n',
-                    '        <script>\n',
-                    '            $("#header").load("/head.html");\n',
-                    '        </script>\n',
+                    '<head>\n',
+                    '    <meta charset="utf-8">\n',
+                    f'    {title.strip()}\n',
+                    '    <script src="/common.js"></script>\n',
                 ] + ext + [
-                    '    </head>\n'
+                    '</head>\n',
+                    '<body>\n',
+                    '    <main>\n'
                 ]
-                foot = [
-                    '    <div id="footer"></div>\n',
-                    '    <foot>\n',
-                    '        <script>\n',
-                    '            $("#footer").load("/foot.html");\n',
-                    '        </script>\n',
-                    '    </foot>\n',
+                tail = [
+                    '    </main>\n',
+                    '\n',
+                    '    <footer id="footer"></footer>\n',
+                    '\n',
+                    '</body>\n',
                     '</html>'
                 ]
-                new_lines = head + lines[body_index[0] : body_index[1] + 1] + foot
+                new_lines = head + lines[body_index[0] + 1 : body_index[1]] + tail
 
             with open(full_path, 'w', encoding="utf-8") as f:
                 f.writelines(new_lines)

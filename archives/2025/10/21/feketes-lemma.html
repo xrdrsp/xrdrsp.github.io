@@ -1,15 +1,13 @@
-<html>
-    <div id="header"></div>
-    <head>
-        <meta charset="utf-8">
-        <title>Fekete 引理的一个常见的证明</title>
-        <script src="/node_modules/jquery.js"></script>
-        <script>
-            $("#header").load("/head.html");
-        </script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Fekete 引理的一个常见的证明</title>
+    <script src="/common.js"></script>
         <!-- <div id="ext"></div> -->
-    </head>
-    <body>
+</head>
+<body>
+    <main>
         <h1>Fekete 引理的一个常见的证明</h1>
         <p><font size=3px>2025-10-21<br></font></p>
         <p>作为网站第一篇和数学相关的文章, 这里只是记录学习时遇到的基础的内容.</p>
@@ -28,11 +26,9 @@
         </p>
         <p>证毕. </p>
         <p>利用 Fekete 引理, 我们就能够得到如下结论. 假设数列 ${x_n}$ 满足 $\forall m, n \in \mathbb{N^*}$ 有 $x_m + x_n - 1 \leq x_{m + n} \leq x_m + x_n + 1$, 那么, 极限 $\lim\limits_{n \to \infty} \dfrac{x_n}{n}$ 也存在.</p>
-    </body>
-    <div id="footer"></div>
-    <foot>
-        <script>
-            $("#footer").load("/foot.html");
-        </script>
-    </foot>
+
+
+    </main>
+    <footer id="footer"></footer>
+</body>
 </html>

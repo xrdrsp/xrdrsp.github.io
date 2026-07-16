@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>404 Not Found - xrdrsp</title>
+    <script src="/common.js"></script>
+</head>
+<body>
+    <main>
+        <h1>404 Not Found</h1>
+        <p>
+            Unfortunately, the content is not found.
+        </p>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>
