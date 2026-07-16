@@ -152,6 +152,11 @@ td {
     font-size: 18px;
 } */
 
+ol, ul {
+    margin-top: -0.8em;
+    margin-bottom: 0;
+}
+
 .error {
     color: #ff0000;
 }
