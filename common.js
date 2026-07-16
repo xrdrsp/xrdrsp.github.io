@@ -1,7 +1,7 @@
 document.write('<script src="/node_modules/jquery.js"></script>');
 
 document.addEventListener("DOMContentLoaded", function() {
-    $.get("/head.html", function(htmlData) {
+    $.get("/node_modules/head.html", function(htmlData) {
         var $temp = $("<div>").html(htmlData);
 
         var $nav = $temp.find("p").first(); 
@@ -21,6 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var $footerContainer = $("#footer");
     if ($footerContainer.length > 0) {
-        $footerContainer.load("/foot.html");
+        $footerContainer.load("/node_modules/foot.html");
     }
 });
