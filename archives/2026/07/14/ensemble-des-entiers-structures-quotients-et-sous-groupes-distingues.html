@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <div id="header"></div>
+    <head>
+        <meta charset="utf-8">
+        <title>整数集的构造, 商结构与正规子群</title>
+        <script src="/node_modules/jquery.js"></script>
+        <script>
+            $("#header").load("/head.html");
+        </script>
+        <!-- <div id="ext"></div> -->
+    </head>
+    <body>
+        <h1>整数集的构造, 商结构与正规子群</h1>
+        <p><font size=3px>2026 年 07 月 14 日<br></font></p>
+        <p>在公理集合论中, 我们定义自然数的集合 $\mathbb{N}$ 为所有归纳集之交, 由此就说明了 $\mathbb{N}$ 确实<font face="NotoSerifSC">“</font>存在<font face="NotoSerifSC">”</font>. 从 Peano 公理出发, 我们能够推导自然数运算的代数性质. 我们知道, 对于给定的 $n, m \in \mathbb{N}$, 方程
+        \[x +_{\mathbb{N}} n = m\]
+        在 $\mathbb{N}$ 中并不一定有解, 其中 $+_{\mathbb{N}}$ 是自然数加法. 但上述工具还不能严格地给出熟知的<font face="NotoSerifSC">“</font>整数<font face="NotoSerifSC">”</font>结构. 下面回忆整数集的构造.</p>
+        <p><b>定义 1.</b> 集合 $A$ 与 $B$ 间的一个二元关系就是 Descartes 积 $A \times B$ 的一个子集. 如果 $A = B$, 就称其为 $A$ 上的二元关系.</p>
+        <p><b>定义 2.</b> 集合 $A$ 上的二元关系 $\sim$ 如果满足以下性质, 就说是 $A$ 上的等价关系:
+        <ol>
+            <li>自反性: 对所有 $a \in A$, 都有 $a \sim a$;</li>
+            <li>对称性: 设 $a, b \in A$, 若 $a\sim b$, 那么 $b\sim a$;</li>
+            <li>传递性: 设 $a, b, c\in A$, 若 $a\sim b$, $b\sim c$, 那么 $a\sim c$.</li>
+        </ol></p>
+        <p><b>定义 3.</b> 设 $X$ 为集合, 配有等价关系 $\sim$. 对于任意 $x\in X$, 以 $x$ 为代表元的等价类意谓 $X$ 的子集 $[x] := \left\{y\in X : x\sim y\right\}$.</p>
+        <p><b>定义 4.</b> 设 $X$ 为集合, 配有等价关系 $\sim$. $X$ 关于 $\sim$ 的商集定义为
+        \[X/\sim \ := \left\{[x] : x\in X \right\}.\]
+        映射
+        \[\begin{array}{ccc}
+        \pi : & X & \longrightarrow & X/\sim \\
+        & x & \longmapsto & [x]
+        \end{array}\]
+        称为商映射.</p>
+        <p><b>定义 5.</b> 设 $A$ 为集合. $A$ 上的一个划分指集合 $\left\{P_i\right\}_i$, 其中每个 $P_i$ 均为 $A$ 的子集, 它们满足 $P_i \neq P_j$ 对所有 $i\neq j$ 成立, 且有:
+        \[A = \bigcup_{i} P_i.\]</p>
+        <p><b>命题 6.</b> 集合 $A$ 上的等价关系与 $A$ 的划分之间存在一个一一对应关系.</p>
+        <p><b>命题 7.</b> 设 $X$ 为集合, 配有等价关系 $\sim$. 对于任意 $x, y\in X$, 得到等价类 $[x], [y]$. 这时, 要么 $[x] = [y]$, 要么 $[x] \cap [y] = \varnothing$. 这就是说, $X$ 是其下所有等价类的无交并
+        \[X = \bigsqcup\limits_{x \in X} [x],\]
+        或者说, $\bigcup_{x \in X} [x]$ 是 $X$ 的划分.</p>
+        <p>现在, 考虑 Descartes 积 $\mathbb{N}\times \mathbb{N}$. 我们按如下方法定义 $\mathbb{N}\times \mathbb{N}$ 上的等价关系 $\sim$, 其中 $n, m, n^\prime, m^\prime \in \mathbb{N}$:
+            \[(n, m)\sim (n^\prime, m^\prime) \iff n +_{\mathbb{N}}m^\prime = n^\prime +_{\mathbb{N}}m.\]
+        记 $(n, m)$ 所属的等价类为 $[n, m]$, 它可以直观地理解为 $m - n$, 当然我们现在还无法给出它的定义.
+        </p>
+        <p><b>定义 8.</b> 我们定义整数集 $\mathbb{Z} := (\mathbb{N}\times \mathbb{N})/\sim$. 在 $\mathbb{Z}$ 上定义加法和加法逆元
+            \[\begin{array}{ccc}
+            +_{\mathbb{Z}} : & \mathbb{Z} \times \mathbb{Z} & \longrightarrow & \mathbb{Z} \\
+            & \left([n_1, m_1], [n_2, m_2]\right) & \longmapsto & [n_1 +_{\mathbb{N}}n_2, m_1 +_{\mathbb{N}}m_2], \\
+            -_{\mathbb{Z}} : & \mathbb{Z} & \longrightarrow & \mathbb{Z} \\
+            & [n, m] & \longmapsto & [m, n].
+            \end{array}\]
+        </p>
+        <p>整数集上的其他运算可以用类似方法定义. 下面验证加法是良定义的, 即运算不依赖代表元的选取. 事实上, 若设 $[ n_1, m_1 ] = [ n_1', m_1' ]$ 且 $[ n_2, m_2 ] = [ n_2', m_2' ]$, 根据定义就有 $n_1 +_{\mathbb{N}}m_1^\prime = n_1^\prime +_{\mathbb{N}}m_1$, $n_2 +_{\mathbb{N}}m_2^\prime = n_2^\prime +_{\mathbb{N}}m_2$. 将这两个自然数加法的等式两边分别相加, 可得
+        \[(n_1 +_{\mathbb{N}}m_1') +_{\mathbb{N}}(n_2 +_{\mathbb{N}}m_2') = (n_1' +_{\mathbb{N}}m_1) +_{\mathbb{N}}(n_2' +_{\mathbb{N}}m_2),\]
+        利用自然数加法的交换律和结合律, 将上式变形为
+        \[(n_1 +_{\mathbb{N}}n_2) +_{\mathbb{N}}(m_1' +_{\mathbb{N}}m_2') = (n_1' +_{\mathbb{N}}n_2') +_{\mathbb{N}}(m_1 +_{\mathbb{N}}m_2).\]
+        这说明
+        \[(n_1 +_{\mathbb{N}}n_2, m_1 +_{\mathbb{N}}m_2) \sim (n_1' +_{\mathbb{N}}n_2', m_1' +_{\mathbb{N}}m_2'),\]
+        从而
+        \[[ n_1 +_{\mathbb{N}}n_2, m_1 +_{\mathbb{N}}m_2 ] = [ n_1' +_{\mathbb{N}}n_2', m_1' +_{\mathbb{N}}m_2' ]\]
+        无论选择哪一组代表元, 加法运算得到的结果都在同一个等价类中. 因此, 整数上的加法运算是良定义的.</p>
+        <p>值得注意的是, $\mathbb{N}$ 中的元素 (即自然数) 是用公理化的手段直接归纳定义的数学对象, 而 $\mathbb{Z}$ 中的元素 (即整数) 是 $\mathbb{N} \times \mathbb{N}$ 的等价类, 它们在形式上差异很大. 但是, 出于常识中二者的紧密联系, 我们有意愿将每个自然数以映射的方式嵌入整数集中. 而商映射
+            \[\begin{array}{ccc}
+            i : & \mathbb{N} & \longrightarrow & \mathbb{Z} \\
+            & n & \longmapsto & [0, n]
+            \end{array}\]
+        已经实现了这一点. 我们易于验证 $i \circ +_{\mathbb{N}} = +_{\mathbb{Z}} \circ (i \times i)$, 写出交换图:
+        $$
+        \begin{array}{ccc}
+        \mathbb{N} \times \mathbb{N} & \xrightarrow{\quad +_{\mathbb{N}} \quad} & \mathbb{N} \\
+        \Big\downarrow \rlap{\scriptstyle i \times i} & & \Big\downarrow \rlap{\scriptstyle i} \\
+        \mathbb{Z} \times \mathbb{Z} & \xrightarrow{\quad +_{\mathbb{Z}} \quad} & \mathbb{Z}
+        \end{array}
+        $$
+        </p>
+        <p>现在, 注意上面讨论中的要素 $(\mathbb{Z}, +_{\mathbb{Z}}, [0, 0], -_{\mathbb{Z}})$ 不外乎作成一个群. 从更加一般而抽象的视角, 考虑带有等价关系 $\sim$ 的群 $(G, *_G, e_G, {}^{-1})$. 我们问: 在什么条件下能够自然地赋予 $G/\sim$ 以群结构? 对于 $[g], [h] \in G/\sim$, 其中 $g, h\in G$, 希望 $e_{G/\sim} := [e_G]$, $[g] *_{G/\sim} [h] := [g *_G h]$ 和 ${[g]}^{-1} := [g^{-1}]$. 为此考虑上述定义在何时是良定义的. 注意 $g, h$ 是等价类的代表元, 我们希望下述条件成立: 
+            \[\forall g, g^\prime, h, h^\prime \in G, \ g\sim g^\prime \land h\sim h^\prime \implies g *_G h \sim g^\prime *_G h^\prime. \tag{!}\label{id}\]
+        事实上, 有如下结论成立.
+        </p>
+        <p><b>命题 9.</b> 设群 $(G, *_G, e_G, {}^{-1})$ 带有等价关系 $\sim$. 如果条件 (\ref{id}) 成立, 那么 $(G/\sim, *_{G/\sim}, e_{G/\sim}, {}^{-1})$ 按照上面的定义作成一个群. 条件 (\ref{id}) 确保我们能够将群结构诱导至商集上.</p>
+        <p><b>定义 10.</b> 群上的等价关系 $\sim$ 如果满足条件 (\ref{id}), 那么就说它是同余关系.</p>
+        <p>在上述条件下, 若记
+        \[\begin{array}{ccc}
+        \pi : & G & \longrightarrow & G/\sim \\
+        & g & \longmapsto & [g]
+        \end{array}\]
+        为商映射, 则有 $\pi \circ *_G = *_{G/\sim} \circ (\pi \times \pi)$, 且下图交换:
+        $$
+        \begin{array}{ccc}
+        G \times G & \xrightarrow{\quad *_G \quad} & G \\
+        \Big\downarrow \rlap{\scriptstyle \pi \times \pi} & & \Big\downarrow \rlap{\scriptstyle \pi} \\
+        G/{\sim} \times G/{\sim} & \xrightarrow{\quad *_{G/\sim} \quad} & G/{\sim}
+        \end{array}
+        $$
+        </p>
+        <p>进一步考虑这样的群 $G$ 所满足的一般性质. 考虑 $[e_G]$, 它在我们想要得到的群中充当单位元.</p>
+        <p><b>引理 11.</b> 设群 $(G, *_G, e_G, {}^{-1})$ 带有同余关系 $\sim$, 那么等价类 $[e_G]$ 是 $G$ 的子群.</p>
+        <p><b>证明.</b> 首先, $e_G \in [e_G]$, 因此 $[e_G]$ 非空. 对任意的 $x, y\in [e_G]$, 从定义得到 $x\sim e_G$, 根据对称性有 $e_G \sim x$. 另一方面, $x^{-1}\sim x^{-1}$ 由自反性成立. 运用条件 (\ref{id}), 我们有 $x^{-1} = e *_G x^{-1} \sim x *_G x^{-1} = e_G$, 从而 $x^{-1} \in [e_G]$. 由 $x\sim e_G$ 得到 $x *_G y \sim e *_G e = e$, 因此 $x *_G y \in [e_G]$. $[e_G]$ 作为 $G$ 的子集, 自然构成了 $G$ 的子群.</p>
+        <p><b>定义 12.</b> 设 $(H, *_H, e_H, {}^{-1})$ 为群, $K$ 是 $H$ 的子群, 给定 $h\in H$. 称集合 $hK := \left\{ h *_H k : k\in K \right\}$ 为 $K$ 在 $H$ 中的左陪集, $Kh := \left\{ k *_H h : k\in K \right\}$ 为 $K$ 在 $H$ 中的右陪集. 由全体左陪集组成的集合写作 $H/K$.</p>
+        <p><b>引理 13.</b> 设群 $(G, *_G, e_G, {}^{-1})$ 带有同余关系 $\sim$, 那么对于任意的 $g\in G$, 等价类 $[g]$, 左陪集 $g[e_G]$, 右陪集 $[e_G]g$ 满足 $[g] = g[e_G]$ 和 $[g] = [e_G]g$.</p>
+        <p><b>证明.</b> 只证明第一个等式, 右陪集的证明是类似的. 事实上, 
+        \[\begin{aligned}
+        x\in [g] &\iff x \sim g \\
+        &\iff g^{-1} *_G x \sim e \\
+        &\iff g^{-1} *_G x \in [e] \\
+        &\iff x \in g[e_G].
+        \end{aligned}\]</p>
+        <p>从上述命题立刻发现如下的性质.</p>
+        <p><b>推论 14.</b> 命题 13 中的等价类 $[e_G]$ 满足对任意 $g\in G$, $g[e_G] = [e_G]g$.</p>
+        <p>推论 14 表明, $G$ 在 $[e_G]$ 中的所有左陪集与所有右陪集完全重合. 对任意的 $a\in [e_G]$, 我们知道 $g *_G a \in g[e_G] = [e_G]g$, 从而存在 $a^\prime \in [e_G]$ 使得 $g *_G a = a^\prime *_G g$, 于是得到 $g *_G a *_G g^{-1} \in [e_G]$. 由于 $a$ 的任意性, 我们有 $g * [e_G] * g^{-1} \subset [e_G]$, 其中对于 $G$ 的子集 $S$ 按标准的方法定义 $\tilde{g} * S = \left\{\tilde{g} *_G s : s \in S\right\}$, $S * \tilde{g} = \left\{s *_G \tilde{g} : s \in S\right\}$. 另一方面, 考虑 $g$ 的逆, 有 $g^{-1} *_G a *_G g \in [e_G]$, 从而 $a \in g * [e_G] * g^{-1}$, 得到 $[e_G] \subset g * [e_G] * g^{-1}$. 所以, 我们事实上有 $[e_G] = g * [e_G] * g^{-1}$ 对任意的 $g\in G$ 成立. 上述讨论都围绕 $G$ 的子群 $[e_G]$ 进行, 这启发我们作出下述定义.</p>
+        <p><b>定义 15.</b> 设 $H$ 是群, $H$ 的子群 $K$ 说是 $H$ 的正规子群, 如果对任意 $a\in H$ 都有 $a * K * a^{-1} = K$.</p>
+        <p>回顾前面给出的同余性质 (\ref{id}). 我们也能够直接利用这一性质推导出所谓的正规性. 设群 $(G, *_G, e_G, {}^{-1})$ 带有同余关系 $\sim$, 且 $g_1, g_1^\prime, g_2, g_2^\prime \in G$ 满足 $g_1 \sim g_1^\prime, g_2 \sim g_2^\prime$. 这给出 $g_1[e_G] = g_1^\prime[e_G]$, $g_2[e_G] = g_2^\prime[e_G]$. 通过简单的变形, 知道存在 $a_1, a_2\in [e_G]$ 使得 $g_1^\prime = g_1 *_G a_1$, $g_2^\prime = g_2 *_G a_2$. 根据同余条件, $(g_1^\prime *_G g_2^\prime)[e_G] = (g_1 *_G g_2)[e_G]$, 从而 $(g_1 *_G g_2)^{-1} *_G (g_1^\prime *_G g_2^\prime) \in [e_G]$. 这里, 
+            \[\begin{aligned}
+            & (g_1 *_G g_2)^{-1} *_G (g_1^\prime *_G g_2^\prime) \\
+            =\ & g_2^{-1} *_G g_1^{-1} *_G g_1 *_G a_1 *_G g_2 *_G a_2 \\
+            =\ & g_2^{-1} *_G a_1 *_G g_2 *_G a_2.
+            \end{aligned}\]
+        所以 $g_2^{-1} *_G h_1 *_G g_2 \in [e_G]$. 这里 $g_2\in G$ 是任意的, 而 $h_1\in [e_G]$ 只与 $g_1, g_1^\prime$ 有关, 实质上也是任意的.</p>
+
+        <p>上面的讨论中, 我们从群上的同余关系 $\sim$ 推导出群的正规性. 下面的结论呼之欲出.</p>
+        <p><b>引理 16.</b> 设 $(G, *_G, e_G, {}^{-1})$ 是群, 则 $G$ 上的所有同余关系与 $G$ 的所有正规子群存在一个一一对应关系.</p>
+        <p><b>证明.</b> 给定正规子群 $L$, 我们这样定义等价关系 $\sim$: 设 $g, g^\prime \in G$, 则 $g\sim g^\prime$ 当且仅当 $g^{-1} *_G g^\prime \in L$. 整个证明是容易的.</p>
+        <p>对正规子群 $L$, 通过上面的方法定义了 $G$ 上的等价关系 $\sim$. 现在考察定义 12 给出的结构 $G / L$, 它由全体左陪集, 亦即 $\sim$ 下的一切等价类构成. 前面已经说明, $G / L$ 继承了 $G$ 上的运算, 因而具有群结构. 我们可以合理地给出如下的定义.</p>
+        <p><b>定义 17.</b> 设 $(G, *_G, e_G, {}^{-1})$ 是群, $L$ 是 $G$ 的正规子群, 则 $(G/L, *_{G/L}, e_{G/L}, {}^{-1})$ 称为 $G$ 模 $L$ 的商群. 其中二元运算 $*_{G/L}$ 指对任意 $g_1, g_2\in G$, $g_1L *_{G/L} g_2L = (g_1 *_G g_2)L$, 对任意的 $g\in G$ 定义 $(gL)^{-1} = g^{-1}L$, 而单位元按照 $e_{G/L} = L$ 定义.</p>
+
+        <p>最后, 我们给出如下的定理.</p>
+        <p><b>定理 18. (商结构的泛性质)</b> 设 $(G, *_G, e_G, {}^{-1})$ 和 $(G^\prime, *_{G^\prime}, e_{G^\prime}, {}^{-1})$ 是群, 其间有同态 $\varphi : G \rightarrow G^\prime$. 设 $L$ 是 $G$ 的正规子群. 按照引理 16, 我们可以合理地定义 $G$ 上的等价关系 $\sim$ 及商映射 $\pi$. 如果 $L \subset \ker \varphi$, 那么存在惟一的同态 $\tilde{\varphi} : G/L \rightarrow G^\prime$ 使得 $\varphi$ 可分解为映射的复合 $\varphi = \tilde{\varphi} \circ \pi$, 即下图交换:
+            \[
+            \begin{array}{ccc}
+            G & \xrightarrow{\quad \varphi \quad} & G' \\
+            \Big\downarrow \rlap{\scriptstyle \pi} & & \Big\Vert \rlap{\scriptstyle{\text{ id}}} \\
+            G/L & \xrightarrow{\quad \exists!\, \tilde{\varphi} \quad} & G'
+            \end{array}
+            \]
+        </p>
+        <p><b>证明.</b> 设 $g_1, g_2 \in G$ 且 $g_1 \sim g_2$. 根据定义, $g_2^{-1} *_G g_1 \in L$, 由 $L \subset \ker \varphi$ 得到 $e_{G^\prime} = \varphi (g_2^{-1} *_G g_1) = \varphi (g_2^{-1}) *_{G^\prime} \varphi (g_1)$, 所以 $\varphi(g_1) = \varphi(g_2)$. 现在我们合理地定义 
+        \[\begin{array}{ccc}
+        \tilde{\varphi} : & G/\sim & \longrightarrow & G^\prime \\
+        & gL & \longmapsto & \varphi(g)
+        \end{array}\]
+        事实上, 对任意的 $h_1L, h_2L \in G/L$, 我们知道
+        \[\begin{aligned}\tilde{\varphi} (h_1L *_{G/L} h_2L) 
+        &= \tilde{\varphi} \left((h_1 *_G h_2)L\right)\\
+        &= \varphi (h_1 *_G h_2) \\
+        &= \varphi (h_1) *_{G^\prime} \varphi (h_2)\\
+        &= \tilde{\varphi} (h_1L) *_{G^\prime} \tilde{\varphi} (h_2L)\end{aligned}\]
+        这说明 $\tilde{\varphi}$ 是同态.</p>
+        <p>设同态 $\tilde{\varphi}$ 与 $\tilde{\varphi}^\prime$ 满足条件 $\varphi = \tilde{\varphi} \circ \pi = \tilde{\varphi}^\prime \circ \pi$, 由定义立刻得到 $\tilde{\varphi}$ 与 $\tilde{\varphi}^\prime$ 在定义域任一点的取值都相同, 因此这两个映射是相等的. 所以 $\tilde{\varphi}$ 是惟一的.</p>
+    </body>
+    <div id="footer"></div>
+    <foot>
+        <script>
+            $("#footer").load("/foot.html");
+        </script>
+    </foot>
+</html>
