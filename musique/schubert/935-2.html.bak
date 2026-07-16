@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Schubert : Impromptu en la bémol majeur, D. 935 n° 2</title>
+    <script src="/common.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Schubert : Impromptu en la bémol majeur, D. 935 n° 2</h1>
+        <p><font size=3px>2025-07-19<br></font></p>
+        <p>Enregistré le 22 juin 2025.</p>
+        <audio controls>
+        <source src="\uploads\2025\07\19\schubert935-2.mp3" type="audio/mpeg">
+            Votre navigateur ne prend pas en charge l’élément audio.
+        </audio>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>

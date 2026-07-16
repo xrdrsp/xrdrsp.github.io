@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Piano Performance - xrdrsp</title>
+    <script src="/common.js"></script>
+</head>
+<body>
+    <main>
+        <div id="write" class="is-node">
+        <h1><span>Piano Performance</span></h1>
+        <div class="intro" id="intro">
+        <p>J’apprends le piano en autodidacte. Je joue des œuvres de Ludwig van Beethoven, Johannes Brahms, Frédéric Chopin, Claude Debussy, Ernst von Dohnányi, Franz Liszt, Ma Sicong, Franz Schubert, Alexandre Scriabine et Wang Xilin. J’ai conscience que mes exécutions sont encore désorganisées et loin d’être satisfaisantes.</p>
+        <p>Veuillez trouver ci-dessous quelques enregistrements de mes performances, présentés dans l’ordre chronologique inverse :</p>
+            <ol>
+                <li><a href="\musique\chopin\barcarolle.html">Chopin : Barcarolle en fa dièse majeur, opus 60</a></li>
+                <li><a href="\musique\debussy\les-soirs-illuminés-par-l'ardeur-du-charbon.html">Debussy : Les soirs illuminés par l’ardeur du charbon</a></li>
+                <li><a href="\musique\debussy\the-little-shepherd.html">Debussy : The Little Shepherd</a></li>
+                <li><a href="/musique/brahms/sonata3.html">Brahms : Sonate pour piano en fa mineur, opus 5 (coda du V. <i>Finale</i>)</a></li>
+            </ol>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>
