@@ -105,7 +105,7 @@
         <p>从上述命题立刻发现如下的性质.</p>
         <p><b>推论 14.</b> 命题 13 中的等价类 $[e_G]$ 满足对任意 $g\in G$, $g[e_G] = [e_G]g$.</p>
         <p>推论 14 表明, $G$ 在 $[e_G]$ 中的所有左陪集与所有右陪集完全重合. 对任意的 $a\in [e_G]$, 我们知道 $g *_G a \in g[e_G] = [e_G]g$, 从而存在 $a^\prime \in [e_G]$ 使得 $g *_G a = a^\prime *_G g$, 于是得到 $g *_G a *_G g^{-1} \in [e_G]$. 由于 $a$ 的任意性, 我们有 $g * [e_G] * g^{-1} \subset [e_G]$, 其中对于 $G$ 的子集 $S$ 按标准的方法定义 $\tilde{g} * S = \left\{\tilde{g} *_G s : s \in S\right\}$, $S * \tilde{g} = \left\{s *_G \tilde{g} : s \in S\right\}$. 另一方面, 考虑 $g$ 的逆, 有 $g^{-1} *_G a *_G g \in [e_G]$, 从而 $a \in g * [e_G] * g^{-1}$, 得到 $[e_G] \subset g * [e_G] * g^{-1}$. 所以, 我们事实上有 $[e_G] = g * [e_G] * g^{-1}$ 对任意的 $g\in G$ 成立. 上述讨论都围绕 $G$ 的子群 $[e_G]$ 进行, 这启发我们作出下述定义.</p>
-        <p><b>定义 15.</b> 设 $H$ 是群, $H$ 的子群 $K$ 说是 $H$ 的正规子群, 如果对任意 $a\in H$ 都有 $a * K * a^{-1} = K$.</p>
+        <p><b>定义 15.</b> 设 $H$ 是群, $H$ 的子群 $K$ 说是 $H$ 的正规子群, 如果对任意 $a\in H$ 都有 $a * K * a^{-1} = K$. $K$ 是 $H$ 的正规子群也记作 $K\triangleleft H$.</p>
         <p>回顾前面给出的同余性质 (\ref{id}). 我们也能够直接利用这一性质推导出所谓的正规性. 设群 $(G, *_G, e_G, {}^{-1})$ 带有同余关系 $\sim$, 且 $g_1, g_1^\prime, g_2, g_2^\prime \in G$ 满足 $g_1 \sim g_1^\prime, g_2 \sim g_2^\prime$. 这给出 $g_1[e_G] = g_1^\prime[e_G]$, $g_2[e_G] = g_2^\prime[e_G]$. 通过简单的变形, 知道存在 $a_1, a_2\in [e_G]$ 使得 $g_1^\prime = g_1 *_G a_1$, $g_2^\prime = g_2 *_G a_2$. 根据同余条件, $(g_1^\prime *_G g_2^\prime)[e_G] = (g_1 *_G g_2)[e_G]$, 从而 $(g_1 *_G g_2)^{-1} *_G (g_1^\prime *_G g_2^\prime) \in [e_G]$. 这里, 
             \[\begin{aligned}
             & (g_1 *_G g_2)^{-1} *_G (g_1^\prime *_G g_2^\prime) \\
