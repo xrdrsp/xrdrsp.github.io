@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weierstraß 逼近定理</title>
+    <script src="/common.js"></script>
+    <!-- <div id="ext"></div> -->
+</head>
+<body>
+    <main>
+        <h1>Weierstraß 逼近定理</h1>
+        <p style="font-size: 16px;">2026 年 07 月 29 日</p>
+
+        <p>设 $\mathbb{R}$ 上的函数 $f(x), x\in [a, b]$ 有任意阶导数, 且 $x_0 \in (a, b)$, 我们得到 Taylor 级数
+            \[ \sum_{n = 0}^\infty \dfrac{f^{(n)}(x_0)}{n!} (x - x_0)^n, \ x\in [a, b]\]
+            和余项
+            \[ R_n(f, x) = f(x) - \sum_{k = 0}^n \dfrac{f^{(k)}(x_0)}{k!} (x - x_0)^k, \ x\in [a, b], \ n = 0, 1, 2, \cdots.\]
+            如果等式
+            \[ \lim\limits_{n\to\infty} R_n(f, x) = 0\]
+            在 $[a, b]$ 上一致成立, 那么我们知道多项式函数列
+            \[ S_n(x) = \sum_{k = 0}^n \dfrac{f^{(k)}(x_0)}{k!} (x - x_0)^k, n = 1, 2, \cdots\]
+            在 $[a, b]$ 上一致收敛于 $f(x)$. 多项式函数列 $S_n(x)$ 在 $[a, b]$ 上一致逼近 $f(x)$.
+        </p>
+        <p>如果仅仅要求 $f(x)$ 在 $[a, b]$ 上连续, 那么是否存在多项式函数列
+            \[P_n(x) = a_{k_n}^{(n)} x^{k_n} + a_{k_n - 1}^{(n)} x^{k_n - 1} + \cdots + a_1^{(n)}x + a_0^{(n)}\]
+            在 $[a, b]$ 上一致收敛于 $f(x)$ ? 下面的定理给出解答.
+        </p>
+        <p><b>定理 1. (Weierstraß)</b> 设 $f(x)$ 在 $[a, b]$ 上连续, 那么对任何正数 $\varepsilon$, 存在多项式 $P_\varepsilon (x)$ 使得 $\max\limits_{x\in [a, b]} \left|f(x) - P_\varepsilon (x)\right| < \varepsilon$ 成立.</p>
+        <p><b>定义 2.</b> 设 $n$ 为正整数, 函数 $f(x)$ 定义在 $[0, 1]$ 上, 称 $n$ 次多项式
+            \[B_n (f, x) = \sum_{k = 0}^n \binom{n}{k} f\left(\frac{k}{n}\right) x^k\left(1 - x\right)^{n - k}\]
+            为 $f(x)$ 的 Bernstein 多项式.
+        </p>
+        <p>用函数 $e_k (x) = x^k, \ x\in [0, 1], \ k = 0, 1, 2$ 试验. 事实上, 首先 $B_n(e_0, x) = 1 = e_0(x)$. 而
+            \[\begin{aligned}B_n(e_1, x) &= \sum_{k = 0}^n \binom{n}{k}\cdot \dfrac{k}{n}\cdot x^k (1 - x)^{n - k} \\
+            &= x\sum_{k = 1}^n \binom{n - 1}{k - 1}\, x^{k - 1}(1 - x)^{n - k} \\
+            &= x\sum_{k = 0}^{n - 1} \binom{n - 1}{k}\, x^{k}(1 - x)^{n - 1 - k} \\
+            &= x \\
+            &= e_1(x)\end{aligned}\]
+            恰好成立. 对于 $B_n(e_2, x)$, 有
+            \[\begin{aligned}B_n(e_2, x) &= \sum_{k = 0}^n \binom{n}{k} \left(\dfrac{k}{n}\right)^2 x^k (1 - x)^{n - k} \\
+            &= x\sum_{k = 1}^n \binom{n - 1}{k - 1}\cdot \dfrac{k}{n}\cdot x^{k - 1}(1 - x)^{n - k} \\
+            &= x\sum_{k = 0}^{n - 1} \binom{n - 1}{k}\, \dfrac{k + 1}{n}\, x^{k}(1 - x)^{n - 1 - k} \\
+            &= \dfrac{x}{n}\sum_{k = 0}^{n - 1} \binom{n - 1}{k}\, x^{k}(1 - x)^{n - 1 - k} + x\sum_{k = 0}^{n - 1} \binom{n - 1}{k}\cdot \dfrac{k}{n}\cdot x^{k}(1 - x)^{n - 1 - k} \\
+            &= \dfrac{x}{n} B_{n - 1}(e_0, x) + x\cdot\dfrac{n - 1}{n} \sum_{k = 0}^{n - 1} \binom{n - 1}{k}\cdot \dfrac{k}{n - 1}\cdot x^{k}(1 - x)^{n - 1 - k} \\
+            &= \dfrac{x}{n} + \dfrac{n - 1}{n}\cdot xB_{n - 1}(e_1, x) \\
+            &= x^2 + \dfrac{x(1 - x)}{n} \\
+            &= e_2(x) + \dfrac{x(1 - x)}{n}.\end{aligned}\]
+            从而 $B_n(e_2, x)\rightrightarrows e_2(x), \ x\in[0, 1]$. 事实上, 我们有如下定理.
+        </p>
+        <p><b>定理 3. (Bernstein)</b> 设 $f(x)$ 在 $[0, 1]$ 连续, 那么 $\lim_{n\to\infty} B_n(f, x) = f(x)$ 在 $[0, 1]$ 上一致成立.</p>
+        <p><b>证明.</b> 函数 $f(x)$ 在 $[0, 1]$ 连续一定一致连续, 即对任何正数 $\varepsilon$, 存在 $\delta > 0$, 当 $x^\prime, x^{\prime\prime}\in [0, 1]$ 满足 $\left|x^\prime - x^{\prime\prime}\right| < \delta$ 时, $\left|f(x^\prime) - f(x^{\prime\prime})\right| < \frac{\varepsilon}{2}$. 令
+        \[\begin{aligned}I &= \left\{k \in \mathbb{N} : k \leq n, \left|\frac{k}{n} - x\right| < \delta\right\},\\
+        J &= \left\{0, 1, \cdots, n\right\}\setminus I \\
+        &= \left\{k \in \mathbb{N} : k \leq n, \left|\frac{k}{n} - x\right| \geq \delta\right\}\\
+        &= \left\{k \in \mathbb{N} : k \leq n, \frac{\left(\frac{k}{n} - x\right)^2}{\delta^2} \geq 1\right\}.\end{aligned}\]
+        于是, 
+        \[\begin{aligned}\left|B_n(f, x) - f(x)\right| &= \left|\sum_{n = 0}^{\infty} \binom{n}{k}\left(f\left(\frac{k}{n}\right) - f(x)\right) x^k(1 - x)^{n - k}\right|\\
+        &= \left|\sum_{k\in I} \binom{n}{k}\left(f\left(\frac{k}{n}\right) - f(x)\right) x^k(1 - x)^{n - k} + \sum_{k\in J} \binom{n}{k}\left(f\left(\frac{k}{n}\right) - f(x)\right) x^k(1 - x)^{n - k}\right|\\
+        &\xlongequal{\text{记}} \left|\Sigma_1 + \Sigma_2\right| \\
+        &\leq \left|\Sigma_1\right| + \left|\Sigma_2\right|, \end{aligned}\]
+        其中 $\Sigma_1 = \sum_{k\in I} \binom{n}{k}\left(f\left(\frac{k}{n}\right) - f(x)\right) x^k(1 - x)^{n - k}$, $\Sigma_2 = \sum_{k\in J} \binom{n}{k}\left(f\left(\frac{k}{n}\right) - f(x)\right) x^k(1 - x)^{n - k}$. </p>
+        <p>进一步, 
+        \[\begin{aligned}\left|\Sigma_1\right| &\leq \frac{\varepsilon}{2} \sum_{k\in I} \binom{n}{k}x^k (1 - x)^{n - k} \\
+        &\leq \dfrac{\varepsilon}{2} \sum_{k = 0}^n \binom{n}{k}x^k (1 - x)^{n - k} \\
+        &= \frac{\varepsilon}{2}. \end{aligned}\].
+        另一方面, $f(x)$ 在 $[0, 1]$ 连续必有界, 设 $\left|f(x)\right| \leq M, \ x\in [0, 1]$, 则当 $n > \frac{2M}{\varepsilon \delta^2}$ 时
+        \[\begin{aligned}\left|\Sigma_2\right| &\leq 2M\left|\sum_{k\in J} \binom{n}{k} x^k (1 - x)^{n - k}\right| \\
+        &\leq 2M\sum_{k\in J} \frac{\left(\frac{k}{n} - x\right)^2}{\delta^2} \binom{n}{k} x^k (1 - x)^{n - k} \\
+        &\leq \frac{2M}{\delta^2} \sum_{k = 0}^n \binom{n}{k} \left(\frac{k}{n} - x\right)^2 x^k (1 - x)^{n - k}\\
+        &= \frac{2M}{\delta^2} \left( \sum_{k = 0}^n \binom{n}{k} e_2\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} - 2x \sum_{k = 0}^n \binom{n}{k} e_1\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} \\ + x^2 \sum_{k = 0}^n \binom{n}{k} e_0\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} \right) \\
+        &= \frac{2M}{\delta^2} \left( e_2(x) + \frac{x(1 - x)}{n} - 2xe_1(x) + x^2\right) \\
+        &= \frac{2M}{\delta^2} \cdot \frac{x(1 - x)}{n} \\
+        &\leq \frac{M}{n\delta^2} \\
+        &< \frac{\varepsilon}{2}. \end{aligned}\]</p>
+        <p>这就证得, 对任何正数 $\varepsilon$, 取 $N = \left\lfloor \frac{2M}{\varepsilon\delta^2}\right\rfloor + 1$当正整数 $n > N$ 时, $\left|B_n(f, x) - f(x)\right| < \varepsilon$ 对一切 $x\in [0, 1]$ 成立, 即 $B_n(f, x)\rightrightarrows f(x)$.</p>
+        <p><b>定义 4.</b> 设 $f(x)$ 定义在 $[a, b]$ 上, 由线性变换 $y = \frac{x - a}{b - a}$ 得到定义在 $[0, 1]$ 上的函数 $g(y) = f(a + (b - a)y) = f(x)$. 这时称
+        \[\begin{aligned}B_n(f, x) &= B_n(g, y) \\
+        &= \sum_{k = 0}^n \binom{n}{k} g\left(\frac{k}{n}\right) y^k\left(1 - y\right)^{n - k} \\
+        &= \sum_{k = 0}^n \binom{n}{k} f\left(a + \frac{k}{n}\left(b - a\right)\right) \frac{\left(x - a\right)^k\left(b - x\right)^{n - k}}{\left(b - a\right)^n}\end{aligned}\]
+        为 $f(x)$ 在 $[a, b]$ 的 Bernstein 多项式.</p>
+        <p>由此可以证明定理 1.</p>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>
