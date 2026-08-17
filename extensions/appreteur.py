@@ -76,7 +76,7 @@ for path, folders, files in os.walk(directory) :
                     '<head>\n',
                     '    <meta charset="utf-8">\n',
                     f'    {title.strip()}\n',
-                    '    <script src="/common.js"></script>\n',
+                    '    <script defer src="/common.js"></script>\n',
                 ] + ext_lines + [
                     '</head>\n',
                     '<body>\n',

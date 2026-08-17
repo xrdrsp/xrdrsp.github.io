@@ -1,5 +1,6 @@
 template.html
 *.DS_Store
+*.bak
 $RECYCLE.bin
 System Volume Information
 .gitignore
