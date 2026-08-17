@@ -27,6 +27,9 @@
         var scripts = [];
         while (container.firstChild) {
             var node = container.firstChild;
+            // Detach the node first so the loop always terminates,
+            // then collect <script> elements to re-create later.
+            container.removeChild(node);
             if (node.tagName === "SCRIPT") {
                 scripts.push(node);
             } else {
