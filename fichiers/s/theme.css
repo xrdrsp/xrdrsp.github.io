@@ -12,7 +12,7 @@ body {
     padding-left: 20px;
     padding-bottom: 50px;
     line-height: 30px;
-    word-break: hyphenate;
+    overflow-wrap: break-word;
     font-size: 18px;
     font-family: "Times New Roman", serif;
 }
@@ -21,7 +21,7 @@ p {
     background-color: #ffffff;
     color: #000000;
     line-height: 30px;
-    word-break: hyphenate;
+    overflow-wrap: break-word;
     font-size: 18px;
     font-family: "Times New Roman", serif;
 }
@@ -62,12 +62,16 @@ h3,
 h4, 
 h5, 
 h6 {
-    word-break: hyphenate;
+    overflow-wrap: break-word;
 }
 
-table, th, td {
+table {
     height: 30px;
     border-collapse: collapse;
+}
+
+th, td {
+    height: 30px;
 }
 
 td {
