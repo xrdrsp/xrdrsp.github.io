@@ -487,17 +487,17 @@ backend=bibtex
     \subsection{\heiti \fontsize{15}{18}\selectfont 《f 小调幻想曲》}
 
     \begin{enumerate}
-    \item Jerzy Żurawlew: Muza SX 0075: \href{https://xrdrsp.github.io/uploads/2023/05/01/zurawlew-49.mp3}{音频地址链接}
-    \item Myra Hess: \href{https://xrdrsp.github.io/uploads/2023/05/01/hess-49.mp3}{音频地址链接}
-    \item Evgeny Kissin, BMG BVCC-656: \href{https://xrdrsp.github.io/uploads/2023/05/01/kissin-49.mp3}{音频地址链接}
+    \item Jerzy Żurawlew: Muza SX 0075: \href{https://xrdrsp.github.io/fichiers/2023/05/01/zurawlew-49.mp3}{音频地址链接}
+    \item Myra Hess: \href{https://xrdrsp.github.io/fichiers/2023/05/01/hess-49.mp3}{音频地址链接}
+    \item Evgeny Kissin, BMG BVCC-656: \href{https://xrdrsp.github.io/fichiers/2023/05/01/kissin-49.mp3}{音频地址链接}
     \end{enumerate}
 
     \subsection{\heiti \fontsize{15}{18}\selectfont 《降 A 大调幻想波兰舞曲》}
 
     \begin{enumerate}
-    \item Sergio Fiorentino: Saga STM 6021: \href{https://xrdrsp.github.io/uploads/2023/05/01/fiorentino-61.mp3}{音频地址链接}
-    \item Marcel Ciampi: \href{https://xrdrsp.github.io/uploads/2023/05/01/ciampi-61.mp3}{音频地址链接}
-    \item Mikhail Pletnev, Recital at 2022 Verbier Festival, Switzerland: \href{https://xrdrsp.github.io/uploads/2023/05/01/pletnev-61.mp3}{音频地址链接}
+    \item Sergio Fiorentino: Saga STM 6021: \href{https://xrdrsp.github.io/fichiers/2023/05/01/fiorentino-61.mp3}{音频地址链接}
+    \item Marcel Ciampi: \href{https://xrdrsp.github.io/fichiers/2023/05/01/ciampi-61.mp3}{音频地址链接}
+    \item Mikhail Pletnev, Recital at 2022 Verbier Festival, Switzerland: \href{https://xrdrsp.github.io/fichiers/2023/05/01/pletnev-61.mp3}{音频地址链接}
     \end{enumerate}
 
     \section{\heiti \fontsize{16}{19.2}\selectfont 乐谱导引}
@@ -505,7 +505,7 @@ backend=bibtex
     % \begin{enumerate}
 
     \subsection{\heiti \fontsize{15}{18}\selectfont 《f 小调幻想曲》}
-        \href{https://xrdrsp.github.io/uploads/2023/05/02/61-ekier.pdf}{这是乐谱地址链接。}
+        \href{https://xrdrsp.github.io/fichiers/2023/05/02/61-ekier.pdf}{这是乐谱地址链接。}
         \begin{longtable}{l l}
             编者 & Carl Mikuli \\ 
             出版商信息 & Complete Works for the Piano, Vol. 6 (\textit{pp.} 75—92)\\
@@ -515,7 +515,7 @@ backend=bibtex
         \end{longtable}
     
     \subsection{\heiti \fontsize{15}{18}\selectfont 《降 A 大调幻想波兰舞曲》}
-        \href{https://xrdrsp.github.io/uploads/2023/05/02/61-ekier.pdf}{这是乐谱地址链接。}
+        \href{https://xrdrsp.github.io/fichiers/2023/05/02/61-ekier.pdf}{这是乐谱地址链接。}
         \begin{longtable}{l l}
             编者 & Jan Ekier \\
             ~ & Pawe\l{} Kamiński \\
