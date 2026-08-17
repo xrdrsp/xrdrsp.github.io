@@ -186,3 +186,8 @@ hr {
         font-size: 1.7rem;
     }
 }
+
+/* Masquer l'icône du compteur Shinystat tout en conservant le comptage */
+a[href*="shinystat.com"], img[src*="shinystat.com"] {
+    display: none;
+}
