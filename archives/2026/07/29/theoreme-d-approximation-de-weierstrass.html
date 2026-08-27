@@ -30,7 +30,7 @@
             \[B_n (f, x) = \sum_{k = 0}^n \binom{n}{k} f\left(\frac{k}{n}\right) x^k\left(1 - x\right)^{n - k}\]
             为 $f(x)$ 的 Bernstein 多项式.
         </p>
-        <p>用函数 $e_k (x) = x^k, \ x\in [0, 1], \ k = 0, 1, 2$ 试验. 事实上, 首先 $B_n(e_0, x) = 1 = e_0(x)$. 而
+        <p>用函数 $e_k (x) = x^k, \ x\in [0, 1], \ k = 0, 1, 2$ 试验. 首先 $B_n(e_0, x) = 1 = e_0(x)$. 而
             \[\begin{aligned}B_n(e_1, x) &= \sum_{k = 0}^n \binom{n}{k}\cdot \dfrac{k}{n}\cdot x^k (1 - x)^{n - k} \\
             &= x\sum_{k = 1}^n \binom{n - 1}{k - 1}\, x^{k - 1}(1 - x)^{n - k} \\
             &= x\sum_{k = 0}^{n - 1} \binom{n - 1}{k}\, x^{k}(1 - x)^{n - 1 - k} \\
@@ -67,7 +67,7 @@
         \[\begin{aligned}\left|\Sigma_2\right| &\leq 2M\left|\sum_{k\in J} \binom{n}{k} x^k (1 - x)^{n - k}\right| \\
         &\leq 2M\sum_{k\in J} \frac{\left(\frac{k}{n} - x\right)^2}{\delta^2} \binom{n}{k} x^k (1 - x)^{n - k} \\
         &\leq \frac{2M}{\delta^2} \sum_{k = 0}^n \binom{n}{k} \left(\frac{k}{n} - x\right)^2 x^k (1 - x)^{n - k}\\
-        &= \frac{2M}{\delta^2} \left( \sum_{k = 0}^n \binom{n}{k} e_2\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} - 2x \sum_{k = 0}^n \binom{n}{k} e_1\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} \\ + x^2 \sum_{k = 0}^n \binom{n}{k} e_0\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} \right) \\
+        &= \frac{2M}{\delta^2} \left( \sum_{k = 0}^n \binom{n}{k} e_2\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} - 2x \sum_{k = 0}^n \binom{n}{k} e_1\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} + x^2 \sum_{k = 0}^n \binom{n}{k} e_0\left(\frac{k}{n}\right) x^k (1 - x)^{n - k} \right) \\
         &= \frac{2M}{\delta^2} \left( e_2(x) + \frac{x(1 - x)}{n} - 2xe_1(x) + x^2\right) \\
         &= \frac{2M}{\delta^2} \cdot \frac{x(1 - x)}{n} \\
         &\leq \frac{M}{n\delta^2} \\

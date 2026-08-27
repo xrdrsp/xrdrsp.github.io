@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>Fourier 级数的 $L^2$ 收敛与 Parseval 等式</title>
+    <script defer src="/common.js"></script>
+    <!-- <div id="ext"></div> -->
+</head>
+<body>
+    <main>
+        <h1>Fourier 级数的 $L^2$ 收敛与 Parseval 等式</h1>
+        <p style="font-size: 16px;">2026 年 08 月 17 日</p>
+
+        <p><b>定义 1.</b> 设 $f(x)$ 是以 $2\pi$ 为周期的函数. 若 $f(x)$ 在 $[0, 2\pi]$ 上 Riemann 可积 (之后的讨论也都在 Riemann 积分框架下展开), 或者瑕积分 $\int_0^{2\pi} f^2(x) \dd x$ 收敛, 则称 $f(x)$ 是平方可积的, 记为 $f(x) \in L_{2\pi}^2$.</p>
+
+        <p><b>注记 2.</b> 在上述定义中, 根据 Riemann 积分的性质, 如果 $f(x)$ 可积, 那么 $|f(x)|$ 也可积. 如果瑕积分 $\int_0^{2\pi} f^2(x) \dd x$ 收敛, 不妨设 $x = 0$ 是 $f(x)$ 在 $[0, 2\pi]$ 上的唯一瑕点, 于是对于任何正数 $\varepsilon < 2\pi$, 我们知道 $|f(x)|$ 与 $f^2(x)$ 在 $[\varepsilon, 2\pi]$ 上可积, 因此适合 Schwarz 不等式 :
+        \[\begin{aligned}\int_\varepsilon^{2\pi} \left|f(x)\right| \dd x &\leq \left(2\pi - \varepsilon\right)^{\frac{1}{2}}\left(\int_\varepsilon^{2\pi} f^2(x)\dd x\right)^{\frac{1}{2}} \\
+        &\leq (2\pi)^{\frac{1}{2}} \left(\int_0^{2\pi} f^2(x)\dd x\right)^{\frac{1}{2}},
+        \end{aligned}\]
+        而随着 $\varepsilon$ 减小, $\int_\varepsilon^{2\pi} \left|f(x)\right| \dd x$ 不减, 因此极限存在 :
+        \[\lim_{\varepsilon\to 0^+} \int_\varepsilon^{2\pi} \left|f(x)\right| \dd x =: \int_0^{2\pi} \left|f(x)\right| \dd x,\]
+        且
+        \[\int_0^{2\pi} \left|f(x)\right| \dd x \leq (2\pi)^{\frac{1}{2}} \left(\int_0^{2\pi} f^2(x)\dd x\right)^{\frac{1}{2}}.\]
+        这就说明, 如果 $f(x)\in L_{2\pi}^2$, 则 $f(x)$ 在 $[0, 2\pi]$ 上可积或者绝对可积 (事实上, $L_{2\pi}^2 \subset L_{2\pi}^1$), 遂说明了 $f(x)$ 的 Fourier 级数存在.
+        </p>
+
+        <p><b>定义 3.</b> 设 $f(x) \in L_{2\pi}^2$. 记 
+        \[\norm{f}_2 := \left(\frac{1}{\pi}\int_0^{2\pi} f^2(x) \dd x\right)^{\frac{1}{2}},\]
+        并称其为 $f$ 的 $L^2$ 范数 ; 对 $f(x), g(x) \in L_{2\pi}^2$ 记内积 $\langle f, g\rangle := \frac{1}{\pi} \int_0^{2\pi} f(x) g(x) \dd x$, 于是 $\norm{f}_2^2 = \langle f, f\rangle$.</p>
+
+        <p><b>命题 4.</b> 设 $f(x) \in L_{2\pi}^2$, 且 $f(x)$ 的 Fourier 级数为 $\frac{a_0}{2} + \sum_{n = 1}^\infty (a_n\cos nx + b_n\sin nx)$, 其部分和为 $S_n (f, x) = \frac{a_0}{2} + \sum_{k = 1}^n (a_k\cos kx + b_k\sin kx)$, 那么以下三个等式成立:
+        \[\begin{align}
+        \norm{S_n}_2^2 &= \frac{a_0^2}{2} + \sum_{k = 1}^n (a_k^2 + b_k^2), \label{premiere}\\
+        \langle f, S_n\rangle &= \norm{S_n}_2^2, \label{deuxieme}\\
+        \norm{f - S_n}_2^2 &= \norm{f}_2^2 - \norm{S_n}_2^2. \label{troisieme}
+        \end{align}\]
+        </p>
+
+        <p><b>证明.</b> 首先, 我们有
+        \[\begin{aligned}
+        S_n^2(f, x) &= \left(\frac{a_0}{2} + \sum_{k = 1}^n\left(a_k \cos kx + b_k \sin kx\right)\right)^2 \\
+        &= \frac{a_0^2}{4} + \sum_{k = 1}^n \left(a_k^2 \cos^2 kx + b_k^2 \sin^2 kx\right) + \sum_{k = 1}^n a_0 \left(a_k\cos kx + b_k\sin kx\right)\\
+        &\qquad+ \sum_{k\neq l, k, l = 1}^n a_ka_l \cos kx \cos lx + \sum_{k\neq l, k, l = 1}^n b_kb_l \sin kx \sin lx\\
+        &\qquad+ \sum_{k\neq l, k, l = 1}^n a_kb_l \cos kx \sin lx + \sum_{k = 1}^n 2a_kb_k \cos kx \sin kx
+        \end{aligned} \label{sn} \]
+        直接对 \eqref{sn} 积分即得到 \eqref{premiere}. 实质上, 若在向量空间
+        \[V = \mathrm{span}\left\{\frac{1}{\sqrt{2}}, \cos kx\ (k = 1, 2, \cdots, n), \sin kx\ (k = 1, 2, \cdots n)\right\}\]
+        上赋以定义 3 中的内积 $\langle \cdot, \cdot\rangle$, \eqref{premiere} 即为 $\left(V, \langle\cdot, \cdot\rangle\right)$ 上的勾股定理.</p>
+
+        <p>对于 \eqref{deuxieme}, 
+        \[\begin{aligned}
+        \langle f, S_n\rangle &= \frac{1}{\pi} \int_0^{2\pi} f(x) \left( \frac{a_0}{2} + \sum_{k = 1}^n \left(a_k \cos kx + b_k \sin kx\right)\right) \dd x \\
+        &= \frac{a_0^2}{2} + \sum_{k = 1}^n \left(a_k \cdot \frac{1}{\pi} \int_0^{2\pi} f(x)\cos kx \dd x + b_k \cdot \frac{1}{\pi} \int_0^{2\pi} f(x)\sin kx \dd x\right) \\
+        &= \frac{a_0^2}{2} + \sum_{k = 1}^n (a_k^2 + b_k^2) \\
+        &= \norm{S_n}_2^2
+        \end{aligned}\]
+        即得. 事实上, $S_n(f, x)$ 可看作 $f(x)\in L_{2\pi}^2$ 在 $V\subset L_{2\pi}^2$ 的投影. 再结合正交性就能得到要证的结论.</p>
+
+        <p>对于 \eqref{troisieme}, 将表达式展开, 再结合 \eqref{deuxieme} 立刻得到.</p>
+
+        <p><b>定理 5. (Bessel 不等式)</b> 设 $f(x) \in L_{2\pi}^2$, $f(x)$ 的 Fourier 级数为 $\frac{a_0}{2} + \sum_{n = 1}^\infty (a_n\cos nx + b_n\sin nx)$, 那么级数 $\frac{a_0^2}{2} + \sum_{n = 1}^\infty (a_n^2 + b_n^2)$ 收敛, 并且如下 Bessel 不等式成立 :
+        \[\frac{a_0^2}{2} + \sum_{n = 1}^\infty (a_n^2 + b_n^2) \leq \norm{f}_2^2.\]</p>
+        <p><b>证明.</b>
+        \[\begin{aligned}
+        \frac{a_0^2}{2} + \sum_{k = 1}^n (a_k^2 + b_k^2) &\overset{\eqref{premiere}}{=} \norm{S_n}_2^2 \\
+        &\overset{\eqref{troisieme}}{=} \norm{f}_2^2 - \norm{f - S_n}_2^2 \\
+        &\leq \norm{f}_2^2
+        \end{aligned}\]
+        令 $n\to \infty$, 立得.
+        </p>
+        <p>由 Bessel 不等式可以证明 $f(x)\in L_{2\pi}^2$ 时的 Riemann 引理 :</p>
+        <p><b>引理 6. (Riemann)</b> 设 $f(x) \in L_{2\pi}^2$, 那么
+        \[\begin{aligned}
+        \lim_{n\to\infty} \frac{1}{\pi} \int_0^{2\pi} f(x) \cos nx \dd x &= 0, \\
+        \lim_{n\to\infty} \frac{1}{\pi} \int_0^{2\pi} f(x) \sin nx \dd x &= 0.
+        \end{aligned}\]
+        </p>
+        <p><b>命题 7. ($S_n$ 的极值性质)</b> 设 $f(x)\in L_{2\pi}^2$, 且 $f(x) \sim \frac{a_0}{2} + \sum_{n = 1}^\infty (a_n\cos nx + b_n\sin nx)$, 部分和为 $S_n = S_n (f, x) = \frac{a_0}{2} + \sum_{k = 1}^n (a_k\cos kx + b_k\sin kx)$, 那么对任何 $n$ 次三角多项式 $T_n = \frac{c_0}{2} + \sum_{k = 1}^n (c_k\cos kx + d_k\sin kx)$ 成立如下不等式
+        \[\norm{f - S_n}_2^2 \leq \norm{f - T_n}_2^2, \label{meilleure-approximation}\]
+        这意味着
+        \[\norm{f - S_n}_2^2 = \inf\limits_{T_n} \left\{ \norm{f - T_n}_2^2 \right\}.\]
+        </p>
+        <p><b>证明.</b> 
+        \[\begin{aligned}
+        \norm{f - S_n}_2^2 &= \norm{f - T_n + T_n - S_n}_2^2 \\
+        &= \norm{f - T_n}_2^2 + 2 \langle f - T_n, T_n - S_n\rangle + \norm{T_n - S_n}_2^2,
+        \end{aligned}\]
+        其中
+        \[\begin{aligned}
+        \langle f - T_n, T_n - S_n\rangle &= \langle f, T_n\rangle - \langle f, S_n\rangle - \norm{T_n}_2^2 + \langle S_n, T_n\rangle \\
+        &= \frac{a_0c_0}{2} + \sum_{k = 1}^n (a_kc_k + b_kd_k) - \left( \frac{a_0^2}{2} + \sum_{k = 1}^n (a_k^2 + b_k^2)\right)\\
+        &\qquad- \left( \frac{c_0^2}{2} + \sum_{k = 1}^n (c_k^2 + d_k^2)\right) + \frac{a_0c_0}{2} + \sum_{k = 1}^n (a_kc_k + b_kd_k),
+        \end{aligned}\]
+        \[\begin{aligned}
+        \norm{T_n - S_n}_2^2 &=  \frac{(a_0 - c_0)^2}{2} + \sum_{k = 1}^n \left( (c_k - a_k)^2 + (d_k - b_k)^2\right) \\
+        &= \frac{a_0^2}{2} + \sum_{k = 1}^n (a_k^2 + b_k^2) + \frac{c_0^2}{2} + \sum_{k = 1}^n (c_k^2 + d_k^2) - a_0c_0 - 2\sum_{k = 1}^n (a_kc_k + b_kd_k).
+        \end{aligned}\]
+        从而 $2 \langle f - T_n, T_n - S_n\rangle = -2 \norm{T_n - S_n}_2^2$, 遂有
+        \[\begin{aligned}\norm{f - S_n}_2^2 &= \norm{f - T_n}_2^2 - \norm{T_n - S_n}_2^2 \\
+        &\leq \norm{f - T_n}_2^2.
+        \end{aligned}\]</p>
+
+        <hr>
+        <p>我们知道, Cesàro 和可能提高级数的收敛性, 于是将其引入. </p>
+        <p><b>定义 8.</b> 设 $f(x)$ 是以 $2\pi$ 为周期的连续函数, 且 $f(x)$ 的 Fourier 级数为 $\frac{a_0}{2} + \sum_{n = 1}^\infty (a_n\cos nx + b_n\sin nx)$, 部分和 $S_n (f, x) = \frac{a_0}{2} + \sum_{k = 1}^n (a_k\cos kx + b_k\sin kx)$, 那么称 $F_n = \frac{1}{n + 1}\sum_{k = 0}^n S_k(f, x)$ 为 $f(x)$ 的 Fejér 部分和.</p>
+        <p><b>注记 9.</b> 施用 Abel 变换,
+        \[\begin{aligned}
+        F_n(f, x) &= \frac{1}{n + 1} \sum_{k = 0}^n S_k (f, x) \\
+        &= \frac{1}{n + 1} \sum_{k = 0}^{n - 1} \left(S_k - S_{k + 1}\right)\sum_{j = 0}^k + \frac{1}{n + 1}S_n\sum_{j = 0}^n \\
+        &= \sum_{k = 1}^n \frac{k}{n + 1} \left( -a_k \cos kx - b_k \sin kx\right)\\
+        &\qquad + \frac{a_0}{2} + \sum_{k = 1}^n (a_k\cos kx + b_k\sin kx) \\
+        &= \frac{a_0}{2} + \sum_{k = 1}^n \left(1 - \frac{k}{n + 1}\right)\left(a_k\cos kx + b_k\sin kx\right).
+        \end{aligned}
+        \]
+        </p>
+
+        <p><b>定义–命题 10.</b> 设 $f(x)$ 是以 $2\pi$ 为周期的可积或绝对可积函数. 若 $f(x) \sim \frac{a_0}{2} + \sum_{n = 1}^\infty (a_n\cos nx + b_n\sin nx)$, Fourier 部分和为 
+        \[\begin{aligned}
+        S_n (f, x) &= \frac{a_0}{2} + \sum_{k = 1}^n (a_k\cos kx + b_k\sin kx) \\
+        &= \frac{1}{\pi} \int_{0}^{\pi} \left(f\left(x+t\right) + f\left(x-t\right)\right) \frac{\sin\frac{2n+1}{2}t}{2 \sin\frac{t}{2}} \dd t,
+        \end{aligned}\]
+        那么 $f(x)$ 的 Fejér 部分和有如下积分表示 :
+        \[F_n(f, x) = \frac{2}{\left(n+1\right)\pi} \int_{0}^{\pi} \left(f\left(x+t\right) + f\left(x-t\right)\right) \left(\frac{\sin\frac{n+1}{2}t}{2 \sin\frac{t}{2}}\right)^{2} \dd t,\]
+        其中, 
+        \[\sigma_n(t) = \frac{2}{n+1} \left(\frac{\sin\frac{n+1}{2}t}{2 \sin\frac{t}{2}}\right)^2\]
+        称为 Fejér 核.
+        </p>
+        <p><b>证明.</b> 
+        \[\begin{aligned}
+        F_n(f, x) &= \frac{1}{n+1} \sum_{k=0}^{n} S_k(f, x) \\
+        &= \frac{1}{n+1} \sum_{k=0}^{n} \frac{1}{\pi} \int_{0}^{\pi} \left(f\left(x+t\right) + f\left(x-t\right)\right) \frac{\sin\frac{2k+1}{2}t}{2 \sin\frac{t}{2}} \dd t \\
+        &= \frac{1}{\left(n+1\right)\pi} \int_{0}^{\pi} \left(f\left(x+t\right) + f\left(x-t\right)\right) \frac{1}{2 \sin\frac{t}{2}} \left(\sum_{k=0}^{n} \sin\frac{2k+1}{2}t\right) \dd t,
+        \end{aligned}\]
+        其中
+        \[\begin{aligned}
+        \sum_{k=0}^{n} \sin\frac{2k+1}{2}t &= \frac{1}{2 \sin\frac{t}{2}} \sum_{k=0}^{n} 2 \sin\frac{t}{2} \sin\frac{2k+1}{2}t \\
+        &= \frac{1}{2 \sin\frac{t}{2}} \sum_{k=0}^{n} \left(\cos\left(\frac{t}{2} - \frac{2k+1}{2}t\right) - \cos\left(\frac{t}{2} + \frac{2k+1}{2}t\right)\right) \\
+        &= \frac{1}{2 \sin\frac{t}{2}} \sum_{k=0}^{n} \left(\cos kt - \cos\left(k+1\right)t\right) \\
+        &= \frac{1}{2 \sin\frac{t}{2}} \left(1 - \cos\left(n+1\right)t\right) \\
+        &= \frac{2 \sin^2\frac{n+1}{2}t}{2 \sin\frac{t}{2}}.
+        \end{aligned}\]
+        </p>
+        <p><b>注记 11.</b> 从上面的推导可以看出得到 $\sigma_n(t)$ 的过程 :
+        \[\sigma_n(t) = \frac{1}{n+1} \sum_{k=0}^{n} D_k\left(t\right) = \frac{2}{n+1} \left(\frac{\sin\frac{n+1}{2}t}{2 \sin\frac{t}{2}}\right)^2, \label{fejer-dirichlet}\]
+        其中
+        \[D_n\left(t\right) = \frac{1}{2} + \sum_{k=1}^{n} \cos kt = \frac{\sin\frac{2n+1}{2}t}{2 \sin\frac{t}{2}}\]
+        为 Dirichlet 核.
+        </p>
+    
+        <p><b>命题 12.</b> 设 $\sigma_n(t)$ 为 Fejér 核, 那么对任何非负整数 $n$, 有如下性质 :</p>
+        <ol>
+            <li>单位积分 : 
+                \[\frac{1}{\pi} \int_{-\pi}^{\pi} \sigma_n(x) \dd x = 1. \label{integrale-egale-1}\]
+            </li>
+            <li>偶且非负 : 对任何 $x$, $\sigma_n(x) = \sigma_n(-x) \geq 0$.</li>
+            <li>对任何 $\delta \in (0, \pi)$, 当 $n\to \infty$ 时, \[\sigma_n(x) \rightrightarrows 0, \quad x\in [\delta, \pi]. \label{convergence-uniforme}\]</li>
+        </ol>
+        <p><b>证明.</b> 直接对 \eqref{fejer-dirichlet} 的第一个等式积分, 得到 \eqref{integrale-egale-1}. 对于 \eqref{convergence-uniforme}, 考虑 
+        \[\max\limits_{x\in [\delta, \pi]}\sigma_n(x) \leq \frac{1}{2(n + 1) \sin^2 \frac{\delta}{2}} = \frac{2}{n + 1} \left(\frac{1}{2\sin \frac{\delta}{2}}\right)^2.\]</p>
+        <p>Dirichlet 核 $D_n(t)$ 不恒正, 它剧烈振荡, 绝对值的积分趋于无穷. 即使 $f(x)$ 的性质加强为连续, 其 Fourier 级数依然可能发散 (Du Bois–Reymond), 但利用 Cesàro 求和方法能够给出如下的结论.</p>
+        <p><b>定理 13. (Fejér)</b> 设 $f(x)$ 是以 $2\pi$ 为周期的连续函数, $f(x) \sim \frac{a_0}{2} + \sum_{n = 1}^\infty (a_n\cos nx + b_n\sin nx)$, Fejér 部分和
+        \[F_n(f, x) = \frac{2}{\left(n+1\right)\pi} \int_{0}^{\pi} \left(f\left(x+t\right) + f\left(x-t\right)\right) \left(\frac{\sin\frac{n+1}{2}t}{2 \sin\frac{t}{2}}\right)^{2} \dd t,\]
+        那么 Cesàro 和 $\lim_{n\to \infty} F_n(f, x) = f(x)$ 在 $\mathbb{R}$ 上一致成立.</p>
+        <p><b>证明.</b> $f(x)$ 在 $[0, 2\pi]$ 上连续则一致连续. 对任何 $\varepsilon > 0$, 存在 $\delta > 0$, 对任何 $x^\prime, x^{\prime\prime} \in [0, 2\pi]$ 满足 $|x^\prime - x^{\prime\prime}| < \delta$ 者, 有 $\left| f(x^\prime) - f(x^{\prime\prime}) \right| < \frac{\varepsilon}{4}$.</p>
+        <p>同时 $f(x)$ 有界, 记 $|f(x)| < M, x\in [0, 2\pi]$. 当 $n$ 满足
+        \[n \geq \left\lfloor \frac{4M}{\varepsilon \sin^2 \frac{\delta}{2}} \right\rfloor + 1\]
+        时, 
+        \[\begin{aligned}
+        F_n(f, x) - f(x) &= \frac{1}{(n + 1)\pi} \int_0^\pi \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t \\
+        &= \frac{1}{(n + 1)\pi} \left(\int_0^\delta + \int_\delta^\pi\right) \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t,
+        \end{aligned}\]
+        其中
+        \[\begin{aligned}
+        \int_0^\delta \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t &\leq \frac{\varepsilon}{2} \int_0^\delta \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t \\
+        &\leq \frac{\varepsilon}{2} \int_0^\pi \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t,
+        \end{aligned}\]
+        且
+        \[\begin{aligned}
+        \int_\delta^\pi \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t &\leq 4M \int_\delta^\pi \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t \\
+        &\leq 4M \cdot \pi \cdot \frac{1}{\left(2\sin \frac{\delta}{2}\right)^2}.
+        \end{aligned}\]
+        </p>
+        <p>遂有
+        \[\begin{aligned}
+        \left|F_n(f, x) - f(x)\right| &\leq \frac{\varepsilon}{2} \int_0^\pi \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t + 4M \cdot \pi \cdot \frac{1}{\left(2\sin \frac{\delta}{2}\right)^2} \\
+        &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+        &= \varepsilon,
+        \end{aligned}\]
+        即 $F_n(f, x) \rightrightarrows f(x)$.
+        </p>
+        <p>于是, 下述的 Weierstraß 第二逼近定理等诸多结论是直接的.</p>
+        <p><b>定理 14. (Weierstraß)</b> 任何周期连续函数都可以被三角多项式一致逼近.</p>
+        <p><b>命题 15.</b> 设 $f$ 为连续周期函数. 它的 Fourier 级数若收敛, 则必收敛到自身.</p>
+        <p><b>证明.</b> 设 $f$ 的 Fourier 级数收敛到 $g$, 则其部分和的平均值也收敛到 $g$. 由定理 13 知道 $g$ 就是 $f$ 自身.</p>
+        <p><b>命题 16.</b> 若函数 $f, g$ 的 Fourier 系数完全相同, 则 $f\equiv g$.</p>
+        <p><b>证明.</b> 记 $h = f - g$, 则 $h$ 的 Fourier 系数全为 $0$, Fourier 部分和为 $0$. 从而 $F_n(f, x) = 0$, 收敛至 $0$.</p>
+        <p>在上述意义下, 可以说 Fourier 级数没有丢失原函数的任何信息.</p>
+
+        <p>在得到最后的 Parseval 等式前, 还需要先证明如下几个引理.</p>
+        <p><b>引理 17.</b> 设 $f(x)$ 在 $[0, 2\pi]$ 上可积, 那么存在折线列 $\left\{ \varphi_n (x) \right\}_n$ 使得 
+        \[ \lim_{n\to\infty} \int_0^{2\pi} \left| f(x) - \varphi_n (x) \right| \dd x = 0, \label{approximation-1}\]
+        这意味着
+        \[\lim_{n\to\infty} \int_0^{2\pi} \varphi_n (x) \dd x = \int_0^{2\pi} f (x) \dd x. \label{approximation-2}\]</p>
+        <p><b>证明.</b> 对每个正整数 $n$, 对区间 $[0, 2\pi]$ 实施 $n$ 等分分割
+        \[\Delta_n :\quad x_0 = 0 < x_1 < \cdots < x_n = 2\pi,\]
+        其中 $x_k = k\cdot \frac{2\pi}{n}, \ k = 0, 1, \cdots, n$. 每个子区间 $[x_{k - 1}, x_k]$ 的长度为 $\Delta x_k = \frac{2\pi}{n}$, 设 $f(x)$ 在每一个这样的子区间上的振幅为 $\omega_k(f, \Delta_n)$.</p>
+        <p>在每个子区间 $[x_{k-1}, x_k]$ 上, 构造线性函数
+        \[\varphi_n^{(k)}(x) = \frac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} (x - x_{k-1}) + f(x_{k-1}), \quad x \in [x_{k-1}, x_k].\]
+        令 $\varphi_n(x) = \varphi_n^{(k)}(x), x \in [x_{k - 1}, x_k], k = 1, 2, \cdots, n$. 容易验证, $\varphi_n(x)$ 是 $[0, 2\pi]$ 上的连续折线函数, 且有
+        \[\left| f(x) - \varphi_n(x) \right| \leq \omega_k(f, \Delta_n), \ x\in [x_{k-1}, x_k].\]
+        </p>
+        <p>于是
+        \[\begin{aligned}
+        \int_0^{2\pi} \left| f(x) - \varphi_n (x) \right| \dd x &= \sum_{k = 1}^n \int_{x_{k - 1}}^{x_k} \left| f(x) - \varphi_n (x) \right| \dd x \\
+        &\leq \sum_{k = 1}^n \omega_k(f, \Delta_n) \Delta_{x_k},
+        \end{aligned}\]
+        而在等分分割 $\Delta_n$ 下
+        \[\lim_{n\to\infty} \sum_{k = 1}^n \omega_k(f, \Delta_n) \Delta x_k = 0,\]
+        所以 \eqref{approximation-1} 式成立.
+        </p>
+        <p>进一步, 
+        \[\begin{aligned}
+        \left| \int_0^{2\pi} f(x) \dd x - \int_0^{2\pi} \varphi_n(x) \dd x \right| &= \left| \int_0^{2\pi} \left( f(x) - \varphi_n(x) \right) \dd x \right| \\
+        &\leq \int_0^{2\pi} \left| f(x) - \varphi_n (x) \right| \dd x
+        \end{aligned}\]
+        所以 \eqref{approximation-2} 式成立.
+        </p>
+
+        <p><b>推论 18.</b> 设 $f(x)$ 在 $[0, 2\pi]$ 上可积, 那么存在连续函数列 $\left\{ f_n (x) \right\}_n$ 使得 
+        \[ \lim_{n\to\infty} \norm{f - f_n}_2 = 0.\]</p>
+
+        <p><b>证明.</b> 利用 $f$ 的有界性即可.</p>
+
+        <p><b>引理 19.</b> 设 $f(x)$ 在 $[0, 2\pi]$ 上不是 Riemann 可积的, 但瑕积分 $\int_0^{2\pi} f^2(x) \dd x$ 收敛, 那么存在函数列 $\left\{ f_n (x) \right\}_n$ 使得
+        \[\lim_{n \to \infty} \norm{f - f_n}_2 = 0.\]</p>
+
+        <p><b>证明.</b> 不妨设 $x = 0$ 为惟一瑕点. 容易说明, 对于任给的 $\varepsilon > 0$, 存在正数 $\delta$ 使得
+        \[\int_0^\delta f^2(x) \dd x < \varepsilon.\]
+        这时, 存在 $M > 0$ 使得 $f(x)$ 在 $[\delta, 2\pi]$ 上满足 $|f(x)| \leq M$.</p>
+        <p>构造截断函数列
+        \[f_n(x) = \begin{cases}  n, & f(x) > n \\  f(x), & |f(x)| \leq n \\  -n, & f(x) < -n  \end{cases},\quad n = 1, 2, \cdots,\]
+        条件 $n \geq M$ 成立时, 在 $[\delta, 2\pi]$ 上 $f(x) - f_n(x) = 0$, 因此
+        \[\begin{aligned}
+        \int_0^{2\pi} \left( f(x) - f_n(x)\right)^2 \dd x &= \int_0^{\delta} \left( f(x) - f_n(x)\right)^2 \dd x + \int_{\delta}^{2\pi} \left( f(x) - f_n(x)\right)^2 \dd x \\ 
+        &= \int_0^{\delta} \left( f(x) - f_n(x)\right)^2 \dd x \\
+        &< \int_0^\delta f^2(x) \dd x \\
+        &< \varepsilon.
+        \end{aligned}\]
+        这就证明了引理 19. 这样就完成了 Parseval 等式的前序准备工作.</p>
+
+        <p><b>定理 20. (Parseval 等式)</b> 设 $f(x) \in L_{2\pi}^2$, 其 Fourier 级数为 $\frac{a_0}{2} + \sum_{n = 1}^\infty (a_n\cos nx + b_n\sin nx)$, 部分和为 $S_n (f, x)$. 那么, 下述极限
+        \[\lim_{n\to\infty} \norm{f - S_n}_2^2 = 0 \tag{1926} \label{parseval-1}\]
+        成立, 并且如下的 Parseval 等式成立 :
+        \[\frac{a_0^2}{2} + \sum_{n = 1}^\infty (a_n^2 + b_n^2) = \norm{f}_2^2. \tag{2026} \label{parseval-2}\]</p>
+
+        <p><b>证明.</b> 首先假设 $f(x)$ 连续. 根据定理 13 知道, 定义 8 中的 Fejér 部分和函数列一致收敛于 $f(x)$, 因此
+        \[\lim_{n\to \infty} \norm{f - F_n(f, \cdot)}_2 = 0\]
+        成立. 又由命题 7, 式 \eqref{meilleure-approximation} 在此成立, 于是 \eqref{parseval-1} 成立. 在 \eqref{troisieme} 中令 $n$ 趋于无穷, 则得到 \eqref{parseval-2}.
+        </p>
+        <p>若 $f(x)$ 不连续但可积, 考察推论 18 得到的连续函数列 $\left\{ f_n (x) \right\}_n$. 对于任给的 $\varepsilon > 0$, 存在正整数 $m$ 使得 
+        \[\norm{f - f_m}_2^2 < \frac{\varepsilon}{4}.\]
+        根据定理 13 知道, 连续函数 $f_m(x)$ 的 Fejér 部分和函数列 $\left\{ F_n(f_m, x) \right\}_n$ 一致收敛于 $f_m(x)$, 因此存在正整数 $N$, 当 $n > N$ 时
+        \[\norm{f_m - F_n(f_m, \cdot)}_2^2 < \frac{\varepsilon}{4},\]
+        所以
+        \[\begin{aligned}
+        \norm{f - F_n(f_m, \cdot)}_2^2 &= \norm{f - f_m + f_m - F_n(f_m, \cdot)}_2^2 \\
+        &\leq 2 \norm{f - f_m}_2^2 + 2 \norm{f_m - F_n(f_m, \cdot)}_2^2 \\
+        &< \varepsilon,
+        \end{aligned}\]
+        故由命题 7 的极值性质 \eqref{meilleure-approximation}, 当 $n > N$ 时
+        \[\norm{f - S_n}_2^2 \leq \norm{f - F_n(f_m, \cdot)}_2^2 < \varepsilon,\]
+        故 \eqref{parseval-1} 成立. 在 \eqref{troisieme} 中令 $n \to \infty$, 即得 \eqref{parseval-2}.
+        </p>
+        <p>若 $f(x)$ 不是 Riemann 可积的, 但瑕积分 $\int_0^{2\pi} f^2(x) \dd x$ 收敛. 像前面一样, 不妨设 $x = 0$ 是惟一的瑕点. 对任给的 $\varepsilon > 0$, 存在正数 $\delta$ 使得
+        \[\int_0^\delta f^2(x) \dd x < \frac{\varepsilon\pi}{9}.\]
+        这时 $f(x)$ 在 $[\delta, 2\pi]$ 上可积, 故存在 $M > 0$ 使得 $|f(x)| \leq M, \ x \in [\delta, 2\pi]$. 取正整数 $m \geq M$, 按引理 19 构造截断函数 $f_m (x)$, 则 $|f_m (x)| \leq m$, 即 $f_m$ 有界 ; 在 $[\delta, 2\pi]$ 上 $f_m = f$ 可积 ; 另一方面, $f_m$ 的不连续点都含于 $f$ 的不连续点之中, 而 $f$ 在 $[\eta, 2\pi]$ ($\eta > 0$) 上 Riemann 可积, 其不连续点集为零测集, 故 $f_m$ 的不连续点集亦为零测集, 结合 $f_m$ 有界, 我们知道 $f_m$ 在 $[0, 2\pi]$ 上 Riemann 可积. 又 $|f(x) - f_m (x)| \leq |f(x)|$, 于是
+        \[\begin{aligned}
+        \norm{f - f_m}_2^2 &= \frac{1}{\pi} \int_0^\delta \left( f(x) - f_m (x) \right)^2 \dd x \\
+        &\leq \frac{1}{\pi} \int_0^\delta f^2 (x) \dd x \\
+        &< \frac{\varepsilon}{9}.
+        \end{aligned}\]
+        由于 $f_m$ 可积但未必连续, 再对其施用推论 18, 存在连续函数 $\varphi (x)$ 使得
+        \[\norm{f_m - \varphi}_2^2 < \frac{\varepsilon}{9}.\]
+        根据定理 13 知道, 连续函数 $\varphi (x)$ 的 Fejér 部分和函数列 $\left\{ F_n(\varphi, x) \right\}_n$ 一致收敛于 $\varphi (x)$, 因此存在正整数 $N$, 当 $n \geq N$ 时
+        \[\norm{\varphi - F_n(\varphi, \cdot)}_2^2 < \frac{\varepsilon}{9},\]
+        所以
+        \[\begin{aligned}
+        \norm{f - F_n(\varphi, \cdot)}_2^2 &\leq 3 \norm{f - f_m}_2^2 + 3 \norm{f_m - \varphi}_2^2 + 3 \norm{\varphi - F_n(\varphi, \cdot)}_2^2 \\
+        &< \varepsilon,
+        \end{aligned}\]
+        故由命题 7 的极值性质 \eqref{meilleure-approximation}, 当 $n \geq N$ 时
+        \[\norm{f - S_n}_2^2 \leq \norm{f - F_n(\varphi, \cdot)}_2^2 < \varepsilon,\]
+        由于 $\varepsilon > 0$ 是任意的, 故 \eqref{parseval-1} 成立. 在 \eqref{troisieme} 中令 $n \to \infty$, 即得 \eqref{parseval-2}. 这就证得定理 20.
+        </p>
+    </main>
+
+    <footer id="footer"></footer>
+
+</body>
+</html>
