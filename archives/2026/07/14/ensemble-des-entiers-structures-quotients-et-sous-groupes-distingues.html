@@ -48,8 +48,8 @@
             \end{array}\]
         </p>
         <p>整数集上的其他运算可以用类似方法定义. 下面验证加法是良定义的, 即运算不依赖代表元的选取. 事实上, 若设 $[ n_1, m_1 ] = [ n_1', m_1' ]$ 且 $[ n_2, m_2 ] = [ n_2', m_2' ]$, 根据定义就有 $n_1 +_{\mathbb{N}}m_1^\prime = n_1^\prime +_{\mathbb{N}}m_1$, $n_2 +_{\mathbb{N}}m_2^\prime = n_2^\prime +_{\mathbb{N}}m_2$. 将这两个等式的两边分别相加, 可得
-        \[(n_1 +_{\mathbb{N}}m_1') +_{\mathbb{N}}(n_2 +_{\mathbb{N}}m_2') = (n_1' +_{\mathbb{N}}m_1) +_{\mathbb{N}}(n_2' +_{\mathbb{N}}m_2),\]
-        利用自然数加法的交换律和结合律, 将上式变形为
+        \[(n_1 +_{\mathbb{N}}m_1') +_{\mathbb{N}}(n_2 +_{\mathbb{N}}m_2') = (n_1' +_{\mathbb{N}}m_1) +_{\mathbb{N}}(n_2' +_{\mathbb{N}}m_2),\label{addition}\]
+        利用自然数加法的交换律和结合律, 将 \eqref{addition} 变形为
         \[(n_1 +_{\mathbb{N}}n_2) +_{\mathbb{N}}(m_1' +_{\mathbb{N}}m_2') = (n_1' +_{\mathbb{N}}n_2') +_{\mathbb{N}}(m_1 +_{\mathbb{N}}m_2).\]
         这说明
         \[(n_1 +_{\mathbb{N}}n_2, m_1 +_{\mathbb{N}}m_2) \sim (n_1' +_{\mathbb{N}}n_2', m_1' +_{\mathbb{N}}m_2'),\]
@@ -71,7 +71,7 @@
         $$
         </p>
         <p>现在, 注意上面讨论中的要素 $(\mathbb{Z}, +_{\mathbb{Z}}, [0, 0], -_{\mathbb{Z}})$ 不外乎作成一个群. 从更加一般而抽象的视角, 考虑带有等价关系 $\sim$ 的群 $(G, *_G, e_G, {}^{-1})$. 我们问: 在什么条件下能够自然地赋予 $G/\sim$ 以群结构? 对于 $[g], [h] \in G/\sim$, 其中 $g, h\in G$, 希望 $e_{G/\sim} := [e_G]$, $[g] *_{G/\sim} [h] := [g *_G h]$ 和 ${[g]}^{-1} := [g^{-1}]$. 为此考虑这些式子在何时是良定义的. 注意 $g, h$ 是等价类的代表元, 我们希望下述条件成立: 
-            \[\forall g, g^\prime, h, h^\prime \in G, \ g\sim g^\prime \land h\sim h^\prime \implies g *_G h \sim g^\prime *_G h^\prime. \tag{!}\label{id}\]
+        \[\forall g, g^\prime, h, h^\prime \in G, \ g\sim g^\prime \land h\sim h^\prime \implies g *_G h \sim g^\prime *_G h^\prime. \label{id}\]
         事实上, 有如下结论成立.
         </p>
         <p><b>命题 9.</b> 设群 $(G, *_G, e_G, {}^{-1})$ 带有等价关系 $\sim$. 如果条件 (\ref{id}) 成立, 那么 $(G/\sim, *_{G/\sim}, e_{G/\sim}, {}^{-1})$ 按照上面的定义作成一个群. 条件 (\ref{id}) 确保我们能够将群结构诱导至商集上.</p>
@@ -100,8 +100,8 @@
         x\in [g] &\iff x \sim g \\
         &\iff g^{-1} *_G x \sim e \\
         &\iff g^{-1} *_G x \in [e] \\
-        &\iff x \in g[e_G].
-        \end{aligned}\]</p>
+        &\iff x \in g[e_G]. 
+        \end{aligned}\notag\]</p>
         <p>从上述命题立刻发现如下的性质.</p>
         <p><b>推论 14.</b> 命题 13 中的等价类 $[e_G]$ 满足对任意 $g\in G$, $g[e_G] = [e_G]g$.</p>
         <p>推论 14 表明, $G$ 在 $[e_G]$ 中的所有左陪集与所有右陪集完全重合. 对任意的 $a\in [e_G]$, 我们知道 $g *_G a \in g[e_G] = [e_G]g$, 从而存在 $a^\prime \in [e_G]$ 使得 $g *_G a = a^\prime *_G g$, 于是得到 $g *_G a *_G g^{-1} \in [e_G]$. 由于 $a$ 的任意性, 我们有 $g * [e_G] * g^{-1} \subset [e_G]$, 其中对于 $G$ 的子集 $S$ 按标准的方法定义 $\tilde{g} * S = \left\{\tilde{g} *_G s : s \in S\right\}$, $S * \tilde{g} = \left\{s *_G \tilde{g} : s \in S\right\}$. 另一方面, 考虑 $g$ 的逆, 有 $g^{-1} *_G a *_G g \in [e_G]$, 从而 $a \in g * [e_G] * g^{-1}$, 得到 $[e_G] \subset g * [e_G] * g^{-1}$. 所以, 我们事实上有 $[e_G] = g * [e_G] * g^{-1}$ 对任意的 $g\in G$ 成立. 上述讨论都围绕 $G$ 的子群 $[e_G]$ 进行, 这启发我们作出下述定义.</p>
