@@ -185,9 +185,45 @@ hr {
     h3 {
         font-size: 1.7rem;
     }
+    .avatar {
+        float: none;
+        width: 40%;
+        display: block;
+        margin: 0 auto 1em;
+    }
 }
 
 /* Masquer l'icône du compteur Shinystat tout en conservant le comptage */
 a[href*="shinystat.com"], img[src*="shinystat.com"] {
     display: none;
+}
+
+/* Navigation du site (injectée par common.js) */
+.site-header p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin: 0 0 1.5em;
+}
+
+/* Pied de page */
+footer ul {
+    padding-left: 1.25em;
+}
+
+/* Date de publication des articles */
+.post-date {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Avatar de l'accueil */
+.avatar {
+    float: right;
+    width: 20%;
+}
+
+/* Tableaux débordants (archives sur mobile) */
+.table-wrap {
+    overflow-x: auto;
 }
