@@ -271,7 +271,7 @@
         \[\norm{f - S_n}_2^2 \leq \norm{f - F_n(f_m, \cdot)}_2^2 < \varepsilon,\]
         故 \eqref{parseval-1} 成立. 在 \eqref{troisieme} 中令 $n \to \infty$, 即得 \eqref{parseval-2}.
         </p>
-        <p>若 $f(x)$ 不是 Riemann 可积的, 但瑕积分 $\int_0^{2\pi} f^2(x) \dd x$ 收敛. 像前面一样, 不妨设 $x = 0$ 是惟一的瑕点. 对任给的 $\varepsilon > 0$, 存在正数 $\delta$ 使得
+        <p>若 $f(x)$ 不是 Riemann 可积的, 但瑕积分 $\int_0^{2\pi} f^2(x) \dd x$ 收敛, 不妨设 $x = 0$ 是惟一的瑕点. 对任给的 $\varepsilon > 0$, 存在正数 $\delta$ 使得
         \[\int_0^\delta f^2(x) \dd x < \frac{\varepsilon\pi}{9}.\]
         这时 $f(x)$ 在 $[\delta, 2\pi]$ 上可积, 故存在 $M > 0$ 使得 $|f(x)| \leq M, \ x \in [\delta, 2\pi]$. 取正整数 $m \geq M$, 按引理 19 构造截断函数 $f_m (x)$, 则 $|f_m (x)| \leq m$, 即 $f_m$ 有界 ; 在 $[\delta, 2\pi]$ 上 $f_m = f$ 可积 ; 另一方面, $f_m$ 的不连续点都含于 $f$ 的不连续点之中, 而 $f$ 在 $[\eta, 2\pi]$ ($\eta > 0$) 上 Riemann 可积, 其不连续点集为零测集, 故 $f_m$ 的不连续点集亦为零测集, 结合 $f_m$ 有界, 我们知道 $f_m$ 在 $[0, 2\pi]$ 上 Riemann 可积. 又 $|f(x) - f_m (x)| \leq |f(x)|$, 于是
         \[\begin{aligned}
