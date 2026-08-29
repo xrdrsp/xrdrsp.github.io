@@ -41,10 +41,10 @@
         S_n^2(f, x) &= \left(\frac{a_0}{2} + \sum_{k = 1}^n\left(a_k \cos kx + b_k \sin kx\right)\right)^2 \\
         &= \frac{a_0^2}{4} + \sum_{k = 1}^n \left(a_k^2 \cos^2 kx + b_k^2 \sin^2 kx\right) + \sum_{k = 1}^n a_0 \left(a_k\cos kx + b_k\sin kx\right)\\
         &\qquad+ \sum_{k\neq l, k, l = 1}^n a_ka_l \cos kx \cos lx + \sum_{k\neq l, k, l = 1}^n b_kb_l \sin kx \sin lx\\
-        &\qquad+ \sum_{k\neq l, k, l = 1}^n a_kb_l \cos kx \sin lx + \sum_{k = 1}^n 2a_kb_k \cos kx \sin kx
+        &\qquad+ \sum_{k\neq l, k, l = 1}^n 2a_kb_l \cos kx \sin lx + \sum_{k = 1}^n 2a_kb_k \cos kx \sin kx
         \end{aligned} \label{sn} \]
         直接对 \eqref{sn} 积分即得到 \eqref{premiere}. 实质上, 若在向量空间
-        \[V = \mathrm{span}\left\{\frac{1}{\sqrt{2}}, \cos kx\ (k = 1, 2, \cdots, n), \sin kx\ (k = 1, 2, \cdots n)\right\}\]
+        \[V = \mathrm{span}\left\{\frac{1}{\sqrt{2}}, \cos kx\ (k = 1, 2, \cdots, n), \sin kx\ (k = 1, 2, \cdots, n)\right\}\]
         上赋以定义 3 中的内积 $\langle \cdot, \cdot\rangle$, \eqref{premiere} 即为 $\left(V, \langle\cdot, \cdot\rangle\right)$ 上的勾股定理.</p>
 
         <p>对于 \eqref{deuxieme}, 
@@ -165,8 +165,8 @@
         \[n \geq \left\lfloor \frac{4M}{\varepsilon \sin^2 \frac{\delta}{2}} \right\rfloor + 1\]
         时, 
         \[\begin{aligned}
-        F_n(f, x) - f(x) &= \frac{1}{(n + 1)\pi} \int_0^\pi \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t \\
-        &= \frac{1}{(n + 1)\pi} \left(\int_0^\delta + \int_\delta^\pi\right) \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t,
+        F_n(f, x) - f(x) &= \frac{2}{(n + 1)\pi} \int_0^\pi \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t \\
+        &= \frac{2}{(n + 1)\pi} \left(\int_0^\delta + \int_\delta^\pi\right) \left(f(x + t) + f(x - t) - 2f(x)\right) \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t,
         \end{aligned}\]
         其中
         \[\begin{aligned}
@@ -181,7 +181,7 @@
         </p>
         <p>遂有
         \[\begin{aligned}
-        \left|F_n(f, x) - f(x)\right| &\leq \frac{\varepsilon}{2} \int_0^\pi \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t + 4M \cdot \pi \cdot \frac{1}{\left(2\sin \frac{\delta}{2}\right)^2} \\
+        \left|F_n(f, x) - f(x)\right| &\leq \frac{2}{(n + 1)\pi} \left( \frac{\varepsilon}{2} \int_0^\pi \left(\frac{\sin \frac{n + 1}{2} t}{2\sin \frac{t}{2}}\right)^2 \dd t + 4M \cdot \pi \cdot \frac{1}{\left(2\sin \frac{\delta}{2}\right)^2} \right) \\
         &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
         &= \varepsilon,
         \end{aligned}\]
@@ -192,7 +192,7 @@
         <p><b>命题 15.</b> 设 $f$ 为连续周期函数. 它的 Fourier 级数若收敛, 则必收敛到自身.</p>
         <p><b>证明.</b> 设 $f$ 的 Fourier 级数收敛到 $g$, 则其部分和的平均值也收敛到 $g$. 由定理 13 知道 $g$ 就是 $f$ 自身.</p>
         <p><b>命题 16.</b> 若函数 $f, g$ 的 Fourier 系数完全相同, 则 $f\equiv g$.</p>
-        <p><b>证明.</b> 记 $h = f - g$, 则 $h$ 的 Fourier 系数全为 $0$, Fourier 部分和为 $0$. 从而 $F_n(f, x) = 0$, 收敛至 $0$.</p>
+        <p><b>证明.</b> 记 $h = f - g$, 则 $h$ 的 Fourier 系数全为 $0$, Fourier 部分和为 $0$. 从而 $F_n(h, x) = 0$, 收敛至 $0$.</p>
         <p>在上述意义下, 可以说 Fourier 级数没有丢失原函数的任何信息.</p>
 
         <p>在得到最后的 Parseval 等式前, 还需要先证明如下几个引理.</p>
